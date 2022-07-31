@@ -47,6 +47,15 @@ setarray(["","","","","","","",""])
     }
   }
   useEffect(() => {
+    setarray([
+      "fade-down",
+      "fade-left",
+      "fade-down",
+      "fade-right",
+      "fade-right",
+      "fade-down",
+      "fade-left",
+    ]);
     window.addEventListener("resize", updatewidths);
 
     updatewidths();

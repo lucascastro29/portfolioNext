@@ -22,7 +22,7 @@ const Skills=(props:skillsmodel)=>{
               textShadow: "5px 2px 5px black",
               overflow: "hidden",
             }}
-            data-aos="fade-down"
+            data-aos={props.aos}
           >
             {props.title}
 

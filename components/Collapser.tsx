@@ -6,7 +6,7 @@ import { Collapsermodel } from "../models/Collapsermodel";
 import { useEffect, useState } from "react";
 
 const Collapser =(props:Collapsermodel)=>{
-const [hook,usehook]=useState("")
+const [hook, usehook] = useState("d-flex");
 useEffect(()=>{
   function as(){
     if (window.innerWidth <= 768) {
@@ -164,7 +164,7 @@ return (
             <div className="col-8">{props.Textwork}</div>
           </div>
         </div>
-        <Skills title={props.skilltitle} />
+        <Skills title={props.skilltitle}  aos={props.aos0}/>
       </div>
       <div className="col-md-5 col-12">
         <div
