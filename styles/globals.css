@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+
+
+html,
+
+body { display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-family: Source Code Pro,monospace;
+   --bs-body-bg: #060026 ;
+
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+span{
+  display: black;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {width: 100%;
+    color: white;
+    background: #242424;
+  }
+}
+
+:root{
+  --bg-color:hsl(49 37% 94%);
+  --typewriterSpeed:2s;
+  --typewriterCharacters:24;
+
+    --btn-color:white;
+    --btn-bg: black;
+    --btn-bg-hover: white;
+    --btn-color-hover: #fff;
+    --bs-body-bg:#242424;
+  
+}
