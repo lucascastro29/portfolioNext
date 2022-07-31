@@ -7,35 +7,36 @@ import { useEffect } from 'react';
 import Icon from '../containers/Icon';
 import IndexComponent from '../containers/IndexComponent';
 
+
 const OtherComponent = lazy(() => import("../containers/IndexComponent"));
 
 export default function Home() {
 
 const [height, useheight] = useState(0);
-const [width, usewidth] = useState(0);
 
+const [realwidth, userealwidth] =useState(0);
 
-function updateheight(){
-
-    useheight(window.innerHeight);
-    console.log(height);
-}
-
-
-function updatewidth() {
-  usewidth(window.innerWidth);
-  console.log(width);
-}
 
 useEffect(() => {
+  
+
+function updateheight() {
+  useheight(window.innerHeight);
+}
+
+function updatewidth() { 
+   
+     userealwidth(window.innerWidth );
+   
+}
+
+  window.addEventListener("resize", updateheight);
+  window.addEventListener("resize", updatewidth);
   updateheight();
     updatewidth();
 
-  window.addEventListener("resize",updateheight)
-    window.addEventListener("resize", updatewidth);
 
-}, [updateheight, updatewidth]);
-
+}, [])
 
   return (
     <div className="col-12" style={{ height: "100%" }}>
@@ -51,10 +52,10 @@ useEffect(() => {
       >
         <Head>
           <title>Portfolio</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="../public/favicon.ico" />
         </Head>
-        <div className={style.App}>
-          <IndexComponent width={width} />
+        <div className={style.App} style={{ width: `${realwidth}px` }}>
+          <OtherComponent  />
         </div>
       </Suspense>
     </div>

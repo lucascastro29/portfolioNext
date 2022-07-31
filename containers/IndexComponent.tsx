@@ -8,9 +8,8 @@ import Forms from "../components/Forms";
 import img_spanish from "../images/españa.png";
 import img_english from "../images/english.png";
 import { useEffect, useState } from "react";
-import { indexmodel } from "../models/indexmodel";
 
-const IndexComponent = (props:indexmodel) => {
+const IndexComponent = () => {
 
 
   const [allTheText, setAllTheText] = useState([
@@ -94,7 +93,7 @@ renderText();
     AOS.init();
   }, []);
   return (
-    <div className="col-12 col-md-12" style={{width:`${props.width-20}px`}} >
+    <div className="col-12 col-md-12"  >
       <div className="col-12 col-md-12">
         <Header
           textpresentation={allTheText[0]}

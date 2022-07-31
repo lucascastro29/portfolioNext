@@ -87,7 +87,7 @@ return (
       className="col-12"
       style={{ display: "flex", marginTop: "40px", padding: "0px" }}
     ></div>
-    <div className="col-md-6 col-12" style={{ padding: "0px" }}>
+    <div className="col-md-6 col-8" style={{ padding: "0px" }}>
       <div
         style={{
           display: "flex",
@@ -150,7 +150,7 @@ return (
         data-aos-delay="300"
       ></div>
     </div>
-    <div className="col-md-5 col-12">
+    <div className="col-md-5 col-10">
       <div
         style={{
           display: "flex",

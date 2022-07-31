@@ -40,8 +40,9 @@ const Skills=(props:skillsmodel)=>{
         </div>
 
         <div
-          className="col-12"
+          className="col-12 col-sm-12"
           style={{
+            justifyContent:"center",
             color: "white",
             fontSize: "40px",
             textShadow: "5px 2px 5px black",
@@ -51,23 +52,25 @@ const Skills=(props:skillsmodel)=>{
           data-aos="fade-right"
           data-aos-delay="300"
         >
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={90} variant={"info"} text={"JavaScript"} />
-          </div>
+          <div className="col-10 col-sm-12"> 
+            <div style={{ margin: "15px" }}>
+              <Skillsingular now={90} variant={"info"} text={"JavaScript"} />
+            </div>
 
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={80} variant={"danger"} text={"React"} />
-          </div>
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={60} variant={""} text={"Next.Js"} />
-          </div>
+            <div style={{ margin: "15px" }}>
+              <Skillsingular now={80} variant={"danger"} text={"React"} />
+            </div>
+            <div style={{ margin: "15px" }}>
+              <Skillsingular now={60} variant={""} text={"Next.Js"} />
+            </div>
 
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={20} variant={"warning"} text={"Node"} />
-          </div>
+            <div style={{ margin: "15px" }}>
+              <Skillsingular now={20} variant={"warning"} text={"Node"} />
+            </div>
 
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={75} variant={""} text={"Bootstrap"} />
+            <div style={{ margin: "15px" }}>
+              <Skillsingular now={75} variant={""} text={"Bootstrap"} />
+            </div>
           </div>
         </div>
       </>
