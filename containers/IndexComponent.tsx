@@ -16,50 +16,10 @@ const IndexComponent = () => {
   ]);
   const [buttonflag, setbuttonflag] = useState(0);
     const [imageflag, setiamgeflag] = useState(img_spanish);
-    const [array, setarray] = useState([ 
-"fade-down",
-"fade-left",
-"fade-down",
-"fade-right",
-"fade-right",
-"fade-down",
-"fade-left"]);
+   
 
-  const [width, setwidth] = useState(0);
 
-  function updatewidths(){
-    setwidth(window.innerWidth)
-
-    if(width<458){
-setarray(["","","","","","","",""])
-
-    }else{
-      setarray([
-        "fade-down",
-        "fade-left",
-        "fade-down",
-        "fade-right",
-        "fade-right",
-        "fade-down",
-        "fade-left",
-        "fade-right",
-      ]);
-    }
-  }
-  useEffect(() => {
-    setarray([
-      "fade-down",
-      "fade-left",
-      "fade-down",
-      "fade-right",
-      "fade-right",
-      "fade-down",
-      "fade-left",
-    ]);
-    window.addEventListener("resize", updatewidths);
-
-    updatewidths();
-  }, []);
+  
   
   
 
@@ -156,18 +116,7 @@ renderText();
           estudios3={allTheText[8]}
           estudios4={allTheText[9]}
           skilltitle={allTheText[5]}
-          aos1={array[0]}
-          aos2={array[1]}
-          aos3={array[2]}
-          aos4={array[3]}
-          aos5={array[4]}
-          aos6={array[5]}
-          aos7={array[6]}
-          aos2time={300}
-          aos4time={300}
-          aos5time={300}
-          aos7time={300}
-          aos0={array[7]}
+         
         />
       </div>
 

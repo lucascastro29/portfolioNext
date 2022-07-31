@@ -4,6 +4,7 @@ import style from "../styles/styles.module.css"
 import Skills from "../containers/Skills";
 import { Collapsermodel } from "../models/Collapsermodel";
 import { useEffect, useState } from "react";
+import { relative } from "path";
 
 const Collapser =(props:Collapsermodel)=>{
 const [hook, usehook] = useState("d-flex");
@@ -15,6 +16,7 @@ useEffect(()=>{
       usehook("d-flex");
     }
   }
+  as()
 
 
 
@@ -31,7 +33,7 @@ return (
       <div className="col-md-1 "></div>
       <div className={`col-12 ${hook}`}>
         <div className="col-md-1"></div>
-        <div className="col-md-4  col-12  imgfather" data-aos={props.aos0}>
+        <div className="col-md-4  col-12  imgfather" data-aos="fade-right">
           <div className={style.boxMe2}>
             <div className={style.span}>
               <Images
@@ -67,8 +69,9 @@ return (
                 fontSize: "400%",
                 textShadow: "5px 2px 5px black",
                 overflow: "hidden",
+                position: "relative",
               }}
-              data-aos={props.aos1}
+              data-aos="fade-right"
             >
               Lucas Castro
               <div
@@ -98,8 +101,8 @@ return (
           >
             <div
               className="col-8 col-md-12"
-              data-aos={props.aos2}
-              data-aos-delay={props.aos2time}
+              data-aos="fade-right"
+              data-aos-delay={0}
             >
               {props.Textaboutme}
             </div>
@@ -133,7 +136,8 @@ return (
                 textShadow: "5px 2px 5px black",
                 overflow: "hidden",
               }}
-              data-aos={props.aos3}
+              data-aos="fade-up"
+              data-aos-delay={100}
             >
               {props.Titlework}
               <div
@@ -158,13 +162,13 @@ return (
               overflow: "hidden",
               padding: "0px",
             }}
-            data-aos={props.aos4}
-            data-aos-delay={props.aos4time}
+            data-aos="fade-up"
+            data-aos-delay={100}
           >
             <div className="col-8">{props.Textwork}</div>
           </div>
         </div>
-        <Skills title={props.skilltitle}  aos={props.aos0}/>
+        <Skills title={props.skilltitle} />
       </div>
       <div className="col-md-5 col-12">
         <div
@@ -182,7 +186,8 @@ return (
               textShadow: "5px 2px 5px black",
               overflow: "hidden",
             }}
-            data-aos={props.aos6}
+            data-aos="fade-up"
+            data-aos-delay={300}
           >
             {props.Titlestudios}
             <div
@@ -207,8 +212,8 @@ return (
         >
           <div
             className="col-md-8 col-12 "
-            data-aos={props.aos7}
-            data-aos-delay={props.aos7time}
+            data-aos="fade-up"
+            data-aos-delay={300}
           >
             <ul>
               <li style={{ margin: "20px" }}>{props.estudios1}</li>
