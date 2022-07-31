@@ -1,4 +1,4 @@
-import Skillsingular from "../components/skillsingular";
+import Skillsingular from "../components/Skillsingular";
 import { skillsmodel } from "../models/skillsmodel";
 
 const Skills=(props:skillsmodel)=>{
