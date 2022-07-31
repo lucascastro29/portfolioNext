@@ -16,9 +16,41 @@ const IndexComponent = () => {
   ]);
   const [buttonflag, setbuttonflag] = useState(0);
     const [imageflag, setiamgeflag] = useState(img_spanish);
+    const [array, setarray] = useState([ 
+"fade-down",
+"fade-left",
+"fade-down",
+"fade-right",
+"fade-right",
+"fade-down",
+"fade-left"]);
 
+  const [width, setwidth] = useState(0);
 
+  function updatewidths(){
+    setwidth(window.innerWidth)
 
+    if(width<458){
+setarray(["","","","","","","",""])
+
+    }else{
+      setarray([
+        "fade-down",
+        "fade-left",
+        "fade-down",
+        "fade-right",
+        "fade-right",
+        "fade-down",
+        "fade-left",
+        "fade-right",
+      ]);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("resize", updatewidths);
+
+    updatewidths();
+  }, []);
   
   
 
@@ -93,8 +125,7 @@ renderText();
     AOS.init();
   }, []);
   return (
-    <div className="col-12 col-md-12"  >
-      <div className="col-12 col-md-12">
+<>      <div className="col-12 col-md-12" style={{padding:"0px"}}>
         <Header
           textpresentation={allTheText[0]}
           onClick={renderText}
@@ -102,7 +133,7 @@ renderText();
         />
       </div>
       <div
-        className="row"
+        className="col-12"
         style={{ margin: "0px", marginTop: "80px", marginBottom: "80px" }}
       >
         <Collapser
@@ -116,6 +147,18 @@ renderText();
           estudios3={allTheText[8]}
           estudios4={allTheText[9]}
           skilltitle={allTheText[5]}
+          aos1={array[0]}
+          aos2={array[1]}
+          aos3={array[2]}
+          aos4={array[3]}
+          aos5={array[4]}
+          aos6={array[5]}
+          aos7={array[6]}
+          aos2time={300}
+          aos4time={300}
+          aos5time={300}
+          aos7time={300}
+          aos0={array[7]}
         />
       </div>
 
@@ -123,9 +166,9 @@ renderText();
         TitleProjects={allTheText[10]}
         FlyersProjects={allTheText[12]}
         Titlewebsite={allTheText[11]}
-  pajinatitle1={"E-Commerce"}
-  pajinatitle2={"DMG Marketing Agency"}
-  pajinatitle3={"Cazasubmarina"}  
+        pajinatitle1={"E-Commerce"}
+        pajinatitle2={"DMG Marketing Agency"}
+        pajinatitle3={"Cazasubmarina"}
         pajinatext={allTheText[14]}
         proces={allTheText[13]}
       />
@@ -142,7 +185,7 @@ renderText();
         title3={allTheText[20]}
         text2={allTheText[21]}
       />
-    </div>
+   </>
   );
 };
 

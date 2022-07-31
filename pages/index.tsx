@@ -19,20 +19,22 @@ const [realwidth, userealwidth] =useState(0);
 
 useEffect(() => {
   
+    window.addEventListener("resize", updatewidth);
+    window.addEventListener("resize", updateheight);
 
 function updateheight() {
   useheight(window.innerHeight);
 }
 
 function updatewidth() { 
-   
-     userealwidth(window.innerWidth );
+   if(window.innerWidth<955){     userealwidth(window.innerWidth);
+}else{
+userealwidth(window.innerWidth - 20);
+   }
    
 }
-
-  window.addEventListener("resize", updateheight);
-  window.addEventListener("resize", updatewidth);
   updateheight();
+
     updatewidth();
 
 
@@ -54,8 +56,17 @@ function updatewidth() {
           <title>Portfolio</title>
           <link rel="icon" href="../public/favicon.ico" />
         </Head>
-        <div className={style.App} style={{ width: `${realwidth}px` }}>
-          <OtherComponent  />
+        <div
+          className="col-12"
+          style={{
+            zIndex: "1",
+            width: `${realwidth}px`,
+            fontFamily: "Source Code Pro,monospace",
+            textAlign: "center",
+            backgroundColor: "#242424",
+          }}
+        >
+          <OtherComponent />
         </div>
       </Suspense>
     </div>

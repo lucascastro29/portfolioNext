@@ -4,9 +4,9 @@ import { skillsmodel } from "../models/skillsmodel";
 const Skills=(props:skillsmodel)=>{
 
 
-    return (
-      <>
-        <div
+    return (<div className="col-sm-12 col-sm-12 ">
+      <div className=" justify-content-center align-items-center">
+        <div className="col-12 col-sm-12"
           style={{
             display: "flex",
             justifyContent: "center",
@@ -33,7 +33,7 @@ const Skills=(props:skillsmodel)=>{
                 borderTop: "0px",
                 borderLeft: "0px",
                 borderRight: "0px",
-                width: "600px",
+                width: "120%",
               }}
             ></div>
           </h1>
@@ -52,7 +52,6 @@ const Skills=(props:skillsmodel)=>{
           data-aos="fade-right"
           data-aos-delay="300"
         >
-          <div className="col-10 col-sm-12"> 
             <div style={{ margin: "15px" }}>
               <Skillsingular now={90} variant={"info"} text={"JavaScript"} />
             </div>
@@ -71,9 +70,10 @@ const Skills=(props:skillsmodel)=>{
             <div style={{ margin: "15px" }}>
               <Skillsingular now={75} variant={""} text={"Bootstrap"} />
             </div>
-          </div>
+          </div>  
+          </div>     
         </div>
-      </>
+
     );
 
 }
