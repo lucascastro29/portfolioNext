@@ -4,7 +4,7 @@ import React, { lazy, Suspense, useState } from "react";
 import style from "../styles/styles.module.css";
 
 import { useEffect } from 'react';
-import Icon from '../containers/icon';
+import Icon from '../containers/Icon';
 import IndexComponent from '../containers/IndexComponent';
 
 const OtherComponent = lazy(() => import("../containers/IndexComponent"));

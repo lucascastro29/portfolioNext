@@ -9,7 +9,7 @@ import img_spanish from "../images/españa.png";
 import img_english from "../images/english.png";
 
 
-import Icon from "./icon";
+import Icon from "./Icon";
 import { useEffect, useState } from "react";
 import { indexmodel } from "../models/indexmodel";
 
@@ -127,7 +127,9 @@ renderText();
         TitleProjects={allTheText[10]}
         FlyersProjects={allTheText[12]}
         Titlewebsite={allTheText[11]}
-        pajinatitle={allTheText[14]}
+  pajinatitle1={"E-Commerce"}
+  pajinatitle2={"DMG Marketing Agency"}
+  pajinatitle3={"Cazasubmarina"}  
         pajinatext={allTheText[14]}
         proces={allTheText[13]}
       />

@@ -23,13 +23,13 @@ const Pajina =(props:pajinamodel)=>{
           <strong>{props.proces}</strong>
         </div>
         <Card.ImgOverlay className={style.imagefather}>
-          <Card.Title className={style.objectspajes}>{props.title}</Card.Title>
+            <Card.Title className={style.objectspajes}>
+              {props.title}
+            </Card.Title>
           <Card.Text></Card.Text>
           <Card.Text>
             <a href={props.src}>
-              <button  className={style.objectspajes}>
-                {props.text}
-              </button>
+              <button className={style.objectspajes}>{props.text}</button>
             </a>
           </Card.Text>
         </Card.ImgOverlay>

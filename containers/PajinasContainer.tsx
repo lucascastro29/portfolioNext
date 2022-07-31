@@ -52,28 +52,26 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         src={"https://lucascastroecommerce.herokuapp.com/"}
                         dive={style.inprocess}
                         text={props.pajinatext}
-                        title={props.pajinatitle}
+                        title={props.pajinatitle1}
                         delay={0}
                         cardstyle={style.card}
-                        proces={props.proces}
-                      />
+                        proces={props.proces}                       />
                       <Pajina
                         img={img_pajina2}
                         src={"https://lucascastroecommerce.herokuapp.com/"}
                         dive={style.inprocesss}
                         delay={200}
                         text={props.pajinatext}
-                        title={props.pajinatitle}
+                        title={props.pajinatitle2}
                         cardstyle={style.card}
-                        proces={props.proces}
-                      />
+                        proces={props.proces}                  />
                       <Pajina
                         img={img_pajina3}
                         src={"https://cazasubmarina.com.uy/"}
                         delay={500}
                         dive={style.inprocesss}
                         text={props.pajinatext}
-                        title={props.pajinatitle}
+                        title={props.pajinatitle3}
                         cardstyle={style.card}
                         proces={props.proces}
                       />{" "}
