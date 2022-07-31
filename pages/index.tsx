@@ -34,7 +34,7 @@ useEffect(() => {
   window.addEventListener("resize",updateheight)
     window.addEventListener("resize", updatewidth);
 
-}, []);
+}, [updateheight, updatewidth]);
 
 
   return (

@@ -7,9 +7,6 @@ import PajinasContainer from "../containers/PajinasContainer";
 import Forms from "../components/Forms";
 import img_spanish from "../images/españa.png";
 import img_english from "../images/english.png";
-
-
-import Icon from "./Icon";
 import { useEffect, useState } from "react";
 import { indexmodel } from "../models/indexmodel";
 
