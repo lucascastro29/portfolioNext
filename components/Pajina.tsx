@@ -27,7 +27,7 @@ const Pajina =(props:pajinamodel)=>{
           <Card.Text></Card.Text>
           <Card.Text>
             <a href={props.src}>
-              <button variant="outline-primary" className={style.objectspajes}>
+              <button  className={style.objectspajes}>
                 {props.text}
               </button>
             </a>
