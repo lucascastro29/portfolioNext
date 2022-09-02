@@ -1,8 +1,9 @@
 import style from "../styles/styles.module.css";
 import Images from "../components/Images";
-import img_arrow from "../images/arrow.png"
-import { Link } from "react-scroll";
+import img_arrow from "../images/arrow.png";
 import { useEffect, useState } from "react";
+import { Link} from "react-scroll";
+
 import { Headermodel } from "../models/Headermodel";
 
 const Header = (props:Headermodel) => {
