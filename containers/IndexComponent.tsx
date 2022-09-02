@@ -9,7 +9,7 @@ import img_spanish from "../images/españa.png";
 import img_english from "../images/english.png";
 
 
-import Icon from "./icon";
+import Icon from "./Icon";
 import { useEffect, useState } from "react";
 import { indexmodel } from "../models/indexmodel";
 
