@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
-
 .App {z-index: 1;
   font-family: "Source Code Pro","monospace";
   text-align: center;
   background-color: #242424;
-  width: 100%;
 
 }
 
@@ -344,11 +342,9 @@ padding: 0px;
 
 }
 .objectspajes{
-  justify-content: center;
-  align-items: center;
   position: relative;
-  top:0px;
   bottom: 00px;
+  top: 10px;
   border-radius: 25px !important;
   border-color: transparent;
   background-color:#75b75d00 ;
@@ -358,14 +354,10 @@ transition: all ease 0.5s ;
 
 
 .card:hover .objectspajes{  
-  justify-content: center;
-  align-items: center;
-    position: relative;
-
   color: white;
   background-color:#75b75d;
+  top: 40px;
   bottom: 0px;
-  top:25px;
   box-shadow: 0 4px 15px 10px rgba(0, 0, 0, 0.75);
 
 }

@@ -7,19 +7,22 @@ import PajinasContainer from "../containers/PajinasContainer";
 import Forms from "../components/Forms";
 import img_spanish from "../images/españa.png";
 import img_english from "../images/english.png";
-import { useEffect, useState } from "react";
 
-const IndexComponent = () => {
+
+import Icon from "./icon";
+import { useEffect, useState } from "react";
+import { indexmodel } from "../models/indexmodel";
+
+const IndexComponent = (props:indexmodel) => {
 
 
   const [allTheText, setAllTheText] = useState([
   ]);
   const [buttonflag, setbuttonflag] = useState(0);
     const [imageflag, setiamgeflag] = useState(img_spanish);
-   
 
 
-  
+
   
   
 
@@ -94,7 +97,8 @@ renderText();
     AOS.init();
   }, []);
   return (
-<>      <div className="col-12 col-md-12" style={{padding:"0px"}}>
+    <div className="col-12 col-md-12" style={{width:`${props.width-20}px`}} >
+      <div className="col-12 col-md-12">
         <Header
           textpresentation={allTheText[0]}
           onClick={renderText}
@@ -102,7 +106,7 @@ renderText();
         />
       </div>
       <div
-        className="col-12"
+        className="row"
         style={{ margin: "0px", marginTop: "80px", marginBottom: "80px" }}
       >
         <Collapser
@@ -116,7 +120,6 @@ renderText();
           estudios3={allTheText[8]}
           estudios4={allTheText[9]}
           skilltitle={allTheText[5]}
-         
         />
       </div>
 
@@ -124,9 +127,7 @@ renderText();
         TitleProjects={allTheText[10]}
         FlyersProjects={allTheText[12]}
         Titlewebsite={allTheText[11]}
-        pajinatitle1={"E-Commerce"}
-        pajinatitle2={"DMG Marketing Agency"}
-        pajinatitle3={"Cazasubmarina"}
+        pajinatitle={allTheText[14]}
         pajinatext={allTheText[14]}
         proces={allTheText[13]}
       />
@@ -143,7 +144,7 @@ renderText();
         title3={allTheText[20]}
         text2={allTheText[21]}
       />
-   </>
+    </div>
   );
 };
 

@@ -4,41 +4,38 @@ import React, { lazy, Suspense, useState } from "react";
 import style from "../styles/styles.module.css";
 
 import { useEffect } from 'react';
-import Icon from '../containers/Icon';
+import Icon from '../containers/icon';
 import IndexComponent from '../containers/IndexComponent';
-
 
 const OtherComponent = lazy(() => import("../containers/IndexComponent"));
 
 export default function Home() {
 
 const [height, useheight] = useState(0);
+const [width, usewidth] = useState(0);
 
-const [realwidth, userealwidth] =useState(0);
 
+function updateheight(){
+
+    useheight(window.innerHeight);
+    console.log(height);
+}
+
+
+function updatewidth() {
+  usewidth(window.innerWidth);
+  console.log(width);
+}
 
 useEffect(() => {
-  
-    window.addEventListener("resize", updatewidth);
-    window.addEventListener("resize", updateheight);
-
-function updateheight() {
-  useheight(window.innerHeight);
-}
-
-function updatewidth() { 
-   if(window.innerWidth<955){     userealwidth(window.innerWidth);
-}else{
-userealwidth(window.innerWidth - 20);
-   }
-   
-}
   updateheight();
-
     updatewidth();
 
+  window.addEventListener("resize",updateheight)
+    window.addEventListener("resize", updatewidth);
 
-}, [])
+}, []);
+
 
   return (
     <div className="col-12" style={{ height: "100%" }}>
@@ -52,21 +49,8 @@ userealwidth(window.innerWidth - 20);
           </div>
         }
       >
-        <Head>
-          <title>Portfolio</title>
-          <link rel="icon" href="../public/favicon.ico" />
-        </Head>
-        <div
-          className="col-12"
-          style={{
-            zIndex: "1",
-            width: `${realwidth}px`,
-            fontFamily: "Source Code Pro,monospace",
-            textAlign: "center",
-            backgroundColor: "#242424",
-          }}
-        >
-          <OtherComponent />
+        <div className={style.App} >
+          <IndexComponent width={width} />
         </div>
       </Suspense>
     </div>

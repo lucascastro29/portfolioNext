@@ -11,9 +11,16 @@ const Forms=(props:Formsmodel)=>{
 
   function enviarEmail(e){
     e.preventDefault();
-    emailjs.sendForm('service_86ytpbx','template_ocqequz',e.target,'ZX2hCZ55pcM9PJ_W8').then(res=>{
-      alert("Enviado Correctamente");
-    })
+    emailjs
+      .sendForm(
+        "service_24z6hdc",
+        "template_ocqequz",
+        e.target,
+        "ZX2hCZ55pcM9PJ_W8"
+      )
+      .then((res) => {
+        alert("Enviado Correctamente");
+      });
   }
     return (
       <div
