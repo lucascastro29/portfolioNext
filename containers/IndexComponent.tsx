@@ -52,6 +52,8 @@ if(buttonflag==0){
       "or",
       "Let's get social",
       "Follow me online on",
+      "Download Curriculum Vitae",
+      "../pdf/CVLucasCastroEN.pdf",
     ]);
   setbuttonflag(1);
   setiamgeflag(img_spanish);
@@ -84,6 +86,8 @@ if(buttonflag==0){
     "",
     "Mis Redes",
     "Seguime en:",
+    "Descargar Curriculum Vitae",
+    "../pdf/CVLucasCastroSP.pdf",
   ]);
     setbuttonflag(0)
   setiamgeflag(img_english);
@@ -132,6 +136,8 @@ renderText();
           estudios3={allTheText[8]}
           estudios4={allTheText[9]}
           skilltitle={allTheText[5]}
+          textPDF={allTheText[22]}
+          PDF={allTheText[23]}
         />
       </div>
       <div
@@ -151,7 +157,6 @@ renderText();
         pajinatext={allTheText[14]}
         proces={allTheText[13]}
       />
-
 
       <Forms
         title1={allTheText[15]}

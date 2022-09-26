@@ -3,6 +3,7 @@ import Images from "./Images";
 import style from "../styles/styles.module.css"
 import Skills from "../containers/Skills";
 import { Collapsermodel } from "../models/Collapsermodel";
+import { Button } from "react-bootstrap";
 
 const Collapser =(props:Collapsermodel)=>{
 
@@ -10,19 +11,30 @@ const Collapser =(props:Collapsermodel)=>{
 return (
   <>
     <div className="col-md-1 col-12"></div>
-    <div
-      className="col-md-4  col-12  imgfather"
-      /*data-aos={this.state.aosFR}*/
-    >
-      <div className={style.boxMe2}>
-        <div className={style.span}>
-          <Images
-            src={img_miFace}
-            Styles={""}
-            alt="Foto de perfil"
-            height={0}
-            width={0}
-          />
+    <div className="col-md-4  col-12  ">
+      <div className="wrap">
+        <div className="tarjeta-wrap">
+          <div className="tarjeta">
+            <div className="adelante card1">
+              <Images
+                src={img_miFace}
+                Styles={""}
+                alt="Foto de perfil"
+                height={0}
+                width={0}
+              />
+            </div>
+            <div className="atras">
+              <div className="col-12">
+                
+                <Button style={{height:"150px", width:"150px"}}>
+                  <a href={props.PDF} download style={{textDecoration:"none",color:"white"}}>
+                    {props.textPDF}
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -170,7 +182,7 @@ return (
 
             textShadow: "5px 2px 5px black",
             overflow: "hidden",
-            width:"400px"
+            width: "400px",
           }}
           data-aos="fade-down"
         >

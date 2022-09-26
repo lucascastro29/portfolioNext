@@ -8,4 +8,6 @@ export interface Collapsermodel {
   estudios2: string;
   estudios3: string;
   estudios4: string;
+  PDF:any;
+  textPDF:string;
 }
