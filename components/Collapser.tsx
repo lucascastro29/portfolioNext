@@ -189,7 +189,7 @@ return (
           textShadow: "5px 2px 5px black",
         }}
       >
-        <div className="col-8" data-aos="fade-left" data-aos-delay="300">
+        <div className="col-8" data-aos="fade-right" data-aos-delay="300">
           <ul>
             <li style={{ margin: "20px" }}>{props.estudios1}</li>
             <li style={{ margin: "20px" }}>{props.estudios2}</li>

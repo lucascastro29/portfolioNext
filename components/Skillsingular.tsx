@@ -9,7 +9,7 @@ const Skillsingular = ( props:skillssingularmodel) => {
     <div className="col-12 " style={{ margin: "10px" }}>
       <div className="col-12 d-flex justify-content-center align-items-center">
         <div
-          className="col-8 d-flex align-items-center"
+          className="col-6 d-flex align-items-center"
           style={{ height: "50px",}}
         >
           <div className="col-12">

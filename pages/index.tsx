@@ -10,6 +10,7 @@ import IndexComponent from '../containers/IndexComponent';
 
 export default function Home() {
 
+  
 const [height, useheight] = useState(0);
 const [width, usewidth] = useState(0);
 
@@ -46,12 +47,11 @@ useEffect(() => {
 
   return (
     <div className="col-12" style={{ height: "100%" }}>
-      <Suspense
-        fallback={renderLoader()
-          
-        }
-      >
-        <div className={style.App} >
+      <Head>
+        <title style={{ height: "0px" }}>Portfolio</title>
+      </Head>
+      <Suspense fallback={renderLoader()}>
+        <div className={style.App}>
           <IndexComponent width={width} />
         </div>
       </Suspense>

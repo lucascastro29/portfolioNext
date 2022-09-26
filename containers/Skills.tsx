@@ -1,9 +1,12 @@
 import Skillsingular from "../components/Skillsingular";
 import { skillsmodel } from "../models/skillsmodel";
+import React, { createContext, useState,useContext } from "react";
+import { EcommerceContext } from "../components/context/PortfolioContext";
 
 const Skills=(props:skillsmodel)=>{
 
 
+const { skills } = useContext(EcommerceContext);
     return (
       <>
         <div
@@ -51,24 +54,16 @@ const Skills=(props:skillsmodel)=>{
           data-aos="fade-right"
           data-aos-delay="300"
         >
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={90} variant={"info"} text={"JavaScript"} />
-          </div>
-
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={80} variant={"danger"} text={"React"} />
-          </div>
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={60} variant={""} text={"Next.Js"} />
-          </div>
-
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={20} variant={"warning"} text={"Node"} />
-          </div>
-
-          <div style={{ margin: "15px" }}>
-            <Skillsingular now={75} variant={""} text={"Bootstrap"} />
-          </div>
+          {skills.map((element, index) => (
+            <div key={index} style={{ margin: "15px" }}>
+              <Skillsingular
+                now={element.now}
+                variant={element.variant}
+                text={element.Text}
+              />
+            </div>
+          ))}
+          
         </div>
       </>
     );
