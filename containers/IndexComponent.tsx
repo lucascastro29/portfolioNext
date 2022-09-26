@@ -30,7 +30,7 @@ const IndexComponent = (props:indexmodel) => {
 if(buttonflag==0){
     setAllTheText([
       "Hi I'm Lucas, I design and build web pages",
-      "i'm a young web Developer, with knowledge in Html, Css, js, node and React. With knowledge in workflows like scrum, kanban and agiles methodologies, with the hability of work by my self or be part of a team.",
+      "i'm a young web Developer, with skills of FullStack Developer, in focus of functionality and good style. With knowledge in workflows like scrum, kanban and agiles methodologies, with the hability of work by my self or be part of a team.",
       "Work Experience",
       `I worked in "Cyber Green" Since 2020 until 2022 working us a computer technical service and client service.`,
       "Studies",
@@ -51,15 +51,13 @@ if(buttonflag==0){
       "or",
       "Let's get social",
       "Follow me online on",
-
-    ])
+    ]);
   setbuttonflag(1);
   setiamgeflag(img_spanish);
 
   }else{setAllTheText([
     "Hola Me llamo Lucas y diseño  paginas Web",
-    ` Soy un desarrollador web de 19 años, con conocimientos en html, Css,
-          js, node y React. Con conocimientos en flujos de trabajo como scrum,
+    ` Soy un desarrollador web de 19 años,con habilidades como desarrollador FullStack centrado en la funcionalidad y un buen estilo. Con conocimientos en flujos de trabajo como scrum,
           kanban y metodologias agiles, con la capacidad de trabajar por mi
           cuenta o ser parte de un equipo, pudiendome relacionarme perfectamente
           con mis compañeros`,
