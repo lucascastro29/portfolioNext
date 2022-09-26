@@ -1,7 +1,4 @@
 import React, { createContext, useState } from "react";
-import { ProductModel } from "../models/products";
-
-import IMG from "../img/cat1.jpg";
 
 export const EcommerceContext = createContext(null);
 
