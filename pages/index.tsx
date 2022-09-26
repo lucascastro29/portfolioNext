@@ -7,13 +7,20 @@ import { useEffect } from 'react';
 import Icon from '../containers/Icon';
 import IndexComponent from '../containers/IndexComponent';
 
-const OtherComponent = lazy(() => import("../containers/IndexComponent"));
 
 export default function Home() {
 
 const [height, useheight] = useState(0);
 const [width, usewidth] = useState(0);
 
+const OtherComponent = lazy(() => import("../containers/IndexComponent"));
+const renderLoader = () => 
+    <div
+      className="col-12 d-flex justify-content-center align-items-center"
+      style={{ height: `${height}px` }}
+    >
+      <Icon />
+    </div>;
 
 function updateheight(){
 
@@ -40,13 +47,8 @@ useEffect(() => {
   return (
     <div className="col-12" style={{ height: "100%" }}>
       <Suspense
-        fallback={
-          <div
-            className="col-12 d-flex justify-content-center align-items-center"
-            style={{ height: `${height}px` }}
-          >
-            <Icon />
-          </div>
+        fallback={renderLoader()
+          
         }
       >
         <div className={style.App} >
