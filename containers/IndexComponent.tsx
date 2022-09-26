@@ -12,6 +12,7 @@ import img_english from "../images/english.png";
 import Icon from "./Icon";
 import { useEffect, useState } from "react";
 import { indexmodel } from "../models/indexmodel";
+import { Container } from "react-bootstrap";
 
 const IndexComponent = (props:indexmodel) => {
 
@@ -95,8 +96,8 @@ renderText();
     AOS.init();
   }, []);
   return (
-    <div className="col-12 col-md-12" style={{width:`${props.width-20}px`}} >
-      <div className="col-12 col-md-12">
+    <>
+      <div className="col-12">
         <Header
           textpresentation={allTheText[0]}
           onClick={renderText}
@@ -105,7 +106,20 @@ renderText();
       </div>
       <div
         className="row"
-        style={{ margin: "0px", marginTop: "80px", marginBottom: "80px" }}
+        style={{
+          margin: "0px",
+          height: "80px",
+
+          backgroundColor: "#242424",
+        }}
+      ></div>
+      <div
+        className="row"
+        style={{
+          margin: "0px",
+
+          backgroundColor: "#242424",
+        }}
       >
         <Collapser
           data-aos="fade-up"
@@ -120,7 +134,15 @@ renderText();
           skilltitle={allTheText[5]}
         />
       </div>
+      <div
+        className="row"
+        style={{
+          margin: "0px",
+          height: "80px",
 
+          backgroundColor: "#242424",
+        }}
+      ></div>
       <PajinasContainer
         TitleProjects={allTheText[10]}
         FlyersProjects={allTheText[12]}
@@ -129,9 +151,7 @@ renderText();
         pajinatext={allTheText[14]}
         proces={allTheText[13]}
       />
-      <h2 className={style.Tittle}>
-        <strong>My Self</strong>
-      </h2>
+
 
       <Forms
         title1={allTheText[15]}
@@ -142,7 +162,7 @@ renderText();
         title3={allTheText[20]}
         text2={allTheText[21]}
       />
-    </div>
+    </>
   );
 };
 

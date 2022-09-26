@@ -5,6 +5,18 @@ export const EcommerceContext = createContext(null);
 export const EcommerceProvider = ({ children }) => {
  const [hook,sethook]=useState("")
 
+const [height, useheight] = useState(undefined);
+const [width, usewidth] = useState(1);
+
+function updateheight() {
+  useheight(window.innerHeight);
+  console.log(height);
+}
+
+function updatewidth() {
+  usewidth(window.innerWidth);
+  console.log(width);
+}
 
  const [skills, setskills] = useState([
    { now: 90, variant: "info", Text: "JavaScript" },
@@ -18,8 +30,14 @@ export const EcommerceProvider = ({ children }) => {
   return (
     <EcommerceContext.Provider
       value={{
-        hook,skills
-      
+        hook,
+        skills,
+        updateheight,
+        updatewidth,
+        height,
+        width,
+        useheight,
+        usewidth,
       }}
     >
       {children}

@@ -15,6 +15,7 @@ const { skills } = useContext(EcommerceContext);
             justifyContent: "center",
             alignContent: "center",
             padding: "0px ",
+            
           }}
         >
           <h1
@@ -32,11 +33,11 @@ const { skills } = useContext(EcommerceContext);
             <div
               style={{
                 paddingTop: "0px",
-                border: "4px solid black",
+                border: "2px solid #75b75d",
                 borderTop: "0px",
                 borderLeft: "0px",
                 borderRight: "0px",
-                width: "600px",
+                width: "400px",
               }}
             ></div>
           </h1>
@@ -49,7 +50,7 @@ const { skills } = useContext(EcommerceContext);
             fontSize: "40px",
             textShadow: "5px 2px 5px black",
             overflow: "hidden",
-            paddingTop: "20px",
+            
           }}
           data-aos="fade-right"
           data-aos-delay="300"
@@ -63,7 +64,6 @@ const { skills } = useContext(EcommerceContext);
               />
             </div>
           ))}
-          
         </div>
       </>
     );

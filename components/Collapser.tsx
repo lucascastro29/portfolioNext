@@ -16,13 +16,13 @@ return (
     >
       <div className={style.boxMe2}>
         <div className={style.span}>
-            <Images
-              src={img_miFace}
-              Styles={""}
-              alt="Foto de perfil"
-              height={0}
-              width={0}
-            />
+          <Images
+            src={img_miFace}
+            Styles={""}
+            alt="Foto de perfil"
+            height={0}
+            width={0}
+          />
         </div>
       </div>
     </div>
@@ -34,7 +34,8 @@ return (
         padding: "0px",
       }}
     >
-      <div className="col-md-12 col-12"
+      <div
+        className="col-md-12 col-12"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -56,7 +57,7 @@ return (
           <div
             style={{
               padding: "0px",
-              border: "4px solid black",
+              border: "3px solid #75b75d",
               borderTop: "0px",
               borderLeft: "0px",
               borderRight: "0px",
@@ -78,7 +79,11 @@ return (
           padding: "0px",
         }}
       >
-        <div className="col-8 col-sm-12" data-aos="fade-left" data-aos-delay="300">
+        <div
+          className="col-8 col-sm-12"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
           {props.Textaboutme}
         </div>
       </div>
@@ -110,7 +115,7 @@ return (
           <div
             style={{
               padding: "0px",
-              border: "4px solid black",
+              border: "2px solid #75b75d",
               borderTop: "0px",
               borderLeft: "0px",
               borderRight: "0px",
@@ -165,23 +170,23 @@ return (
 
             textShadow: "5px 2px 5px black",
             overflow: "hidden",
+            width:"400px"
           }}
           data-aos="fade-down"
         >
           {props.Titlestudios}
           <div
             style={{
-              border: "4px solid black",
+              border: "2px solid #75b75d",
               borderTop: "0px",
               borderLeft: "0px",
               borderRight: "0px",
-              width: "300px",
             }}
           ></div>
         </h1>
       </div>
       <div
-        className="d-flex justify-content-center align-items-center"
+        className="col-12 d-flex justify-content-center align-items-center"
         style={{
           color: "white",
           fontSize: "30px",
@@ -189,14 +194,16 @@ return (
           textShadow: "5px 2px 5px black",
         }}
       >
-        <div className="col-8" data-aos="fade-right" data-aos-delay="300">
-          <ul>
-            <li style={{ margin: "20px" }}>{props.estudios1}</li>
-            <li style={{ margin: "20px" }}>{props.estudios2}</li>
-            <li style={{ margin: "20px" }}>{props.estudios3}</li>
-            <li style={{ margin: "20px" }}>{props.estudios4}</li>
-          </ul>
-        </div>
+        <ul
+          className="col-12  overflow-auto"
+          data-aos="fade-right"
+          data-aos-delay="300"
+        >
+          <li style={{ margin: "20px" }}>{props.estudios1}</li>
+          <li style={{ margin: "20px" }}>{props.estudios2}</li>
+          <li style={{ margin: "20px" }}>{props.estudios3}</li>
+          <li style={{ margin: "20px" }}>{props.estudios4}</li>
+        </ul>
       </div>
     </div>
   </>

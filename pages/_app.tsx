@@ -5,9 +5,6 @@ import {EcommerceProvider} from '../components/context/PortfolioContext';
 import Head from 'next/head';
 function MyApp({ Component, pageProps }) {
 
-<Head>
-  <title> Hola soy la page</title>
-</Head>;
   
   return (
       <EcommerceProvider>

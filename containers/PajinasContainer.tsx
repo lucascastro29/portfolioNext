@@ -23,12 +23,14 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                   className="col-12 d-flex justify-content-center align-items-center"
                   style={{ marginTop: "30px" }}
                 >
-                  <h2
-                    className={style.tittlestyle}
-                    style={{ marginBottom: "10px" }}
-                  >
-                    <strong>{props.TitleProjects}</strong>
-                  </h2>
+                  <div className="col-12 d-flex justify-content-center align-items-center">
+                    <strong
+                      className="tittlestyle "
+                      style={{ marginBottom: "10px" }}
+                    >
+                      {props.TitleProjects}
+                    </strong>
+                  </div>
                 </div>
 
                 <div
@@ -96,40 +98,38 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                       </div>
                     </div>
                     <div className=" d-flex justify-content-center align-items-center">
-                  
-                        <Pajina
-                          img={img_flyer1}
-                          src={"https://lucascastroecommerce.herokuapp.com/"}
-                          dive={style.inprocessnot}
-                          text={"Visit Website"}
-                          title={"Ecommerce"}
-                          delay={0}
-                          cardstyle={style.cardflyer1}
-                          proces={props.proces}
-                        />
-                   
-                        <Pajina
-                          img={img_flyer2}
-                          src={"https://lucascastroecommerce.herokuapp.com/"}
-                          dive={style.inprocessnot}
-                          delay={200}
-                          text={"Visit Website"}
-                          title={"Direct Marketing Agency"}
-                          cardstyle={style.cardflyer}
-                          proces={props.proces}
-                        />
-                     
-                        <Pajina
-                          img={img_flyer3}
-                          src={"https://cazasubmarina.com.uy/"}
-                          delay={500}
-                          dive={style.inprocessnot}
-                          text={"Visit Website"}
-                          title={"Cazasubmarina"}
-                          cardstyle={style.cardflyer}
-                          proces={props.proces}
-                        />
-                      
+                      <Pajina
+                        img={img_flyer1}
+                        src={"https://lucascastroecommerce.herokuapp.com/"}
+                        dive={style.inprocessnot}
+                        text={"Visit Website"}
+                        title={"Ecommerce"}
+                        delay={0}
+                        cardstyle={style.cardflyer1}
+                        proces={props.proces}
+                      />
+
+                      <Pajina
+                        img={img_flyer2}
+                        src={"https://lucascastroecommerce.herokuapp.com/"}
+                        dive={style.inprocessnot}
+                        delay={200}
+                        text={"Visit Website"}
+                        title={"Direct Marketing Agency"}
+                        cardstyle={style.cardflyer}
+                        proces={props.proces}
+                      />
+
+                      <Pajina
+                        img={img_flyer3}
+                        src={"https://cazasubmarina.com.uy/"}
+                        delay={500}
+                        dive={style.inprocessnot}
+                        text={"Visit Website"}
+                        title={"Cazasubmarina"}
+                        cardstyle={style.cardflyer}
+                        proces={props.proces}
+                      />
                     </div>
                   </div>
                 </div>

@@ -112,7 +112,7 @@ animation-timing-function: step-end;
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  margin: 0px;
 }
 .Tittle2{
   

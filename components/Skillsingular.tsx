@@ -10,10 +10,10 @@ const Skillsingular = ( props:skillssingularmodel) => {
       <div className="col-12 d-flex justify-content-center align-items-center">
         <div
           className="col-6 d-flex align-items-center"
-          style={{ height: "50px",}}
+          style={{ height: "50px" }}
         >
-          <div className="col-12">
-            <Animatedbar variant={props.variant} now={props.now}  />
+          <div className="col-12 overflow-visible">
+            <Animatedbar variant={props.variant} now={props.now} />
           </div>
         </div>
         <div
@@ -23,8 +23,8 @@ const Skillsingular = ( props:skillssingularmodel) => {
             fontSize: "20px",
           }}
         >
-          <div>
-            <strong style={{marginLeft:"15px"}}>{props.text}</strong>
+          <div className="col-12 overflow-visible">
+            <strong style={{ marginLeft: "15px",minWidth:"120px",overflow:"visible" }}>{props.text}</strong>
           </div>
         </div>
       </div>

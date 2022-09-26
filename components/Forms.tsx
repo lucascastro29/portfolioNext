@@ -24,7 +24,7 @@ const Forms=(props:Formsmodel)=>{
   }
     return (
       <div
-        className=" d-flex row col-12 "
+        className="   col-12 row"
         style={{
           color: "white",
           backgroundColor: "rgb(22, 25, 28)",
@@ -33,7 +33,7 @@ const Forms=(props:Formsmodel)=>{
         }}
       >
         <div
-          className="col-md-5 row col-12"
+          className="col-md-5 col-12"
           style={{ alignItems: "center", justifyContent: "center" }}
         >
           <div className="col-12">
