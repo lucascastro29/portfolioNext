@@ -79,7 +79,6 @@ color: white;
 
 
 .wrap{
-	margin:0px 50px auto;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -98,8 +97,6 @@ color: white;
 }
 
 .tarjeta{
-	width: 500px;
-	height: 550px;
 	background: #242424;
 	position: relative;
 	-webkit-transform-style: preserve-3d;
@@ -154,4 +151,21 @@ color: white;
 .tarjeta-wrap:hover .tarjeta{
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
+}
+
+
+.imagefather{ 
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  overflow:hidden;
+  transition: all ease 0.5s ;
+
+  backdrop-filter: saturate(125%)  ;
+
+}
+.image{ 
+  height: 100%;
+  width: 100%;
+  transition: all ease 0.5s ;
 }

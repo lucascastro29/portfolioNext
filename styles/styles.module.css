@@ -284,6 +284,12 @@ padding: 0px;
 
 
 }
+
+.image{ 
+  height: 100%;
+  width: 100%;
+  transition: all ease 0.5s ;
+}
 .card:hover .imagefather{
   backdrop-filter: saturate(25%)  ;
 

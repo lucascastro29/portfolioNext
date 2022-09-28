@@ -12,13 +12,15 @@ import { EcommerceContext } from '../components/context/PortfolioContext';
 export default function Home() {
 
   
-const { height,  updateheight  } =
+const { height, width, updateheight, updatewidth } =
   useContext(EcommerceContext);
   
 useEffect(() => {
   updateheight();
+  updatewidth();
 
   window.addEventListener("resize", updateheight);
+  window.addEventListener("resize", updatewidth);
 }, []);
 
 const OtherComponent = lazy(() => import("../containers/IndexComponent"));
@@ -40,7 +42,7 @@ const renderLoader = () =>
       </Head>
       <Suspense  fallback={renderLoader()}>
         <div className="App col-12"  >
-          <IndexComponent width={0} />
+          <IndexComponent width={width} />
         </div>
       </Suspense>
     </>
