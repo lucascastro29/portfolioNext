@@ -11,39 +11,33 @@ const Collapser =(props:Collapsermodel)=>{
 return (
   <>
     <div className="col-md-1 col-12"></div>
-
-    <div className="wrap col-md-4  col-12">
-      <div className="tarjeta-wrap col-12" style={{ height: "100%" }}>
-        <div className="tarjeta ">
-          <div className="adelante card1 "style={{height:"100%"}}>
-            <div className="imagefather">
+    <div className="col-md-4  col-12  ">
+      <div className="wrap">
+        <div className="tarjeta-wrap">
+          <div className="tarjeta">
+            <div className="adelante card1">
               <Images
                 src={img_miFace}
-                Styles={"image"}
+                Styles={""}
                 alt="Foto de perfil"
                 height={0}
                 width={0}
               />
             </div>
-          </div>
-
-          <div className="atras">
-            <div className="col-12">
-              <Button style={{ height: "150px", width: "150px" }}>
-                <a
-                  href={props.PDF}
-                  download
-                  style={{ textDecoration: "none", color: "white" }}
-                >
-                  {props.textPDF}
-                </a>
-              </Button>
+            <div className="atras">
+              <div className="col-12">
+                
+                <Button style={{height:"150px", width:"150px"}}>
+                  <a href={props.PDF} download style={{textDecoration:"none",color:"white"}}>
+                    {props.textPDF}
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <div className="col-md-1 col-12"></div>
 
     <div
