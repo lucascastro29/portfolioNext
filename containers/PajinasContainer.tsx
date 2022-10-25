@@ -51,7 +51,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                     <div className="  d-flex justify-content-center align-items-center">
                       <Pajina
                         img={img_pajina1}
-                        src={"https://lucascastroecommerce.herokuapp.com/"}
+                        src={"https://commerce-lucascastro.herokuapp.com/"}
                         dive={style.inprocess}
                         text={props.pajinatext}
                         title={props.pajinatitle}
