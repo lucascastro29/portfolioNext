@@ -54,7 +54,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         src={"https://commerce-lucascastro.herokuapp.com/"}
                         dive={style.inprocess}
                         text={props.pajinatext}
-                        title={props.pajinatitle}
+                        title={"E-Commerce"}
                         delay={0}
                         cardstyle={style.card}
                         proces={props.proces}
