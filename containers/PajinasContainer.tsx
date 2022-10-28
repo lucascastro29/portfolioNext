@@ -59,7 +59,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         cardstyle={style.card}
                         proces={props.proces}
                       />
-                      <Pajina
+                      {/*<Pajina
                         img={img_pajina2}
                         src={"https://lucascastroecommerce.herokuapp.com/"}
                         dive={style.inprocesss}
@@ -68,7 +68,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         title={props.pajinatitle}
                         cardstyle={style.card}
                         proces={props.proces}
-                      />
+    />*/}
                       <Pajina
                         img={img_pajina3}
                         src={"https://cazasubmarina.com.uy/"}
