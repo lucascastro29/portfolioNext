@@ -35,11 +35,11 @@ const renderLoader = () =>
 
   return (
     <>
-      <Head>
-        <title>Portfolio</title>
-      </Head>
-      <Suspense  fallback={renderLoader()}>
-        <div className="App col-12"  >
+      <Suspense fallback={renderLoader()}>
+        <Head>
+          <title>Portfolio</title>
+        </Head>
+        <div className="App col-12">
           <IndexComponent width={0} />
         </div>
       </Suspense>
