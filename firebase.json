@@ -1,11 +1,14 @@
 {
   "hosting": {
-    "source": ".",
-    "main":"portfoliolucascastro",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "public": "public",
+    "site":"portfoliolucascastr",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nextServer"
+      }
     ]
-  }
+  },
+  "function": "nextServer"
 }
