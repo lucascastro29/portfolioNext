@@ -1,6 +1,5 @@
 {
   "name": "portfolio_next",
-  "main": "server.js",
   "version": "0.1.0",
   "private": true,
   "scripts": {
