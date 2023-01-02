@@ -1,10 +1,7 @@
 {
   "hosting": {
-    "source": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+    "public": "y",
+    "site": "portfolio-lucas-castro",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
