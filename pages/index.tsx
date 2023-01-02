@@ -12,8 +12,7 @@ import { EcommerceContext } from '../components/context/PortfolioContext';
 export default function Home() {
 
   
-const { height,  updateheight  } =
-  useContext(EcommerceContext);
+const { height,updateheight  } =useContext(EcommerceContext);
   
 useEffect(() => {
   updateheight();
