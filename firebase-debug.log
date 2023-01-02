@@ -1,0 +1,73 @@
+[debug] [2023-01-02T19:01:52.214Z] ----------------------------------------------------------------------
+[debug] [2023-01-02T19:01:52.217Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Trabajo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-01-02T19:01:52.219Z] CLI Version:   11.19.0
+[debug] [2023-01-02T19:01:52.219Z] Platform:      win32
+[debug] [2023-01-02T19:01:52.219Z] Node Version:  v16.16.0
+[debug] [2023-01-02T19:01:52.221Z] Time:          Mon Jan 02 2023 16:01:52 GMT-0300 (hora estándar de Argentina)
+[debug] [2023-01-02T19:01:52.221Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-02T19:01:52.327Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-02T19:01:52.336Z] > authorizing via signed-in user (lucascastro2929@gmail.com)
+[debug] [2023-01-02T19:01:52.337Z] [iam] checking project portfoliolucascastro for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-01-02T19:01:52.343Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions [none]
+[debug] [2023-01-02T19:01:52.345Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions x-goog-quota-user=projects/portfoliolucascastro
+[debug] [2023-01-02T19:01:52.346Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-02T19:01:53.240Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions 200
+[debug] [2023-01-02T19:01:53.240Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-02T19:01:53.242Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro [none]
+[debug] [2023-01-02T19:01:53.610Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro 200
+[debug] [2023-01-02T19:01:53.610Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro {"projectId":"portfoliolucascastro","projectNumber":"303913010055","displayName":"portfoliolucascastro","name":"projects/portfoliolucascastro","resources":{"hostingSite":"portfoliolucascastro"},"state":"ACTIVE","etag":"1_ec165a6d-11b4-47a6-a3ef-e80ef72b3d12"}
+[debug] [2023-01-02T19:02:00.669Z] defaultcredentials: writing to file C:\Users\Trabajo\AppData\Roaming\firebase\lucascastro2929_gmail_com_application_default_credentials.json
+[debug] [2023-01-02T19:02:00.672Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites pageToken=&pageSize=10
+[debug] [2023-01-02T19:02:01.792Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites 200
+[debug] [2023-01-02T19:02:01.792Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites {"sites":[{"name":"projects/portfoliolucascastro/sites/portfoliolucascastro","defaultUrl":"https://portfoliolucascastro.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-02T19:02:01.793Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites 
+[debug] [2023-01-02T19:02:02.874Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites 200
+[debug] [2023-01-02T19:02:02.875Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites {"sites":[{"name":"projects/portfoliolucascastro/sites/portfoliolucascastro","defaultUrl":"https://portfoliolucascastro.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-02T19:02:02.875Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro/webApps/-/config [none]
+[debug] [2023-01-02T19:02:03.739Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro/webApps/-/config 200
+[debug] [2023-01-02T19:02:03.739Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro/webApps/-/config {"projectId":"portfoliolucascastro","appId":"1:303913010055:web:d7591122b0eb5a22624922","storageBucket":"portfoliolucascastro.appspot.com","apiKey":"AIzaSyAPrq1BCFrAhfSSW7EMqJRmGJGWqs2tce4","authDomain":"portfoliolucascastro.firebaseapp.com","messagingSenderId":"303913010055"}
+[debug] [2023-01-02T19:02:37.616Z] TypeError: Cannot read properties of null (reading 'toString')
+    at ɵcodegenFunctionsDirectory (C:\Users\Trabajo\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:220:18)
+    at async prepareFrameworks (C:\Users\Trabajo\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:305:84)
+    at async deploy (C:\Users\Trabajo\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-01-02T19:03:43.917Z] ----------------------------------------------------------------------
+[debug] [2023-01-02T19:03:43.919Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Trabajo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-01-02T19:03:43.920Z] CLI Version:   11.19.0
+[debug] [2023-01-02T19:03:43.920Z] Platform:      win32
+[debug] [2023-01-02T19:03:43.920Z] Node Version:  v16.16.0
+[debug] [2023-01-02T19:03:43.922Z] Time:          Mon Jan 02 2023 16:03:43 GMT-0300 (hora estándar de Argentina)
+[debug] [2023-01-02T19:03:43.922Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-02T19:03:43.997Z] Object ".hosting" in "firebase.json" has unknown property: {"additionalProperty":"main"}
+[debug] [2023-01-02T19:03:43.998Z] Field ".hosting" in "firebase.json" is possibly invalid: should be array
+[debug] [2023-01-02T19:03:43.998Z] Field ".hosting" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2023-01-02T19:03:44.005Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-02T19:03:44.005Z] > authorizing via signed-in user (lucascastro2929@gmail.com)
+[debug] [2023-01-02T19:03:44.006Z] [iam] checking project portfoliolucascastro for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-01-02T19:03:44.024Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions [none]
+[debug] [2023-01-02T19:03:44.025Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions x-goog-quota-user=projects/portfoliolucascastro
+[debug] [2023-01-02T19:03:44.026Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-02T19:03:44.916Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions 200
+[debug] [2023-01-02T19:03:44.916Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfoliolucascastro:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-02T19:03:44.917Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro [none]
+[debug] [2023-01-02T19:03:45.278Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro 200
+[debug] [2023-01-02T19:03:45.278Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro {"projectId":"portfoliolucascastro","projectNumber":"303913010055","displayName":"portfoliolucascastro","name":"projects/portfoliolucascastro","resources":{"hostingSite":"portfoliolucascastro"},"state":"ACTIVE","etag":"1_ec165a6d-11b4-47a6-a3ef-e80ef72b3d12"}
+[debug] [2023-01-02T19:03:51.202Z] defaultcredentials: writing to file C:\Users\Trabajo\AppData\Roaming\firebase\lucascastro2929_gmail_com_application_default_credentials.json
+[debug] [2023-01-02T19:03:51.205Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites pageToken=&pageSize=10
+[debug] [2023-01-02T19:03:52.314Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites 200
+[debug] [2023-01-02T19:03:52.314Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites {"sites":[{"name":"projects/portfoliolucascastro/sites/portfoliolucascastro","defaultUrl":"https://portfoliolucascastro.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-02T19:03:52.316Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites 
+[debug] [2023-01-02T19:03:53.373Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites 200
+[debug] [2023-01-02T19:03:53.373Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfoliolucascastro/sites {"sites":[{"name":"projects/portfoliolucascastro/sites/portfoliolucascastro","defaultUrl":"https://portfoliolucascastro.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-02T19:03:53.373Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro/webApps/-/config [none]
+[debug] [2023-01-02T19:03:54.234Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro/webApps/-/config 200
+[debug] [2023-01-02T19:03:54.234Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfoliolucascastro/webApps/-/config {"projectId":"portfoliolucascastro","appId":"1:303913010055:web:d7591122b0eb5a22624922","storageBucket":"portfoliolucascastro.appspot.com","apiKey":"AIzaSyAPrq1BCFrAhfSSW7EMqJRmGJGWqs2tce4","authDomain":"portfoliolucascastro.firebaseapp.com","messagingSenderId":"303913010055"}
+[debug] [2023-01-02T19:04:16.797Z] TypeError: Cannot read properties of null (reading 'toString')
+    at ɵcodegenFunctionsDirectory (C:\Users\Trabajo\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:220:18)
+    at async prepareFrameworks (C:\Users\Trabajo\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:305:84)
+    at async deploy (C:\Users\Trabajo\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
