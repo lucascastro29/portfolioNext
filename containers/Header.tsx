@@ -3,6 +3,7 @@ import Images from "../components/Images";
 import img_arrow from "../images/arrow.png";
 import { useEffect, useState } from "react";
 import { Link} from "react-scroll";
+import desarrolloWeb from"../images/desarrollo-web.jpeg";
 
 import { Headermodel } from "../models/Headermodel";
 
@@ -24,7 +25,7 @@ updatewidth();
   
   return (
     <div className="col-12 col-sm-12">
-      <div className={style.divcontainer}>
+      <div className={style.divcontainer} >
         <div className={style.filterc}>
           <div className="col-12 col-sm-12">
             <div className={style.container1}>
