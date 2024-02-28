@@ -13,7 +13,7 @@ const Forms=(props:Formsmodel)=>{
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_elqeedd",
+        "service_86ytpbx",
         "template_ocqequz",
         e.target,
         "ZX2hCZ55pcM9PJ_W8"
