@@ -3,6 +3,8 @@ import style from "../styles/styles.module.css";
 import img_pajina1 from "../images/ecommerce.png"
 import img_pajina4 from "../images/huerta.png";
 import img_pajina3 from "../images/caza.png";
+import img_pajina5 from "../images/webs_uy.png";
+
 import img_flyer1 from "../images/flyer1.jpg";
 import img_flyer2 from "../images/flyer2.jpg";
 import img_flyer3 from "../images/flyer3.jpg";
@@ -95,6 +97,18 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         cardstyle={style.card}
                         proces={props.proces}
                       />
+                      <Pajina
+                       heigh={1000}
+                       widt={0}
+                        img={img_pajina5}
+                        src={"https://webs-uy.vercel.app/"}
+                        dive={style.inprocess}
+                        text={props.pajinatext}
+                        title={"Webs Uy"}
+                        delay={0}
+                        cardstyle={style.card}
+                        proces={props.proces}
+                      />
                     </div>
                   </div>
                 </div>
@@ -152,6 +166,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         cardstyle={style.cardflyer}
                         proces={props.proces}
                       />
+                      
                     </div>
                   </div>
                 </div>
