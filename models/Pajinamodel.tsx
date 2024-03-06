@@ -5,6 +5,8 @@ export interface pajinamodel{
       title:string,
        delay:number,
         img:any, 
+        heigh:number,
+        widt:number,
     text:string,
     cardstyle:any,
     proces:string;

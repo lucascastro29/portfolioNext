@@ -14,8 +14,8 @@ const Pajina =(props:pajinamodel)=>{
         <Images
           src={props.img}
           alt="card image"
-          width={0}
-          height={0}
+          width={props.widt}
+          height={props.heigh}
           Styles={style.image}
         />
 

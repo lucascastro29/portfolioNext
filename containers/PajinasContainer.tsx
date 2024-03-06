@@ -1,7 +1,7 @@
 import Pajina from "../components/Pajina";
 import style from "../styles/styles.module.css";
 import img_pajina1 from "../images/ecommerce.png"
-import img_pajina2 from "../images/DMG.png";
+import img_pajina4 from "../images/huerta.png";
 import img_pajina3 from "../images/caza.png";
 import img_flyer1 from "../images/flyer1.jpg";
 import img_flyer2 from "../images/flyer2.jpg";
@@ -50,6 +50,8 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                     </div>
                     <div className="  d-flex justify-content-center align-items-center">
                       <Pajina
+                       heigh={1000}
+                       widt={0}
                         img={img_pajina1}
                         src={"https://commerce-lucascastro.herokuapp.com/"}
                         dive={style.inprocess}
@@ -70,6 +72,8 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         proces={props.proces}
     />*/}
                       <Pajina
+                       heigh={1000}
+                       widt={0}
                         img={img_pajina3}
                         src={"https://cazasubmarina.com.uy/"}
                         delay={500}
@@ -78,7 +82,19 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         title={props.pajinatitle}
                         cardstyle={style.card}
                         proces={props.proces}
-                      />{" "}
+                      />
+                      <Pajina
+                       heigh={1000}
+                       widt={0}
+                        img={img_pajina4}
+                        src={"https://huerta-249.web.app/inicio"}
+                        dive={style.inprocess}
+                        text={props.pajinatext}
+                        title={"Huerta Comunitaria 249"}
+                        delay={0}
+                        cardstyle={style.card}
+                        proces={props.proces}
+                      />
                     </div>
                   </div>
                 </div>
@@ -100,6 +116,8 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                     <div className=" d-flex justify-content-center align-items-center">
                       <Pajina
                         img={img_flyer1}
+                        heigh={0}
+                        widt={0}
                         src={"https://lucascastroecommerce.herokuapp.com/"}
                         dive={style.inprocessnot}
                         text={"Visit Website"}
@@ -110,6 +128,8 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                       />
 
                       <Pajina
+                       heigh={2000}
+                       widt={0}
                         img={img_flyer2}
                         src={"https://lucascastroecommerce.herokuapp.com/"}
                         dive={style.inprocessnot}
@@ -121,6 +141,8 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                       />
 
                       <Pajina
+                       heigh={2500}
+                       widt={0}
                         img={img_flyer3}
                         src={"https://cazasubmarina.com.uy/"}
                         delay={500}
