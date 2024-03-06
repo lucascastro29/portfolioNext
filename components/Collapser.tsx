@@ -203,6 +203,7 @@ return (
           <li style={{ margin: "20px" }}>{props.estudios2}</li>
           <li style={{ margin: "20px" }}>{props.estudios3}</li>
           <li style={{ margin: "20px" }}>{props.estudios4}</li>
+
         </ul>
       </div>
     </div>

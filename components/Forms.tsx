@@ -23,31 +23,39 @@ const Forms=(props:Formsmodel)=>{
       });
   }
     return (
-      <div
-        className="   col-12 row"
+      <>
+      <div 
+              className="   col-12 flex justify-content-center align-items-center"
+              style={{
+                color: "white",
+                backgroundColor: "rgb(22, 25, 28)",
+                margin: "0px",
+                paddingTop: "20px",
+              }}
+              >
+<div
+        className="   col-9 row"
         style={{
           color: "white",
           backgroundColor: "rgb(22, 25, 28)",
-          margin: "0px",
-          paddingTop: "20px",
         }}
       >
         <div
           className="col-md-5 col-12"
           style={{ alignItems: "center", justifyContent: "center" }}
         >
-          <div className="col-12">
-            <h2 style={{ marginTop: "30px", fontSize: "40px" }}>
+          <div className="col-10">
+            <h2 style={{ marginTop: "30px",marginLeft:"15px", textAlign:"start", fontSize: "40px" }}>
               {props.title1}
             </h2>
           </div>
-          <div className="col-8" style={{ margin: "15px" }}>
+          <div className="col-10  container border rounded border-gray-200 shadow dark:bg-gray-800" style={{ margin: "15px", backgroundColor:"rgb(30 30 35)" }}>
             <Form
-              className="container"
+              className=""
               style={{ textAlign: "start", padding: "5px", height: "250px" }}
               onSubmit={enviarEmail}
             >
-              <Form.Group className="mb-3">
+              <Form.Group className="mb-3 " >
                 <Form.Label>{props.form1}</Form.Label>
                 <Form.Control
                   type="email" required
@@ -76,13 +84,14 @@ const Forms=(props:Formsmodel)=>{
                 />
               </Form.Group>
               <div
-                className="col-12 row "
+                className="col-12 row hover:bg-blue-800"
                 style={{ justifyContent: "end", margin: "0px", padding: "0px" }}
               >
-                <Button
+                
+                <Button  
                   variant="primary"
                   type="submit"
-                  style={{ backgroundColor: "transparent", border: "none" }}
+                  style={{ backgroundColor:"rgb(24 24 24)", border: "none" }}
                 >
                   {props.button}
                 </Button>
@@ -149,7 +158,26 @@ const Forms=(props:Formsmodel)=>{
               </div>
             </div>
           </div>
+          
         </div>
+              </div>
+
+      
+        <div
+        className="col-12 d-flex justify-content-center align-items-center"
+        style={{
+          color: "white",
+          backgroundColor: "rgb(22, 25, 28)",
+          padding:"15px 20px 20px 20px"
+        }}
+      >
+        <div className='col-11 ' style={{
+          borderTop:"2px solid grey",
+
+        }}> </div>
+
+
+        </div></>
     );
 }
 export default Forms

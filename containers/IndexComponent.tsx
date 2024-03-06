@@ -31,9 +31,10 @@ const IndexComponent = (props:indexmodel) => {
 if(buttonflag==0){
     setAllTheText([
       "Hi I'm Lucas, I design and build web pages",
-      "i'm a young web Developer, with skills of FullStack Developer, in focus of functionality and good style. With knowledge in workflows like scrum, kanban and agiles methodologies, with the hability of work by my self or be part of a team.",
+      "i'm a young web Developer, with skills of Front End Developer, in focus of functionality and good style. With the hability of work by my self or be part of a team. Expecting to give all my effort in a task or project",
       "Work Experience",
-      `I worked in "Cyber Green" Since 2020 until 2022 working us a computer technical service and client service.`,
+      `I worked in "Cyber Green" Since 2020 until 2022 working us a computer technical service and client service.
+      Nowadays i worked as a self-checkout cashier in "Geant Parque roosevelt" (january 2023- present)`,
       "Studies",
       "Skills",
       `Realizing a course of "Full stack development" in the university of "Buenos Aires"`,
@@ -49,7 +50,7 @@ if(buttonflag==0){
       "Email",
       "Message",
       "submit",
-      "or",
+      "",
       "Let's get social",
       "Follow me online on",
     ]);
@@ -58,20 +59,19 @@ if(buttonflag==0){
 
   }else{setAllTheText([
     "Hola Me llamo Lucas y diseño  paginas Web",
-    ` Soy un desarrollador web de 19 años,con habilidades como desarrollador FullStack centrado en la funcionalidad y un buen estilo. Con conocimientos en flujos de trabajo como scrum,
-          kanban y metodologias agiles, con la capacidad de trabajar por mi
+    ` Soy un desarrollador web de 21 años,con habilidades como desarrollador Front End centrado en la funcionalidad y un buen estilo. Con la capacidad de trabajar por mi
           cuenta o ser parte de un equipo, pudiendome relacionarme perfectamente
-          con mis compañeros`,
+          con mis compañeros y buscando dedicarme en mi totalidad a los proyectos`,
     "Experiencia Laboral",
     ` Trabaje en "Cyber Green" desde 2020 hasta 2022 trabajando como tecnico
-          informatico y servicio a equipos informaticos.`,
+          informatico y servicio a equipos informaticos.
+        Actualmente me encuentro trabajando como encargado de cajas automaticas en Geant Parque Roosevelt  ( enero 2023-Presente)`,
     "Estudios",
     "Habilidades",
-    `Realizando un curso de "desarrollador Full Stack" en la "Universidad de Buenos Aires"`,
-    ` Primer año de ingeniería en computación en la "Facultad de
-              Ingeniería de la Republica"`,
+    `Curso de "desarrollador Full Stack" en la "Universidad de Buenos Aires"`,
+    ` Cursando segundo año de Tecnologo en Cyberseguridad en el "Instituto de alta especialización" de Montevideo`,
     `  "Jóvenes a Programar" desde Marzo 2021 hasta Diciembre 2022`,
-    " Estudiando para el first Cambridge exam a principio de 2023",
+    " B2 First Cambridge Certificate ",
     "PROJECTOS",
     "Sitios Web",
     "Flyers",
@@ -83,7 +83,7 @@ if(buttonflag==0){
     "Enviar",
     "",
     "Mis Redes",
-    "Seguime en:",
+    "Seguime en",
   ]);
     setbuttonflag(0)
   setiamgeflag(img_english);
