@@ -55,7 +55,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                        heigh={1000}
                        widt={0}
                         img={img_pajina1}
-                        src={"https://commerce-lucascastro.herokuapp.com/"}
+                        src={"https://e-commerce-next-theta.vercel.app/"}
                         dive={style.inprocess}
                         text={props.pajinatext}
                         title={"E-Commerce"}
@@ -72,7 +72,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         title={props.pajinatitle}
                         cardstyle={style.card}
                         proces={props.proces}
-    />*/}
+    />
                       <Pajina
                        heigh={1000}
                        widt={0}
@@ -84,7 +84,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         title={props.pajinatitle}
                         cardstyle={style.card}
                         proces={props.proces}
-                      />
+                      />*/}
                       <Pajina
                        heigh={1000}
                        widt={0}
