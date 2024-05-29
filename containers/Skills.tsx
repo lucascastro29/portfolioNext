@@ -30,10 +30,10 @@ const { skills } = useContext(EcommerceContext);
           >
             {props.title}
 
-            <div
+            <div className="rounded"
               style={{
                 paddingTop: "0px",
-                border: "2px solid #75b75d",
+                border: "2px solid green",
                 borderTop: "0px",
                 borderLeft: "0px",
                 borderRight: "0px",

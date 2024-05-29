@@ -38,7 +38,9 @@ const renderLoader = () =>
         <Head>
           <title>Portfolio</title>
         </Head>
-        <div className="App col-12">
+        <div className="App col-12" 
+          style={{"lineHeight": "1.625"}}
+          >
           <IndexComponent width={0} />
         </div>
       </Suspense>

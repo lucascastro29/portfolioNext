@@ -45,7 +45,7 @@ const Forms=(props:Formsmodel)=>{
           style={{ alignItems: "center", justifyContent: "center" }}
         >
           <div className="col-10">
-            <h2 style={{ marginTop: "30px",marginLeft:"15px", textAlign:"start", fontSize: "40px" }}>
+            <h2 style={{ marginTop: "30px",marginLeft:"15px", textAlign:"start", fontSize: "40px",width:"80%",borderBottom:"2px solid green" }}>
               {props.title1}
             </h2>
           </div>
@@ -106,7 +106,7 @@ const Forms=(props:Formsmodel)=>{
         </div>
         <div className="col-md-5 col-12  " style={{ marginBottom: "30px" }}>
           <div>
-            <h1 style={{ fontSize: "40px", marginTop: "30px" }}>
+            <h1  style={{ fontSize: "40px", marginTop: "30px",borderBottom:"2px solid green",paddingBottom:"5px"  }}>
               {props.title3}
             </h1>
             <br />

@@ -8,7 +8,6 @@ import img_pajina5 from "../images/webs_uy.png";
 import img_flyer1 from "../images/flyer1.jpg";
 import img_flyer2 from "../images/flyer2.jpg";
 import img_flyer3 from "../images/flyer3.jpg";
-import Head from "../node_modules/next/head";
 import { Pajinasmodel } from "../models/Pajinasmodel";
 
 
@@ -28,7 +27,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                   <div className="col-12 d-flex justify-content-center align-items-center">
                     <strong
                       className="tittlestyle "
-                      style={{ marginBottom: "10px" }}
+                      style={{ marginBottom: "10px",fontSize:"250%" }}
                     >
                       {props.TitleProjects}
                     </strong>
@@ -127,12 +126,13 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                         </h2>
                       </div>
                     </div>
-                    <div className=" d-flex justify-content-center align-items-center">
+                    <div className=" d-flex justify-content-center align-items-center"
+                        >
                       <Pajina
                         img={img_flyer1}
                         heigh={0}
                         widt={0}
-                        src={"https://lucascastroecommerce.herokuapp.com/"}
+                        src={""}
                         dive={style.inprocessnot}
                         text={"Visit Website"}
                         title={"Ecommerce"}
@@ -145,7 +145,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                        heigh={2000}
                        widt={0}
                         img={img_flyer2}
-                        src={"https://lucascastroecommerce.herokuapp.com/"}
+                        src={""}
                         dive={style.inprocessnot}
                         delay={200}
                         text={"Visit Website"}
@@ -158,7 +158,7 @@ const PajinasContainer =(props:Pajinasmodel)=>{
                        heigh={2500}
                        widt={0}
                         img={img_flyer3}
-                        src={"https://cazasubmarina.com.uy/"}
+                        src={""}
                         delay={500}
                         dive={style.inprocessnot}
                         text={"Visit Website"}

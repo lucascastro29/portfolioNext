@@ -15,6 +15,7 @@ top:10px;
 bottom: 0px;
 left: 20px;
 right:0px;}
+
 .divcontainer{
   background: url(https://lucascastro29.github.io/imgg/desarrollo-web.jpeg);
   background-repeat:no-repeat ;
@@ -25,18 +26,30 @@ right:0px;}
   align-items: center;
 
 }
+.imageContainer {
+  width: 150px; /* Ajusta el tamaño según tus necesidades */
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #000; /* Color del borde */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
 
+.profileImage {
+  object-fit: cover;
+}
 .h1{
-  font-size:300%;
+  font-size:350%;
   font-weight: bold;
-  font-weight:550;
   
   color: rgb(255, 255, 255);
 font-family: "Source Code Pro",monospace;
   text-align: center;
-  text-shadow: 6px 1px 5px  black;
+  text-shadow: 5px 1px 5px  black;
 } 
-
 
 
 .filterc{
@@ -133,7 +146,7 @@ color: white;
     
   margin-top: 30px;
   padding-bottom: 3px;
-  border-bottom:solid #75b75d 2px;
+  border-bottom:solid green 2px;
   
 
 }
@@ -150,7 +163,7 @@ color: white;
     
   margin-top: 30px;
   padding-bottom: 3px;
-  border-bottom:solid #75b75d 2px;
+  border-bottom:solid green 2px;
   
 
 }
@@ -166,13 +179,13 @@ color: white;
     
   margin-top: 30px;
   padding-bottom: 3px;
-  border-bottom:solid #75b75d 2px;
+  border-bottom:solid green 2px;
   
 }
 .borderbottomx{
   width: 800px;
   padding-bottom: 3px;
-  border-bottom:solid #75b75d 2px;
+  border-bottom:solid green 2px;
   margin-bottom: 30px
 }
 
@@ -242,12 +255,14 @@ background-color: #242424;
 }
 .boxMe2 span{
   display: block;
-  z-index: 1  ;
-  margin: 30px;
-  margin-left: 0px;
-  margin-right: 0px;
+z-index: 1  ;
+margin: 30px;
+margin-left: 0px;
+margin-right: 0px;
 padding: 0px;
-  box-shadow: 0 4px 15px 8px rgba(0, 0, 0, 0.75);
+border-radius: 0.5%;
+box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.75);
+
 
 }
 .span span{
@@ -256,13 +271,6 @@ padding: 0px;
 
 }
 .boxMe2 {
-  z-index: 1  ;
-  margin: 30px;
-  margin-left: 0px;
-  margin-right: 0px;
-padding: 0px;
-  box-shadow: 0 4px 15px 8px rgba(0, 0, 0, 0.75);
-
 }
 .imagefather{ 
   width: 100%;
@@ -347,7 +355,7 @@ padding: 0px;
   top: 10px;
   border-radius: 25px !important;
   border-color: transparent;
-  background-color:#75b75d00 ;
+  background-color:green00 ;
 color: transparent;
 transition: all ease 0.5s ;
 }
@@ -355,9 +363,11 @@ transition: all ease 0.5s ;
 
 .card:hover .objectspajes{  
   color: white;
-  background-color:#75b75d;
+  background-color:green;
   top: 40px;
   bottom: 0px;
+  padding:10px;
+
   box-shadow: 0 4px 15px 10px rgba(0, 0, 0, 0.75);
 
 }

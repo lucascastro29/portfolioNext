@@ -23,6 +23,7 @@ return (
             height={0}
             width={0}
           />
+          
         </div>
       </div>
     </div>
@@ -54,10 +55,10 @@ return (
           data-aos="fade-down"
         >
           Lucas Castro
-          <div
+          <div className="rounded"
             style={{
               padding: "0px",
-              border: "3px solid #75b75d",
+              border: "2px solid green",
               borderTop: "0px",
               borderLeft: "0px",
               borderRight: "0px",
@@ -80,7 +81,7 @@ return (
         }}
       >
         <div
-          className="col-8 col-sm-12"
+          className="col-8 col-sm-12 "
           data-aos="fade-left"
           data-aos-delay="300"
         >
@@ -112,10 +113,10 @@ return (
           data-aos="fade-down"
         >
           {props.Titlework}
-          <div
+          <div className="rounded"
             style={{
               padding: "0px",
-              border: "2px solid #75b75d",
+              border: "2px solid green",
               borderTop: "0px",
               borderLeft: "0px",
               borderRight: "0px",
@@ -175,9 +176,9 @@ return (
           data-aos="fade-down"
         >
           {props.Titlestudios}
-          <div
+          <div className="rounded"
             style={{
-              border: "2px solid #75b75d",
+              border: "2px solid green",
               borderTop: "0px",
               borderLeft: "0px",
               borderRight: "0px",

@@ -52,7 +52,7 @@ if(buttonflag==0){
       "submit",
       "",
       "Let's get social",
-      "Follow me online on",
+      "Contact me on",
     ]);
   setbuttonflag(1);
   setiamgeflag(img_spanish);
@@ -83,7 +83,7 @@ if(buttonflag==0){
     "Enviar",
     "",
     "Mis Redes",
-    "Seguime en",
+    "Contactame en",
   ]);
     setbuttonflag(0)
   setiamgeflag(img_english);

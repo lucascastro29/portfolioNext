@@ -10,6 +10,7 @@ import { Headermodel } from "../models/Headermodel";
 const Header = (props:Headermodel) => {
 const [marginTop,usemarginTop]=useState(250)
 
+
 useEffect(()=>{
   function updatewidth(){
       if (window.innerWidth < 1227) {
@@ -40,7 +41,7 @@ updatewidth();
                         src={props.image}
                         alt="spanish"
                         width={70}
-                        height={70}
+                        height={80}
                         Styles={""}
                       />
                     </a>
