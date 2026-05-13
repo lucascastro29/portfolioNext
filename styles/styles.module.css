@@ -947,6 +947,153 @@ transition:all  inherit;
 rotate: (0deg)
 
  }
+
+/* Collapser styles */
+.collapserCol {
+  padding: 0;
+}
+
+.titleWrap {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 0;
+}
+
+.nameTitle {
+  padding: 0;
+  color: white;
+  font-size: 400%;
+  text-shadow: 5px 2px 5px black;
+  overflow: hidden;
+}
+
+.sectionTitle {
+  padding: 0;
+  color: white;
+  font-size: 350%;
+  text-shadow: 5px 2px 5px black;
+  overflow: hidden;
+}
+
+.studiesTitle {
+  width: 400px;
+}
+
+.greenUnderline {
+  border: 2px solid var(--accent-color);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.greenUnderlineWide {
+  padding: 0;
+  border: 2px solid var(--accent-color);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  width: 500px;
+  margin: 0;
+}
+
+.aboutMeWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  font-size: 40px;
+  text-shadow: 5px 2px 5px black;
+  overflow: hidden;
+  padding: 0;
+}
+
+.spacer40 {
+  display: flex;
+  margin-top: 40px;
+  padding: 0;
+  width: 100%;
+}
+
+.sectionText {
+  color: white;
+  font-size: 40px;
+  text-shadow: 5px 2px 5px black;
+  overflow: hidden;
+  padding: 0;
+}
+
+.studiesList {
+  color: white;
+  font-size: 30px;
+  margin-left: 10px;
+  text-shadow: 5px 2px 5px black;
+}
+
+.studiesItem {
+  margin: 20px;
+}
+
+/* Header utility classes */
+.langButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+.langButton:hover {
+  opacity: 0.8;
+}
+
+.headerArrowsWrap {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.headerArrows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Skill bar — fills once on view, no looping shimmer */
+.skillBar {
+  width: 100%;
+  height: 22px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.skillBarFill {
+  height: 100%;
+  border-radius: 12px;
+  transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.35);
+}
+
+.skillBarLabel {
+  font-size: 13px;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
 @keyframes rotation {
   from {
     transform: scaleX(1);

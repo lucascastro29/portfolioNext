@@ -1,34 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio — Lucas Castro
 
-## Getting Started
+Portfolio personal de Lucas Castro, desarrollador web Front End. Sitio bilingüe (ES/EN) con secciones de presentación, experiencia, estudios, skills, proyectos y contacto.
 
-First, run the development server:
+🌐 **Producción:** https://portfolio-next-three-mu.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
+## Stack
+
+- **Framework:** Next.js 12 (Pages Router)
+- **Lenguaje:** TypeScript
+- **UI:** React 18, React-Bootstrap, Tailwind CSS, Flowbite
+- **Animaciones:** AOS (Animate On Scroll), CSS transitions custom
+- **Deploy:** Vercel (con Vercel Analytics + Speed Insights)
+- **i18n:** JSON estático (`content/translations.json`)
+
+## Estructura
+
+```
+portfolioNext/
+├── components/         # UI reutilizable (Forms, Pajina, Skillsingular, etc.)
+│   └── context/        # PortfolioContext (estado global)
+├── containers/         # Secciones de página (Header, IndexComponent, PajinasContainer, Skills)
+├── content/            # translations.json (textos ES/EN)
+├── images/             # Assets locales (foto, screenshots de proyectos, flyers)
+├── models/             # Interfaces TypeScript
+├── pages/              # Rutas Next.js (index, 404, 500, _app)
+├── public/             # Estáticos servidos en raíz (robots.txt, sitemap.xml, favicon)
+└── styles/             # globals.css + styles.module.css (CSS variables y módulos)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup local
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Requisitos: **Node.js 24.x** y npm.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+git clone https://github.com/lucascastro29/portfolioNext.git
+cd portfolioNext
+npm install --legacy-peer-deps
+npm run dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Abrí http://localhost:3000.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Servidor de desarrollo en `localhost:3000` |
+| `npm run build` | Build de producción |
+| `npm start` | Servir el build de producción |
+| `npm run lint` | Linter de Next.js |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+El proyecto está conectado a Vercel. Cualquier deploy se hace con:
 
-## Deploy on Vercel
+```bash
+npx vercel deploy --prod
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+El email del commit author debe estar verificado en la cuenta de Vercel (`lucascastro2929@gmail.com`).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Decisiones de diseño
+
+- **Sin EmailJS:** el formulario de contacto abre el cliente de email del usuario via `mailto:` para evitar exponer credenciales en el cliente.
+- **Bilingüe via JSON:** evita la complejidad de `next-i18next` para un sitio de una sola página.
+- **CSS Variables:** colores y delays de animación están centralizados en `:root` (ver `styles/globals.css`).
+- **Skills animadas con IntersectionObserver:** las barras se llenan una sola vez cuando entran al viewport, sin shimmer en loop.
+
+## Autor
+
+**Lucas Castro** — [LinkedIn](https://www.linkedin.com/in/lucas-castro-7b4003219/) · [GitHub](https://github.com/lucascastro29) · lucascastro2929@gmail.com

@@ -1,8 +1,8 @@
-export interface Collapsermodel {
+export interface CollapserModel {
   Textaboutme: string;
-  Titlework: String;
+  Titlework: string;
   Textwork: string;
-  skilltitle:string;
+  skilltitle: string;
   Titlestudios: string;
   estudios1: string;
   estudios2: string;
