@@ -1,16 +1,16 @@
-import '../styles/globals.css'
-import React from 'react'
+import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {EcommerceProvider} from '../components/context/PortfolioContext';
-import Head from 'next/head';
-function MyApp({ Component, pageProps }) {
+import type { AppProps } from "next/app";
+import { EcommerceProvider } from "../components/context/PortfolioContext";
+import { Analytics } from "@vercel/analytics/react";
 
-  
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-      <EcommerceProvider>
-        <Component {...pageProps} />
-      </EcommerceProvider>
+    <EcommerceProvider>
+      <Component {...pageProps} />
+      <Analytics />
+    </EcommerceProvider>
   );
 }
 
-export default MyApp
+export default MyApp;

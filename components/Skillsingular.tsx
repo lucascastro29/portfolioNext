@@ -1,12 +1,9 @@
-import ProgressBar from "react-bootstrap/ProgressBar";
-import { skillssingularmodel } from "../models/skillssingularmodel";
+import { SkillSingularModel } from "../models/SkillSingularModel";
 import Animatedbar from "./Animatedbar";
 
-const Skillsingular = ( props:skillssingularmodel) => {
-
-
+const Skillsingular = (props: SkillSingularModel) => {
   return (
-    <div className="col-12 " style={{ margin: "10px" }}>
+    <div className="col-12" style={{ margin: "10px" }}>
       <div className="col-12 d-flex justify-content-center align-items-center">
         <div
           className="col-6 d-flex align-items-center"
@@ -24,7 +21,15 @@ const Skillsingular = ( props:skillssingularmodel) => {
           }}
         >
           <div className="col-12 overflow-visible">
-            <strong style={{ marginLeft: "15px",minWidth:"120px",overflow:"visible" }}>{props.text}</strong>
+            <strong
+              style={{
+                marginLeft: "15px",
+                minWidth: "120px",
+                overflow: "visible",
+              }}
+            >
+              {props.text}
+            </strong>
           </div>
         </div>
       </div>

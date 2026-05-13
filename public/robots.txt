@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-next-three-mu.vercel.app/sitemap.xml
