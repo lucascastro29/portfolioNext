@@ -1,5 +1,7 @@
 import React, { createContext, useState, ReactNode } from "react";
 
+export type Lang = "es" | "en";
+
 interface Skill {
   now: number;
   variant: string;
@@ -15,16 +17,20 @@ interface PortfolioContextValue {
   width: number;
   useheight: React.Dispatch<React.SetStateAction<number | undefined>>;
   usewidth: React.Dispatch<React.SetStateAction<number>>;
+  language: Lang;
+  toggleLanguage: () => void;
+  setLanguage: React.Dispatch<React.SetStateAction<Lang>>;
 }
 
-export const EcommerceContext = createContext<PortfolioContextValue | null>(
-  null
+export const EcommerceContext = createContext<PortfolioContextValue>(
+  {} as PortfolioContextValue
 );
 
 export const EcommerceProvider = ({ children }: { children: ReactNode }) => {
   const [hook, sethook] = useState<string>("");
   const [height, useheight] = useState<number | undefined>(undefined);
   const [width, usewidth] = useState<number>(1);
+  const [language, setLanguage] = useState<Lang>("es");
 
   function updateheight() {
     useheight(window.innerHeight);
@@ -32,6 +38,10 @@ export const EcommerceProvider = ({ children }: { children: ReactNode }) => {
 
   function updatewidth() {
     usewidth(window.innerWidth);
+  }
+
+  function toggleLanguage() {
+    setLanguage((prev) => (prev === "es" ? "en" : "es"));
   }
 
   const [skills, setskills] = useState<Skill[]>([
@@ -55,6 +65,9 @@ export const EcommerceProvider = ({ children }: { children: ReactNode }) => {
         width,
         useheight,
         usewidth,
+        language,
+        toggleLanguage,
+        setLanguage,
       }}
     >
       {children}

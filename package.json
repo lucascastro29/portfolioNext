@@ -20,13 +20,18 @@
     "firebase-functions": "^4.1.1",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.2",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^1.14.0",
     "next": "^12.2.3",
     "postcss": "^8.4.35",
     "react": "18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "18.2.0",
+    "react-markdown": "^10.1.0",
     "react-scroll": "^1.8.7",
     "reactfire": "^4.0.0-rc.2",
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1",
     "vercel": "^33.5.1"
   },
   "devDependencies": {

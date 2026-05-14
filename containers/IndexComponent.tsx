@@ -4,23 +4,20 @@ import Header from "../containers/Header";
 import Collapser from "../components/Collapser";
 import PajinasContainer from "../containers/PajinasContainer";
 import Forms from "../components/Forms";
-import img_spanish from "../images/españa.png";
+import img_spanish from "../images/espana.png";
 import img_english from "../images/english.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { IndexModel } from "../models/IndexModel";
 import translations from "../content/translations.json";
-
-type Lang = "es" | "en";
+import { EcommerceContext } from "../components/context/PortfolioContext";
 
 const IndexComponent = (props: IndexModel) => {
-  const [lang, setLang] = useState<Lang>("es");
+  const ctx = useContext(EcommerceContext);
+  const language = ctx?.language ?? "es";
+  const toggleLanguage = ctx?.toggleLanguage ?? (() => {});
 
-  const t = translations[lang];
-  const flagImage = lang === "es" ? img_english : img_spanish;
-
-  const toggleLang = () => {
-    setLang((prev) => (prev === "es" ? "en" : "es"));
-  };
+  const t = translations[language];
+  const flagImage = language === "es" ? img_english : img_spanish;
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
@@ -31,7 +28,7 @@ const IndexComponent = (props: IndexModel) => {
       <div className="col-12">
         <Header
           textpresentation={t.headerTitle}
-          onClick={toggleLang}
+          onClick={toggleLanguage}
           image={flagImage}
         />
       </div>
