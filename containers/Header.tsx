@@ -1,144 +1,68 @@
-import style from "../styles/styles.module.css";
-import Images from "../components/Images";
-import img_arrow from "../images/arrow.png";
-import { useEffect, useState } from "react";
-import { Link } from "react-scroll";
-
+import NextLink from "next/link";
 import { HeaderModel } from "../models/HeaderModel";
 
 const Header = (props: HeaderModel) => {
-  const [marginTop, setMarginTop] = useState(250);
-
-  useEffect(() => {
-    function updatewidth() {
-      if (window.innerWidth < 1227) {
-        setMarginTop(225);
-      } else {
-        setMarginTop(250);
-      }
-    }
-    updatewidth();
-    window.addEventListener("resize", updatewidth);
-    return () => window.removeEventListener("resize", updatewidth);
-  }, []);
-
   return (
-    <header className="col-12 col-sm-12">
-      <div className={style.divcontainer}>
-        <div className={style.filterc}>
-          <div className="col-12 col-sm-12">
-            <div className={style.container1}>
-              <div className="col-12 col-sm-12">
-                <div className={style.languajes}>
-                  <button
-                    type="button"
-                    onClick={props.onClick}
-                    aria-label="Toggle language"
-                    className={style.langButton}
-                  >
-                    <Images
-                      src={props.image}
-                      alt="Language toggle"
-                      width={70}
-                      height={80}
-                      Styles={""}
-                    />
-                  </button>
-                </div>
-                <div className="col-12 col-sm-12 user-select-none">
-                  <h1 className={style.h1}>{props.textpresentation}</h1>
-                </div>
-                <div className={`col-12 d-column justify-content-end ${style.headerArrowsWrap}`}>
-                  <div className={`col-12 d-row justify-content-end ${style.headerArrows}`}>
-                    <div style={{ height: "15px", marginTop: `${marginTop}px` }}>
-                      <Link
-                        to="Collapse"
-                        spy={true}
-                        smooth={true}
-                        offset={50}
-                        duration={500}
-                        href="#Collapse"
-                        aria-label="Scroll to about section"
-                      >
-                        <Images
-                          src={img_arrow}
-                          alt="Scroll down arrow"
-                          width={0}
-                          height={0}
-                          Styles={style.imgarrow}
-                        />
-                      </Link>
-                    </div>
-                    <div>
-                      <Link
-                        to="Collapse"
-                        id="Collapse"
-                        spy={true}
-                        smooth={true}
-                        offset={50}
-                        duration={500}
-                        href="#Collapse"
-                        aria-label="Scroll to about section"
-                      >
-                        <Images
-                          src={img_arrow}
-                          alt="Scroll down arrow"
-                          width={0}
-                          height={0}
-                          Styles={style.imgarrow}
-                        />
-                      </Link>
-                      <nav
-                        aria-label="Header social links"
-                        className="col-12 d-flex"
-                        style={{ height: "80px", justifyContent: "end" }}
-                      >
-                        <a
-                          href="https://www.linkedin.com/in/lucas-castro-7b4003219/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="LinkedIn profile"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className={style.logos1}
-                            fill="currentColor"
-                            viewBox="0 0 16 16"
-                            role="img"
-                            aria-label="LinkedIn"
-                          >
-                            <title>LinkedIn</title>
-                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                          </svg>
-                        </a>
-                        <a
-                          href="https://github.com/lucascastro29"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="GitHub profile"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className={style.logos2}
-                            fill="currentColor"
-                            viewBox="0 0 16 16"
-                            role="img"
-                            aria-label="GitHub"
-                          >
-                            <title>GitHub</title>
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                          </svg>
-                        </a>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <section
+      id="hero"
+      className="parallax-large relative mx-auto w-full max-w-6xl px-4 pb-20 pt-28 sm:px-6 sm:pt-32"
+      data-parallax-depth="0.2"
+    >
+      <div className="led-sign relative overflow-hidden rounded-[28px] border border-cyan-200/45 bg-slate-950/30 p-6 shadow-[0_20px_80px_rgba(2,6,23,0.55)] backdrop-blur-xl sm:p-10">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(56,189,248,0.12),transparent_36%),radial-gradient(circle_at_80%_120%,rgba(59,130,246,0.18),transparent_44%)]" />
+        <div className="mb-6 flex items-center justify-end gap-3">
+          <div className="relative z-10 inline-flex items-center gap-2 rounded-full border border-cyan-300/40 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+            <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
+            Open for freelance
           </div>
         </div>
+
+        <h1 className="relative z-10 max-w-3xl text-balance text-4xl font-black leading-tight tracking-tight text-slate-100 sm:text-6xl">
+          {props.textpresentation}
+        </h1>
+        <p className="relative z-10 mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          I craft performant, conversion-focused web experiences with a clean interface and strong frontend execution.
+        </p>
+
+        <div className="relative z-10 mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href="#about"
+            className="led-btn led-btn-stable rounded-full border border-cyan-300/40 bg-cyan-400/20 px-5 py-2.5 text-sm font-semibold tracking-[0.06em] text-cyan-100 no-underline transition hover:bg-cyan-300/30"
+          >
+            Explore Work
+          </a>
+          <NextLink
+            href="/blog"
+            className="led-btn led-btn-stable rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-[0.06em] text-slate-100 no-underline transition hover:bg-white/20"
+          >
+            Read Journal
+          </NextLink>
+          <a
+            href="https://github.com/lucascastro29"
+            target="_blank"
+            rel="noreferrer"
+            className="led-btn led-btn-stable rounded-full border border-white/15 px-4 py-2 text-sm font-medium tracking-[0.04em] text-slate-300 no-underline transition hover:border-cyan-300/40 hover:text-cyan-100"
+          >
+            GitHub Profile
+          </a>
+          <a
+            href="https://www.linkedin.com/in/lucas-castro-7b4003219/"
+            target="_blank"
+            rel="noreferrer"
+            className="led-btn led-btn-stable rounded-full border border-white/15 px-4 py-2 text-sm font-medium tracking-[0.04em] text-slate-300 no-underline transition hover:border-cyan-300/40 hover:text-cyan-100"
+          >
+            LinkedIn Profile
+          </a>
+        </div>
+
+        <div className="relative z-10 mt-10 flex items-center gap-3 text-slate-400">
+          <span className="h-px w-16 bg-white/20" />
+          <a href="#about" className="text-xs uppercase tracking-[0.22em] text-cyan-300/80 no-underline hover:text-cyan-200">
+            Scroll to navigate
+          </a>
+        </div>
       </div>
-    </header>
+    </section>
   );
 };
 

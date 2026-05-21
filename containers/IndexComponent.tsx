@@ -24,19 +24,11 @@ const IndexComponent = (props: IndexModel) => {
   }, []);
 
   return (
-    <main>
+    <main className="site-shell">
       <div className="col-12">
-        <Header
-          textpresentation={t.headerTitle}
-          onClick={toggleLanguage}
-          image={flagImage}
-        />
+        <Header textpresentation={t.headerTitle} onClick={toggleLanguage} image={flagImage} />
       </div>
-      <div
-        className="row"
-        style={{ margin: "0px", height: "80px", backgroundColor: "var(--bg-color)" }}
-      ></div>
-      <div className="row" style={{ margin: "0px", backgroundColor: "var(--bg-color)" }}>
+      <div className="row" style={{ margin: "0px" }}>
         <Collapser
           Textaboutme={t.aboutMe}
           Titlework={t.workTitle}
@@ -49,10 +41,6 @@ const IndexComponent = (props: IndexModel) => {
           skilltitle={t.skillsTitle}
         />
       </div>
-      <div
-        className="row"
-        style={{ margin: "0px", height: "80px", backgroundColor: "var(--bg-color)" }}
-      ></div>
       <PajinasContainer
         TitleProjects={t.projectsTitle}
         FlyersProjects={t.flyersTitle}

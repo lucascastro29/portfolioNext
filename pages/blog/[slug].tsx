@@ -130,12 +130,12 @@ export default function PostPage({
           </div>
         )}
 
-        <header className="led-sign mb-10 rounded-2xl border border-white/10 bg-slate-900/35 p-10">
-          <h1 className="text-justify text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+        <header className="led-sign section-panel blog-post-header mb-10">
+          <h1 className="blog-post-title">
             {post.title}
           </h1>
 
-          {post.excerpt && <p className="mt-4 text-lg leading-relaxed text-slate-300">{post.excerpt}</p>}
+          {post.excerpt && <p className="blog-post-excerpt">{post.excerpt}</p>}
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
@@ -168,7 +168,7 @@ export default function PostPage({
           </div>
         </header>
 
-        <div className="led-sign rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg sm:p-8">
+        <div className="led-sign section-panel blog-post-body">
           <div className="prose prose-invert max-w-none prose-headings:scroll-mt-24 text-slate-300 prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-code:rounded prose-code:bg-white/10 prose-code:px-1 prose-code:py-0.5 prose-pre:border prose-pre:border-white/10 prose-pre:bg-black/40">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
@@ -199,8 +199,8 @@ export default function PostPage({
           </div>
         </div>
 
-        <footer className="mt-10 border-t border-white/10 pt-6 text-sm text-slate-400">
-          <div className="rounded-2xl border border-cyan-300/30 bg-cyan-400/[0.07] p-4 shadow-[0_0_20px_rgba(34,211,238,0.16),inset_0_0_18px_rgba(34,211,238,0.06)] sm:p-5">
+        <footer className="mt-10 pt-2 text-sm text-slate-400">
+          <div className="led-sign section-panel blog-post-footer">
             <div className="grid gap-4 md:grid-cols-12">
               <section className="rounded-xl border border-cyan-200/20 bg-slate-950/35 p-4 md:col-span-7">
                 <p className="m-0 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">Índice Automático</p>
