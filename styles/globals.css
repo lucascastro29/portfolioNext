@@ -1108,7 +1108,7 @@ small { font-size: var(--fs-sm); }
   display: grid;
   grid-template-columns: minmax(240px, 380px) 1fr;
   gap: clamp(1.4rem, 2.2vw, 3rem);
-  align-items: start;
+  align-items: bottom;
 }
 
 .about-photo-wrap {
