@@ -1127,7 +1127,7 @@ small { font-size: var(--fs-sm); }
   content: "";
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 35%;
+  height: 80%;
   background: linear-gradient(to top, rgba(4,9,15,0.55), transparent);
   pointer-events: none;
   z-index: 1;
@@ -1274,7 +1274,7 @@ small { font-size: var(--fs-sm); }
 
 .fd-label {
   position: absolute;
-  bottom: 10%;
+  bottom: 20%;
   left: 12%;
   right: 12%;
   background: rgba(2, 8, 18, 0.75);
