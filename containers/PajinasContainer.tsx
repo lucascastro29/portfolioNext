@@ -52,7 +52,7 @@ const PajinasContainer = (props: PajinasModel) => {
                 className="project-card"
                 aria-label={`${info.title} — ${t.visitWebsite}`}
                 data-aos="fade-up"
-                data-aos-delay={120 + i * 100}
+                data-aos-delay={i * 150}
               >
                 <div className="project-media">
                   <Image
@@ -93,7 +93,7 @@ const PajinasContainer = (props: PajinasModel) => {
                 key={key}
                 className="project-card"
                 data-aos="fade-up"
-                data-aos-delay={80 + i * 100}
+                data-aos-delay={i * 150}
               >
                 <div className="project-media">
                   <Image

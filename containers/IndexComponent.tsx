@@ -17,7 +17,7 @@ const IndexComponent = (props: IndexModel) => {
   const t = translations[language];
 
   useEffect(() => {
-    AOS.init({ duration: 700, once: true, offset: 80 });
+    AOS.init({ duration: 1100, once: true, offset: 30, easing: "ease-out-cubic" });
   }, []);
 
   return (
