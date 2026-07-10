@@ -1323,7 +1323,7 @@ small { font-size: var(--fs-sm); }
 .about-detect-overlay .fd-corner--tr { top: 5%;    right: 5%; }
 .about-detect-overlay .fd-corner--bl { bottom: 5%; left: 5%;  }
 .about-detect-overlay .fd-corner--br { bottom: 5%; right: 5%; }
-.about-detect-overlay .fd-label      { bottom: 10%; left: 5%; right: 5%; }
+.about-detect-overlay .fd-label      { bottom: 15%; left: 5%; right: 5%; }
 
 /* ── Project card: detection overlay ─────────────────────── */
 .project-detect {

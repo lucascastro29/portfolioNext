@@ -6,12 +6,12 @@ import { PajinasModel } from "../models/PajinasModel";
 import { PortfolioContext } from "../components/context/PortfolioContext";
 import translations from "../content/translations.json";
 import img_pajina1 from "../images/ecommerce.png";
-import img_pajina5 from "../images/webs_uy.png";
-import img_routine from "../images/desarrollo-web.jpeg";
+
 import img_flyer1 from "../images/flyer1.jpg";
 import img_flyer2 from "../images/flyer2.jpg";
 import img_flyer3 from "../images/flyer3.jpg";
-
+import img_pajina5 from "../images/valdnar-cover.png";
+import img_routine from "../images/routineuniverse-cover.png";
 const PajinasContainer = (props: PajinasModel) => {
   const ctx = useContext(PortfolioContext);
   const language = (ctx?.language ?? "es") as "es" | "en";
