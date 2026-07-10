@@ -1312,6 +1312,70 @@ small { font-size: var(--fs-sm); }
   to { opacity: 0; }
 }
 
+/* ── About photo: detection overlay (full portrait, no fade-out) ─ */
+.about-detect-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+/* Reposition corners to frame the full portrait */
+.about-detect-overlay .fd-corner--tl { top: 5%;    left: 5%;  }
+.about-detect-overlay .fd-corner--tr { top: 5%;    right: 5%; }
+.about-detect-overlay .fd-corner--bl { bottom: 5%; left: 5%;  }
+.about-detect-overlay .fd-corner--br { bottom: 5%; right: 5%; }
+.about-detect-overlay .fd-label      { bottom: 32%; left: 5%; right: 5%; }
+
+/* ── Project card: detection overlay ─────────────────────── */
+.project-detect {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pdc {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-color: rgba(56, 189, 248, 0.5);
+  border-style: solid;
+  border-radius: 2px;
+  transition: border-color 260ms ease, box-shadow 260ms ease;
+}
+.pdc--tl { top: 8px;    left: 8px;   border-width: 2px 0 0 2px; border-radius: 2px 0 0 0; }
+.pdc--tr { top: 8px;    right: 8px;  border-width: 2px 2px 0 0; border-radius: 0 2px 0 0; }
+.pdc--bl { bottom: 8px; left: 8px;   border-width: 0 0 2px 2px; border-radius: 0 0 0 2px; }
+.pdc--br { bottom: 8px; right: 8px;  border-width: 0 2px 2px 0; border-radius: 0 0 2px 0; }
+
+.project-card:hover .pdc {
+  border-color: rgba(56, 189, 248, 0.95);
+  box-shadow: 0 0 5px rgba(56, 189, 248, 0.55);
+}
+
+.pdc-label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(2, 8, 18, 0.78);
+  border: 1px solid rgba(56, 189, 248, 0.42);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: #7dd3fc;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  transition: border-color 260ms ease, background 260ms ease;
+}
+
+.project-card:hover .pdc-label {
+  border-color: rgba(56, 189, 248, 0.85);
+  background: rgba(2, 8, 18, 0.92);
+}
+
 /* ── Footer ──────────────────────────────────────────────────── */
 .footer-bar {
   position: relative;

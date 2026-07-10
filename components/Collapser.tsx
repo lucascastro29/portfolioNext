@@ -42,6 +42,17 @@ const Collapser = (props: CollapserModel) => {
             priority
             sizes="(max-width: 480px) 220px, (max-width: 980px) 380px, 380px"
           />
+          {/* Detection overlay — frames the full portrait */}
+          <div className="about-detect-overlay" aria-hidden="true">
+            <div className="fd-corner fd-corner--tl" />
+            <div className="fd-corner fd-corner--tr" />
+            <div className="fd-corner fd-corner--bl" />
+            <div className="fd-corner fd-corner--br" />
+            <div className="fd-scan" />
+            <div className="fd-label">
+              {language === "es" ? "Lucas Castro · Analista IT" : "Lucas Castro · IT Analyst"}
+            </div>
+          </div>
         </div>
 
         <div className="about-copy">

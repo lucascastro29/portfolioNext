@@ -19,10 +19,10 @@ const PajinasContainer = (props: PajinasModel) => {
   const t = translations[language];
 
   const websites = [
-    { key: "ecommerce" as const, image: img_pajina1, href: "https://e-commerce-next-theta.vercel.app/" },
-    { key: "huerta" as const,    image: img_pajina4, href: "https://huerta-249.web.app/inicio" },
-    { key: "valdnar" as const,       image: img_pajina5, href: "https://valdnar.com" },
-    { key: "routineuniverse" as const, image: img_routine,  href: "https://routineuniverse.com" },
+    { key: "ecommerce" as const,     image: img_pajina1, href: "https://e-commerce-next-theta.vercel.app/", tag: "E-Commerce · Web App" },
+    { key: "huerta" as const,        image: img_pajina4, href: "https://huerta-249.web.app/inicio",          tag: "Community · Web Site" },
+    { key: "valdnar" as const,       image: img_pajina5, href: "https://valdnar.com",                        tag: "Agency · Tech Studio" },
+    { key: "routineuniverse" as const, image: img_routine, href: "https://routineuniverse.com",              tag: "Productivity · Web App" },
   ];
 
   const designs = [
@@ -41,7 +41,7 @@ const PajinasContainer = (props: PajinasModel) => {
         {/* Web projects */}
         <h3 className="subsection-title">{props.Titlewebsite}</h3>
         <div className="project-grid">
-          {websites.map(({ key, image, href }) => {
+          {websites.map(({ key, image, href, tag }) => {
             const info = t.projects[key];
             return (
               <a
@@ -60,6 +60,14 @@ const PajinasContainer = (props: PajinasModel) => {
                     objectFit="cover"
                     sizes="(max-width: 900px) 100vw, 33vw"
                   />
+                  {/* Detection overlay */}
+                  <div className="project-detect" aria-hidden="true">
+                    <div className="pdc pdc--tl" />
+                    <div className="pdc pdc--tr" />
+                    <div className="pdc pdc--bl" />
+                    <div className="pdc pdc--br" />
+                    <span className="pdc-label">{tag}</span>
+                  </div>
                 </div>
                 <div className="project-info">
                   <div className="project-info-copy">
