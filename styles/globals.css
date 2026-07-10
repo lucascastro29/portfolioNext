@@ -1257,8 +1257,8 @@ small { font-size: var(--fs-sm); }
 }
 .fd-corner--tl { top: 12%; left: 12%; border-width: 2px 0 0 2px; border-radius: 3px 0 0 0; }
 .fd-corner--tr { top: 12%; right: 12%; border-width: 2px 2px 0 0; border-radius: 0 3px 0 0; }
-.fd-corner--bl { bottom: 28%; left: 12%; border-width: 0 0 2px 2px; border-radius: 0 0 0 3px; }
-.fd-corner--br { bottom: 28%; right: 12%; border-width: 0 2px 2px 0; border-radius: 0 0 3px 0; }
+.fd-corner--bl { bottom: 12%; left: 12%; border-width: 0 0 2px 2px; border-radius: 0 0 0 3px; }
+.fd-corner--br { bottom: 12%; right: 12%; border-width: 0 2px 2px 0; border-radius: 0 0 3px 0; }
 
 .fd-scan {
   position: absolute;
