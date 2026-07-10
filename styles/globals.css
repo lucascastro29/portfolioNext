@@ -1234,7 +1234,7 @@ small { font-size: var(--fs-sm); }
 .face-detect-img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 150%;
   object-fit: cover;
   object-position: center top;
 }
