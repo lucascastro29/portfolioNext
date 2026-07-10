@@ -1234,7 +1234,7 @@ small { font-size: var(--fs-sm); }
 .face-detect-img {
   display: block;
   width: 100%;
-  height: 150%;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
 }
@@ -1274,7 +1274,7 @@ small { font-size: var(--fs-sm); }
 
 .fd-label {
   position: absolute;
-  bottom: 26%;
+  bottom: 10%;
   left: 12%;
   right: 12%;
   background: rgba(2, 8, 18, 0.75);
