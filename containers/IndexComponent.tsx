@@ -2,6 +2,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import Header from "../containers/Header";
 import Collapser from "../components/Collapser";
+import BlogFeed from "../containers/BlogFeed";
 import PajinasContainer from "../containers/PajinasContainer";
 import Forms from "../components/Forms";
 import Footer from "../components/Footer";
@@ -9,8 +10,13 @@ import { useContext, useEffect } from "react";
 import { IndexModel } from "../models/IndexModel";
 import translations from "../content/translations.json";
 import { PortfolioContext } from "../components/context/PortfolioContext";
+import type { Post } from "../models/post";
 
-const IndexComponent = (props: IndexModel) => {
+interface IndexComponentProps extends IndexModel {
+  posts?: Post[];
+}
+
+const IndexComponent = (props: IndexComponentProps) => {
   const ctx = useContext(PortfolioContext);
   const language = ctx?.language ?? "es";
 
@@ -37,6 +43,8 @@ const IndexComponent = (props: IndexModel) => {
           skilltitle={t.skillsTitle}
         />
       </div>
+      {/* Blog feed — now part of the home page */}
+      <BlogFeed posts={props.posts ?? []} />
       <PajinasContainer
         TitleProjects={t.projectsTitle}
         FlyersProjects={t.flyersTitle}

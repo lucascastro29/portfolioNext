@@ -1460,3 +1460,452 @@ small { font-size: var(--fs-sm); }
     align-items: flex-start;
   }
 }
+/* ═══════════════════════════════════════════════════════════════
+   BLOG TERMINAL FEED — New styles
+   Add this block to the END of your globals.css
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Blog Terminal Shell ─────────────────────────────────────── */
+.blog-terminal {
+  overflow: hidden;
+}
+
+.blog-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.blog-terminal-dots {
+  display: flex;
+  gap: 7px;
+}
+
+.blog-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  box-shadow: inset 0 -1px 2px rgba(0,0,0,0.2);
+}
+
+.blog-dot--red    { background: #ff5f57; }
+.blog-dot--yellow { background: #febc2e; }
+.blog-dot--green  { background: #28c840; }
+
+.blog-terminal-path {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.blog-terminal-user {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.blog-terminal-cmd {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: var(--fs-xs);
+  color: var(--cyan);
+  letter-spacing: 0.06em;
+}
+
+.blog-terminal-live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blog-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+  animation: blogLivePulse 2s ease-in-out infinite;
+}
+
+.blog-live-label {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: 0.6rem;
+  color: var(--cyan-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@keyframes blogLivePulse {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+
+/* ── Blog Feed List ──────────────────────────────────────────── */
+.blog-feed-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-feed-entry {
+  display: grid;
+  grid-template-columns: 110px 1fr 160px;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 16px;
+  border-bottom: 1px solid rgba(186, 230, 253, 0.08);
+  border-radius: 12px;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-feed-entry:last-child {
+  border-bottom: none;
+}
+
+.blog-feed-entry:hover {
+  background: rgba(34, 211, 238, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.12), 0 0 20px rgba(34, 211, 238, 0.06);
+}
+
+.blog-feed-entry--architecture:hover {
+  background: rgba(167, 139, 250, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.12), 0 0 20px rgba(167, 139, 250, 0.06);
+}
+
+.blog-feed-entry--tutorial:hover {
+  background: rgba(96, 165, 250, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.12), 0 0 20px rgba(96, 165, 250, 0.06);
+}
+
+/* Meta column */
+.blog-feed-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.blog-feed-date {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.blog-feed-tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid;
+  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  width: fit-content;
+}
+
+.blog-feed-reading {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* Content column */
+.blog-feed-title {
+  font-family: "Sora", sans-serif;
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  color: #f8fcff;
+  margin: 0 0 6px;
+  line-height: 1.25;
+  transition: color 0.2s;
+}
+
+.blog-feed-excerpt {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.blog-feed-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.blog-feed-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(186, 230, 253, 0.2);
+  object-fit: cover;
+}
+
+.blog-feed-author-name {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Thumbnail column */
+.blog-feed-thumb {
+  width: 160px;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.blog-feed-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.blog-feed-entry:hover .blog-feed-thumb-img {
+  transform: scale(1.06);
+}
+
+/* Detection corners on thumbnails */
+.blog-feed-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bfc {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--corner-color, rgba(56, 189, 248, 0.45));
+  border-style: solid;
+  border-radius: 2px;
+  transition: border-color 260ms ease;
+}
+
+.bfc--tl { top: 5px;    left: 5px;   border-width: 2px 0 0 2px; border-radius: 2px 0 0 0; }
+.bfc--tr { top: 5px;    right: 5px;  border-width: 2px 2px 0 0; border-radius: 0 2px 0 0; }
+.bfc--bl { bottom: 5px; left: 5px;   border-width: 0 0 2px 2px; border-radius: 0 0 0 2px; }
+.bfc--br { bottom: 5px; right: 5px;  border-width: 0 2px 2px 0; border-radius: 0 0 2px 0; }
+
+/* Terminal prompt */
+.blog-terminal-prompt {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blog-terminal-cursor {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: var(--fs-xs);
+  color: var(--cyan);
+  animation: termBlink 1.2s step-end infinite;
+}
+
+@keyframes termBlink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PROJECTS — Alternating rows layout (replaces old grid)
+   ═══════════════════════════════════════════════════════════════ */
+
+.project-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(186, 230, 253, 0.18);
+  border-radius: var(--radius-inner);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(4, 9, 20, 0.8));
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.project-row--img-first {
+  grid-template-columns: 320px 1fr;
+}
+
+.project-row:hover {
+  border-color: var(--pr-hover-border, rgba(34, 211, 238, 0.4));
+  box-shadow: var(--pr-hover-shadow, 0 0 32px rgba(56, 189, 248, 0.22), 0 16px 48px rgba(0,0,0,0.5));
+  transform: translateY(-3px);
+}
+
+.project-row-media {
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.project-row:hover .project-row-media img {
+  transform: scale(1.04);
+}
+
+.project-row-media img {
+  transition: transform 0.45s ease;
+}
+
+.project-row-copy {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-row-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid;
+  border-radius: var(--radius-pill);
+  padding: 3px 12px;
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.project-row-title {
+  font-family: "Sora", sans-serif;
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  color: #f8fcff;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+.project-row-desc {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin: 0 0 14px;
+  line-height: 1.65;
+}
+
+.project-row-stack {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: var(--fs-xs);
+  color: var(--cyan-dim);
+  letter-spacing: 0.06em;
+}
+
+/* Detection corners — use CSS var for color */
+.project-detect .pdc {
+  border-color: var(--corner-color, rgba(56, 189, 248, 0.5));
+}
+
+.project-row:hover .pdc {
+  border-color: var(--corner-color, rgba(56, 189, 248, 0.95));
+  box-shadow: 0 0 5px var(--corner-color, rgba(56, 189, 248, 0.55));
+}
+
+
+/* ── Design Cards (replaces old project-grid for flyers) ────── */
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.design-card {
+  border: 1px solid rgba(186, 230, 253, 0.18);
+  border-radius: var(--radius-inner);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(4, 9, 20, 0.8));
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.design-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(251, 191, 36, 0.16), 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.design-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.design-card:hover .design-card-media img {
+  transform: scale(1.04);
+}
+
+.design-card-media img {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.design-card-info {
+  padding: 12px 14px;
+  border-top: 1px solid rgba(186, 230, 253, 0.1);
+}
+
+.design-card-title {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+}
+
+.design-card-desc {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 4px 0 0;
+}
+
+
+/* ── Responsive overrides for new layouts ────────────────────── */
+@media (max-width: 980px) {
+  .blog-feed-entry {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .blog-feed-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .blog-feed-thumb {
+    width: 100%;
+    height: 180px;
+    order: -1;
+  }
+  .project-row,
+  .project-row--img-first {
+    grid-template-columns: 1fr;
+  }
+  .project-row-media {
+    min-height: 220px;
+  }
+  .design-grid {
+    grid-template-columns: 1fr;
+  }
+}

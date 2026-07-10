@@ -15,21 +15,21 @@ export default function Navbar() {
       ? [
           { name: "Profile",  href: "/#about",    section: "about" },
           { name: "Skills",   href: "/#skills",   section: "skills" },
+          { name: "Blog",     href: "/#blog",     section: "blog" },
           { name: "Projects", href: "/#projects", section: "projects" },
-          { name: "Blog",     href: "/blog",       section: "" },
           { name: "Contact",  href: "/#contact",  section: "contact" },
         ]
       : [
           { name: "Perfil",    href: "/#about",    section: "about" },
           { name: "Skills",    href: "/#skills",   section: "skills" },
+          { name: "Blog",      href: "/#blog",     section: "blog" },
           { name: "Proyectos", href: "/#projects", section: "projects" },
-          { name: "Blog",      href: "/blog",       section: "" },
           { name: "Contacto",  href: "/#contact",  section: "contact" },
         ];
 
   useEffect(() => {
-    if (pathname !== "/") return;
-    const sectionIds = ["hero", "about", "skills", "projects", "contact"];
+    if (pathname !== "/" && !pathname.startsWith("/blog")) return;
+    const sectionIds = ["hero", "about", "skills", "blog", "projects", "contact"];
     const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
@@ -47,7 +47,6 @@ export default function Navbar() {
   }, [pathname]);
 
   const isActive = (link: { href: string; section: string }) => {
-    if (link.href === "/blog") return pathname.startsWith("/blog");
     return activeSection === link.section;
   };
 

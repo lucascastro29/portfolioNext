@@ -1,7 +1,10 @@
 import Head from "next/head";
 import { lazy, Suspense, useContext, useEffect } from "react";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Icon from "../containers/Icon";
 import { PortfolioContext } from "../components/context/PortfolioContext";
+import type { Post } from "../models/post";
+import { getAllPosts } from "../lib/server/post";
 
 const IndexComponent = lazy(() => import("../containers/IndexComponent"));
 
@@ -35,7 +38,12 @@ const STRUCTURED_DATA = {
   ],
 };
 
-export default function Home() {
+export const getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
+  const posts = getAllPosts();
+  return { props: { posts } };
+};
+
+export default function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const ctx = useContext(PortfolioContext);
   const height = ctx?.height;
   const updateheight = ctx?.updateheight;
@@ -97,7 +105,7 @@ export default function Home() {
 
       <Suspense fallback={renderLoader()}>
         <div className="w-full" style={{ lineHeight: "1.625" }}>
-          <IndexComponent width={0} />
+          <IndexComponent width={0} posts={posts} />
         </div>
       </Suspense>
     </>
