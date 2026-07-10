@@ -1354,7 +1354,7 @@ small { font-size: var(--fs-sm); }
 
 .pdc-label {
   position: absolute;
-  bottom: 10px;
+  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(2, 8, 18, 0.78);
