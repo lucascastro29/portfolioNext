@@ -47,10 +47,15 @@
         "desc": "Sitio para una huerta comunitaria urbana: noticias, galería y gestión de actividades.",
         "stack": "Firebase · HTML/CSS · JS"
       },
-      "websuy": {
-        "title": "Webs Uy",
-        "desc": "Agencia de desarrollo web para el mercado uruguayo: landing pages y e-commerce.",
+      "valdnar": {
+        "title": "Valdnar",
+        "desc": "Estudio tecnológico para PyMEs: sitios web a medida, automatización con IA y CRM personalizado.",
         "stack": "Next.js · Vercel"
+      },
+      "routineuniverse": {
+        "title": "Routine Universe",
+        "desc": "App de gestión de rutinas y hábitos para lograr metas con estructura y seguimiento diario.",
+        "stack": "Next.js · React"
       }
     },
     "design": {
@@ -116,10 +121,15 @@
         "desc": "Website for an urban community garden: news, gallery and activity management.",
         "stack": "Firebase · HTML/CSS · JS"
       },
-      "websuy": {
-        "title": "Webs Uy",
-        "desc": "Web development agency for the Uruguayan market: landing pages and e-commerce.",
+      "valdnar": {
+        "title": "Valdnar",
+        "desc": "Technology studio for SMBs: custom websites, AI automation and personalized CRM.",
         "stack": "Next.js · Vercel"
+      },
+      "routineuniverse": {
+        "title": "Routine Universe",
+        "desc": "Routine and habit tracking app to achieve goals with structure and daily progress.",
+        "stack": "Next.js · React"
       }
     },
     "design": {

@@ -8,6 +8,7 @@ import translations from "../content/translations.json";
 import img_pajina1 from "../images/ecommerce.png";
 import img_pajina4 from "../images/huerta.png";
 import img_pajina5 from "../images/webs_uy.png";
+import img_routine from "../images/desarrollo-web.jpeg";
 import img_flyer1 from "../images/flyer1.jpg";
 import img_flyer2 from "../images/flyer2.jpg";
 import img_flyer3 from "../images/flyer3.jpg";
@@ -20,7 +21,8 @@ const PajinasContainer = (props: PajinasModel) => {
   const websites = [
     { key: "ecommerce" as const, image: img_pajina1, href: "https://e-commerce-next-theta.vercel.app/" },
     { key: "huerta" as const,    image: img_pajina4, href: "https://huerta-249.web.app/inicio" },
-    { key: "websuy" as const,    image: img_pajina5, href: "https://webs-uy.vercel.app/" },
+    { key: "valdnar" as const,       image: img_pajina5, href: "https://valdnar.com" },
+    { key: "routineuniverse" as const, image: img_routine,  href: "https://routineuniverse.com" },
   ];
 
   const designs = [
