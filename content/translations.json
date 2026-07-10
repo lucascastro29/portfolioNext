@@ -1,50 +1,140 @@
 {
   "es": {
-    "headerTitle": "Hola Me llamo Lucas y diseño  paginas Web",
-    "aboutMe": "Soy un desarrollador web de 21 años, con habilidades como desarrollador Front End centrado en la funcionalidad y un buen estilo. Con la capacidad de trabajar por mi cuenta o ser parte de un equipo, pudiendome relacionarme perfectamente con mis compañeros y buscando dedicarme en mi totalidad a los proyectos",
-    "workTitle": "Experiencia Laboral",
-    "workText": "Trabaje en \"Cyber Green\" desde 2020 hasta 2022 trabajando como tecnico informatico y servicio a equipos informaticos. Actualmente me encuentro trabajando como encargado de cajas automaticas en Geant Parque Roosevelt (enero 2023-Presente)",
-    "studiesTitle": "Estudios",
-    "skillsTitle": "Habilidades",
-    "study1": "Curso de \"desarrollador Full Stack\" en la \"Universidad de Buenos Aires\"",
-    "study2": "Cursando segundo año de Tecnologo en Cyberseguridad en el \"Instituto de alta especialización\" de Montevideo",
-    "study3": "\"Jóvenes a Programar\" desde Marzo 2021 hasta Diciembre 2022",
-    "study4": "B2 First Cambridge Certificate",
-    "projectsTitle": "PROYECTOS",
+    "headerTitle": "Hola, soy Lucas — Analista IT y Desarrollador de Software",
+    "headerSubtitle": "Apasionado por la automatización de sistemas, Machine Learning y Computer Vision. Creo soluciones que simplifican procesos, aplicaciones y herramientas de desarrollo.",
+    "headerBadge": "Disponible para freelance",
+    "headerExplore": "Ver Proyectos",
+    "headerJournal": "Leer Blog",
+    "headerScroll": "Explorar más",
+    "aboutLabel": "01 / Sobre mí",
+    "aboutMe": "Analista IT y desarrollador de software apasionado por la automatización de sistemas y la inteligencia artificial. Trabajo con Python aplicando Machine Learning y Computer Vision con OpenCV, YOLO y TensorFlow. Me especializo en crear soluciones que simplifican procesos reales, desde aplicaciones de escritorio hasta sistemas de visión en producción.",
+    "workTitle": "02 / Experiencia",
+    "workHeading": "Experiencia",
+    "workText": "He desarrollado proyectos de IA y visión computacional, automatizando procesos con Python, OpenCV y YOLO. Construí aplicaciones de escritorio para integración entre sistemas, sitios web con Next.js y Node.js, e interfaces de flujo visual con Node-RED. También cuento con experiencia en Cyber Green (2020–2022) como técnico informático.",
+    "studiesTitle": "03 / Formación",
+    "studiesHeading": "Formación",
+    "skillsTitle": "04 / Tecnologías",
+    "skillsKicker": "Stack técnico principal — IA, visión computacional, automatización y desarrollo web.",
+    "study1": "Certificación como Analista Genexus",
+    "study2": "Curso Desarrollador Full Stack — Universidad de Buenos Aires",
+    "study3": "Jóvenes a Programar — Marzo 2021 a Diciembre 2022",
+    "study4": "B2 First Certificate — Cambridge English",
+    "projectsTitle": "05 / Proyectos",
+    "projectsHeading": "Proyectos",
     "websitesTitle": "Sitios Web",
-    "flyersTitle": "Flyers",
-    "inProcess": "En Proceso",
-    "visitWebsite": "Visitar Sitio Web",
-    "contactTitle": "Contactarme",
+    "flyersTitle": "Diseño & Branding",
+    "inProcess": "Ver proyecto",
+    "visitWebsite": "Visitar Sitio",
+    "contactTitle": "06 / Contacto",
+    "contactHeading": "Contacto",
+    "contactCopy": "¿Tenés un proyecto de IA, automatización o desarrollo web? Escribime y lo conversamos.",
     "formEmail": "Email",
     "formMessage": "Mensaje",
     "formSubmit": "Enviar",
     "formSent": "Abriendo tu cliente de email...",
     "socialTitle": "Mis Redes",
-    "contactSubtitle": "Contactame en"
+    "contactSubtitle": "Contactame en",
+    "blogTitle": "Blog",
+    "blogSubtitle": "Notas de ingeniería, flujos de IA e insights de proyectos reales.",
+    "projects": {
+      "ecommerce": {
+        "title": "E-Commerce",
+        "desc": "Plataforma de comercio electrónico con carrito, autenticación y panel de administración.",
+        "stack": "Next.js · Firebase · React"
+      },
+      "huerta": {
+        "title": "Huerta Comunitaria 249",
+        "desc": "Sitio para una huerta comunitaria urbana: noticias, galería y gestión de actividades.",
+        "stack": "Firebase · HTML/CSS · JS"
+      },
+      "websuy": {
+        "title": "Webs Uy",
+        "desc": "Agencia de desarrollo web para el mercado uruguayo: landing pages y e-commerce.",
+        "stack": "Next.js · Vercel"
+      }
+    },
+    "design": {
+      "ecommerce": {
+        "title": "Ecommerce Brand",
+        "desc": "Identidad visual y material de marketing para tienda online."
+      },
+      "marketing": {
+        "title": "Direct Marketing Agency",
+        "desc": "Brand identity y flyers para agencia de marketing directo."
+      },
+      "caza": {
+        "title": "Cazasubmarina Deportes",
+        "desc": "Diseño gráfico para club deportivo de caza submarina."
+      }
+    }
   },
   "en": {
-    "headerTitle": "Hi I'm Lucas, I design and build web pages",
-    "aboutMe": "I'm a young web Developer, with skills of Front End Developer, in focus of functionality and good style. With the hability of work by my self or be part of a team. Expecting to give all my effort in a task or project",
-    "workTitle": "Work Experience",
-    "workText": "I worked in \"Cyber Green\" Since 2020 until 2022 working us a computer technical service and client service. Nowadays i worked as a self-checkout cashier in \"Geant Parque roosevelt\" (january 2023- present)",
-    "studiesTitle": "Studies",
-    "skillsTitle": "Skills",
-    "study1": "Realizing a course of \"Full stack development\" in the university of \"Buenos Aires\"",
-    "study2": "First year of Computer engineer in the \"Facultad de Ingeniería de la Republica\"",
-    "study3": "\"Jóvenes a Programar\" since March 2021 until December 2022",
-    "study4": "Studying for the first Cambridge exam for the beginning of 2023",
-    "projectsTitle": "PROJECTS",
-    "websitesTitle": "Web Sites",
-    "flyersTitle": "Flyers",
-    "inProcess": "In Process",
-    "visitWebsite": "Visit Website",
-    "contactTitle": "Contact Me",
+    "headerTitle": "Hi, I'm Lucas — IT Analyst & Software Developer",
+    "headerSubtitle": "Passionate about system automation, Machine Learning and Computer Vision. I build solutions that simplify processes, applications and development tools.",
+    "headerBadge": "Available for freelance",
+    "headerExplore": "Explore Work",
+    "headerJournal": "Read Blog",
+    "headerScroll": "Explore more",
+    "aboutLabel": "01 / About me",
+    "aboutMe": "IT Analyst and software developer passionate about system automation and artificial intelligence. I work with Python applying Machine Learning and Computer Vision using OpenCV, YOLO and TensorFlow. I specialize in building solutions that simplify real-world processes — from desktop applications to production-ready vision systems.",
+    "workTitle": "02 / Experience",
+    "workHeading": "Experience",
+    "workText": "I have developed AI and computer vision projects, automating workflows with Python, OpenCV and YOLO. I built desktop applications for cross-platform integration, websites with Next.js and Node.js, and visual flow interfaces with Node-RED. I also have experience at Cyber Green (2020–2022) as an IT technician.",
+    "studiesTitle": "03 / Education",
+    "studiesHeading": "Education",
+    "skillsTitle": "04 / Skills",
+    "skillsKicker": "Core tech stack — AI, computer vision, automation and web development.",
+    "study1": "Genexus Analyst Certification",
+    "study2": "Full Stack Developer Course — University of Buenos Aires",
+    "study3": "Jóvenes a Programar — March 2021 to December 2022",
+    "study4": "B2 First Certificate — Cambridge English",
+    "projectsTitle": "05 / Projects",
+    "projectsHeading": "Projects",
+    "websitesTitle": "Websites",
+    "flyersTitle": "Design & Branding",
+    "inProcess": "View project",
+    "visitWebsite": "Visit Site",
+    "contactTitle": "06 / Contact",
+    "contactHeading": "Contact",
+    "contactCopy": "Have a project involving AI, automation or web development? Reach out and let's talk.",
     "formEmail": "Email",
     "formMessage": "Message",
-    "formSubmit": "Submit",
+    "formSubmit": "Send",
     "formSent": "Opening your email client...",
-    "socialTitle": "Let's get social",
-    "contactSubtitle": "Contact me on"
+    "socialTitle": "Let's connect",
+    "contactSubtitle": "Find me on",
+    "blogTitle": "Blog",
+    "blogSubtitle": "Engineering notes, AI workflows and insights from real projects.",
+    "projects": {
+      "ecommerce": {
+        "title": "E-Commerce",
+        "desc": "E-commerce platform with cart, authentication and admin dashboard.",
+        "stack": "Next.js · Firebase · React"
+      },
+      "huerta": {
+        "title": "Huerta Comunitaria 249",
+        "desc": "Website for an urban community garden: news, gallery and activity management.",
+        "stack": "Firebase · HTML/CSS · JS"
+      },
+      "websuy": {
+        "title": "Webs Uy",
+        "desc": "Web development agency for the Uruguayan market: landing pages and e-commerce.",
+        "stack": "Next.js · Vercel"
+      }
+    },
+    "design": {
+      "ecommerce": {
+        "title": "Ecommerce Brand",
+        "desc": "Visual identity and marketing materials for an online store."
+      },
+      "marketing": {
+        "title": "Direct Marketing Agency",
+        "desc": "Brand identity and flyers for a direct marketing agency."
+      },
+      "caza": {
+        "title": "Cazasubmarina Deportes",
+        "desc": "Graphic design for a spearfishing sports club."
+      }
+    }
   }
 }

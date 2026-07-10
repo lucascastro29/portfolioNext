@@ -1,9 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { Mail } from "lucide-react";
 import { PortfolioContext } from "./context/PortfolioContext";
-import translations from "../content/translations.json";
 
 const IconGithub = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -17,54 +15,47 @@ const IconLinkedin = () => (
   </svg>
 );
 
-export default function Forms() {
+export default function Footer() {
   const ctx = useContext(PortfolioContext);
-  const language = (ctx?.language ?? "es") as "es" | "en";
-  const t = translations[language];
+  const language = ctx?.language ?? "es";
 
   return (
-    <section id="contact" aria-label="Contact section" className="section-stack">
-      <article className="led-sign section-panel contact-panel parallax-large" data-aos="fade-up">
+    <footer className="footer-bar">
+      <div className="footer-inner">
+        <p className="footer-copy">
+          © {new Date().getFullYear()} Lucas Castro
+          <span className="footer-sep">·</span>
+          <span className="footer-built">
+            {language === "es" ? "Hecho con" : "Built with"} Next.js
+          </span>
+        </p>
 
-        <div className="section-label" style={{ justifyContent: "center" }}>
-          {t.contactTitle}
-        </div>
-        <h2 className="subtitle">
-          {t.contactTitle.includes(" / ") ? t.contactTitle.split(" / ")[1] : t.contactTitle}
-        </h2>
-
-        <p className="contact-copy">{t.contactCopy}</p>
-
-        <div className="contact-divider">
-          <span>{language === "es" ? "canales" : "channels"}</span>
-        </div>
-
-        <nav className="contact-actions" aria-label="Social links">
-          <a
-            href="https://www.linkedin.com/in/lucas-castro-7b4003219/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-btn contact-btn--primary"
-          >
-            <IconLinkedin />
-            LinkedIn
-          </a>
+        <nav className="footer-links" aria-label="Social links">
           <a
             href="https://github.com/lucascastro29"
             target="_blank"
             rel="noopener noreferrer"
-            className="contact-btn"
+            className="footer-link"
+            aria-label="GitHub"
           >
             <IconGithub />
             GitHub
           </a>
-          <a href="mailto:lucascastro2929@gmail.com" className="contact-btn">
-            <Mail size={16} strokeWidth={2} />
-            Email
+          <a
+            href="https://www.linkedin.com/in/lucas-castro-7b4003219/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+            aria-label="LinkedIn"
+          >
+            <IconLinkedin />
+            LinkedIn
+          </a>
+          <a href="mailto:lucascastro2929@gmail.com" className="footer-link">
+            lucascastro2929@gmail.com
           </a>
         </nav>
-
-      </article>
-    </section>
+      </div>
+    </footer>
   );
 }

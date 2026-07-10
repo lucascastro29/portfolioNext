@@ -1,4 +1,5 @@
 export interface CollapserModel {
+  aboutLabel: string;
   Textaboutme: string;
   Titlework: string;
   Textwork: string;

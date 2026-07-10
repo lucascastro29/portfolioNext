@@ -1,5 +1,3 @@
-export interface HeaderModel {
-  textpresentation: string;
-  onClick: () => void;
-  image: any;
-}
+// Header toma todos sus textos del contexto de idioma (EcommerceContext)
+// y ya no necesita props externos.
+export interface HeaderModel {}

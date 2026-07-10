@@ -4,9 +4,8 @@ const config = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./containers/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite-react/lib/esm/**/*.js",
   ],
-  plugins: [require("flowbite/plugin")],
+  plugins: [],
 };
 
 module.exports = config;

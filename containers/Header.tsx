@@ -1,64 +1,183 @@
-import NextLink from "next/link";
-import { HeaderModel } from "../models/HeaderModel";
+"use client";
 
-const Header = (props: HeaderModel) => {
+import NextLink from "next/link";
+import Image from "next/image";
+import { useContext, useEffect, useRef, useState } from "react";
+import { PortfolioContext } from "../components/context/PortfolioContext";
+import translations from "../content/translations.json";
+import heroPhoto from "../images/foto.jpg";
+
+const TECH_CHIPS = ["Python", "OpenCV · YOLO", "TensorFlow", "Next.js", "Node-RED", "C++"];
+
+function useCountUp(target: number, duration = 1100) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const triggered = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || triggered.current) return;
+        triggered.current = true;
+        observer.disconnect();
+        const start = performance.now();
+        const tick = (now: number) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          setCount(Math.round(target * ease));
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      },
+      { threshold: 0.6 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target, duration]);
+
+  return { count, ref };
+}
+
+const Header = () => {
+  const ctx = useContext(PortfolioContext);
+  const language = ctx?.language ?? "es";
+  const t = translations[language];
+
+  const yearsCounter = useCountUp(3);
+  const projectsCounter = useCountUp(10, 900);
+
+  const stats =
+    language === "es"
+      ? [
+          { value: yearsCounter.count, suffix: "+", label: "Años de exp.", ref: yearsCounter.ref },
+          { value: projectsCounter.count, suffix: "+", label: "Proyectos", ref: projectsCounter.ref },
+          { value: null, suffix: "ML/CV", label: "Especialidad", ref: null },
+        ]
+      : [
+          { value: yearsCounter.count, suffix: "+", label: "Years exp.", ref: yearsCounter.ref },
+          { value: projectsCounter.count, suffix: "+", label: "Projects", ref: projectsCounter.ref },
+          { value: null, suffix: "ML/CV", label: "Specialty", ref: null },
+        ];
+
   return (
     <section
       id="hero"
       className="parallax-large relative mx-auto w-full max-w-6xl px-4 pb-20 pt-28 sm:px-6 sm:pt-32"
       data-parallax-depth="0.2"
     >
-      <div className="led-sign relative overflow-hidden rounded-[28px] border border-cyan-200/45 bg-slate-950/30 p-6 shadow-[0_20px_80px_rgba(2,6,23,0.55)] backdrop-blur-xl sm:p-10">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(56,189,248,0.12),transparent_36%),radial-gradient(circle_at_80%_120%,rgba(59,130,246,0.18),transparent_44%)]" />
-        <div className="mb-6 flex items-center justify-end gap-3">
-          <div className="relative z-10 inline-flex items-center gap-2 rounded-full border border-cyan-300/40 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
-            <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
-            Open for freelance
+      <div className="led-sign hero-panel relative overflow-hidden rounded-[2rem] border border-cyan-200/40 bg-slate-950/30 p-7 shadow-[0_24px_80px_rgba(2,6,23,0.62)] backdrop-blur-xl sm:p-12">
+
+        {/* Ambient glow */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(34,211,238,0.08),transparent_38%),radial-gradient(circle_at_82%_78%,rgba(59,130,246,0.1),transparent_46%)]" />
+
+        {/* Badge */}
+        <div className="relative z-10 mb-7">
+          <div className="hero-chip">
+            <span className="hero-chip-dot" />
+            {t.headerBadge}
           </div>
         </div>
 
-        <h1 className="relative z-10 max-w-3xl text-balance text-4xl font-black leading-tight tracking-tight text-slate-100 sm:text-6xl">
-          {props.textpresentation}
-        </h1>
-        <p className="relative z-10 mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-          I craft performant, conversion-focused web experiences with a clean interface and strong frontend execution.
-        </p>
+        {/* Split: copy + photo */}
+        <div className="hero-split relative z-10">
 
-        <div className="relative z-10 mt-8 flex flex-wrap items-center gap-3">
-          <a
-            href="#about"
-            className="led-btn led-btn-stable rounded-full border border-cyan-300/40 bg-cyan-400/20 px-5 py-2.5 text-sm font-semibold tracking-[0.06em] text-cyan-100 no-underline transition hover:bg-cyan-300/30"
-          >
-            Explore Work
-          </a>
-          <NextLink
-            href="/blog"
-            className="led-btn led-btn-stable rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-[0.06em] text-slate-100 no-underline transition hover:bg-white/20"
-          >
-            Read Journal
-          </NextLink>
-          <a
-            href="https://github.com/lucascastro29"
-            target="_blank"
-            rel="noreferrer"
-            className="led-btn led-btn-stable rounded-full border border-white/15 px-4 py-2 text-sm font-medium tracking-[0.04em] text-slate-300 no-underline transition hover:border-cyan-300/40 hover:text-cyan-100"
-          >
-            GitHub Profile
-          </a>
-          <a
-            href="https://www.linkedin.com/in/lucas-castro-7b4003219/"
-            target="_blank"
-            rel="noreferrer"
-            className="led-btn led-btn-stable rounded-full border border-white/15 px-4 py-2 text-sm font-medium tracking-[0.04em] text-slate-300 no-underline transition hover:border-cyan-300/40 hover:text-cyan-100"
-          >
-            LinkedIn Profile
-          </a>
+          {/* Left: text */}
+          <div>
+            <h1 className="hero-title max-w-2xl">
+              {t.headerTitle}
+            </h1>
+            <p className="hero-subtitle mt-5">
+              {t.headerSubtitle}
+            </p>
+
+            {/* Tech chips */}
+            <div className="hero-tech-strip">
+              {TECH_CHIPS.map((tech) => (
+                <span key={tech} className="hero-tech-chip">{tech}</span>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href="#about"
+                className="led-btn led-btn-stable rounded-full border border-cyan-300/40 bg-cyan-400/15 px-6 py-2.5 text-sm font-bold tracking-[0.05em] text-cyan-50 no-underline transition hover:bg-cyan-300/25"
+              >
+                {t.headerExplore}
+              </a>
+              <NextLink
+                href="/blog"
+                className="led-btn led-btn-stable rounded-full border border-white/16 bg-white/6 px-6 py-2.5 text-sm font-bold tracking-[0.05em] text-slate-100 no-underline transition hover:bg-white/12"
+                style={{ background: "rgba(255,255,255,0.06)", borderColor: "rgba(255,255,255,0.16)" }}
+              >
+                {t.headerJournal}
+              </NextLink>
+              <a
+                href="https://github.com/lucascastro29"
+                target="_blank"
+                rel="noreferrer"
+                className="led-btn led-btn-stable rounded-full border border-white/14 px-4 py-2 text-sm font-semibold text-slate-300 no-underline hover:border-cyan-300/40 hover:text-cyan-100"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/lucas-castro-7b4003219/"
+                target="_blank"
+                rel="noreferrer"
+                className="led-btn led-btn-stable rounded-full border border-white/14 px-4 py-2 text-sm font-semibold text-slate-300 no-underline hover:border-cyan-300/40 hover:text-cyan-100"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          {/* Right: photo + face detection overlay */}
+          <div className="hero-photo-col">
+            <div className="face-detect-wrap">
+              <Image
+                src={heroPhoto}
+                alt="Lucas Castro"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center top"
+                className="face-detect-img"
+                priority
+                sizes="(max-width: 700px) 160px, 260px"
+              />
+              <div className="face-detect-overlay" aria-hidden="true">
+                <div className="fd-corner fd-corner--tl" />
+                <div className="fd-corner fd-corner--tr" />
+                <div className="fd-corner fd-corner--bl" />
+                <div className="fd-corner fd-corner--br" />
+                <div className="fd-scan" />
+                <div className="fd-label">
+                  Person: Lucas Castro · 99.8%
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="relative z-10 mt-10 flex items-center gap-3 text-slate-400">
-          <span className="h-px w-16 bg-white/20" />
-          <a href="#about" className="text-xs uppercase tracking-[0.22em] text-cyan-300/80 no-underline hover:text-cyan-200">
-            Scroll to navigate
+        {/* Stats row */}
+        <div className="hero-stats relative z-10">
+          {stats.map((s) => (
+            <div key={s.label}>
+              <span className="hero-stat-value" ref={s.ref ?? undefined}>
+                {s.value !== null ? `${s.value}${s.suffix}` : s.suffix}
+              </span>
+              <span className="hero-stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="hero-scroll relative z-10">
+          <span className="hero-scroll-line" />
+          <a href="#about" className="hero-scroll-text">
+            {t.headerScroll}
           </a>
         </div>
       </div>

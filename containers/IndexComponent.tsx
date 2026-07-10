@@ -4,32 +4,28 @@ import Header from "../containers/Header";
 import Collapser from "../components/Collapser";
 import PajinasContainer from "../containers/PajinasContainer";
 import Forms from "../components/Forms";
-import img_spanish from "../images/espana.png";
-import img_english from "../images/english.png";
+import Footer from "../components/Footer";
 import { useContext, useEffect } from "react";
 import { IndexModel } from "../models/IndexModel";
 import translations from "../content/translations.json";
-import { EcommerceContext } from "../components/context/PortfolioContext";
+import { PortfolioContext } from "../components/context/PortfolioContext";
 
 const IndexComponent = (props: IndexModel) => {
-  const ctx = useContext(EcommerceContext);
+  const ctx = useContext(PortfolioContext);
   const language = ctx?.language ?? "es";
-  const toggleLanguage = ctx?.toggleLanguage ?? (() => {});
 
   const t = translations[language];
-  const flagImage = language === "es" ? img_english : img_spanish;
 
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 700, once: true, offset: 80 });
   }, []);
 
   return (
-    <main className="site-shell">
-      <div className="col-12">
-        <Header textpresentation={t.headerTitle} onClick={toggleLanguage} image={flagImage} />
-      </div>
-      <div className="row" style={{ margin: "0px" }}>
+    <main id="main-content" className="site-shell">
+      <Header />
+      <div>
         <Collapser
+          aboutLabel={t.aboutLabel}
           Textaboutme={t.aboutMe}
           Titlework={t.workTitle}
           Textwork={t.workText}
@@ -49,16 +45,8 @@ const IndexComponent = (props: IndexModel) => {
         pajinatext={t.visitWebsite}
         proces={t.inProcess}
       />
-      <Forms
-        title1={t.contactTitle}
-        form1={t.formEmail}
-        form2={t.formMessage}
-        button={t.formSubmit}
-        title2={""}
-        title3={t.socialTitle}
-        text2={t.contactSubtitle}
-        sentMessage={t.formSent}
-      />
+      <Forms />
+      <Footer />
     </main>
   );
 };

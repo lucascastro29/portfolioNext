@@ -1,78 +1,104 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { Download } from "lucide-react";
-import { useContext } from "react";
-import { EcommerceContext } from "./context/PortfolioContext";
-import imgSpanish from "../images/espana.png";
-import imgEnglish from "../images/english.png";
+import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
+import { PortfolioContext } from "./context/PortfolioContext";
 
 export default function Navbar() {
-  const { language, toggleLanguage } = useContext(EcommerceContext);
-  const languageImage = language === "en" ? imgSpanish : imgEnglish;
+  const { language, toggleLanguage } = useContext(PortfolioContext);
+  const { pathname } = useRouter();
+  const [activeSection, setActiveSection] = useState<string>("");
 
   const links =
     language === "en"
       ? [
-          { name: "Profile", href: "/#about" },
-          { name: "Techs", href: "/#skills" },
-          { name: "Work", href: "/#projects" },
-          { name: "Blog", href: "/blog" },
-          { name: "Contact", href: "/#contact" },
+          { name: "Profile",  href: "/#about",    section: "about" },
+          { name: "Skills",   href: "/#skills",   section: "skills" },
+          { name: "Projects", href: "/#projects", section: "projects" },
+          { name: "Blog",     href: "/blog",       section: "" },
+          { name: "Contact",  href: "/#contact",  section: "contact" },
         ]
       : [
-          { name: "Perfil", href: "/#about" },
-          { name: "Techs", href: "/#skills" },
-          { name: "Proyectos", href: "/#projects" },
-          { name: "Blog", href: "/blog" },
-          { name: "Contacto", href: "/#contact" },
+          { name: "Perfil",    href: "/#about",    section: "about" },
+          { name: "Skills",    href: "/#skills",   section: "skills" },
+          { name: "Proyectos", href: "/#projects", section: "projects" },
+          { name: "Blog",      href: "/blog",       section: "" },
+          { name: "Contacto",  href: "/#contact",  section: "contact" },
         ];
 
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const sectionIds = ["hero", "about", "skills", "projects", "contact"];
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        { threshold: 0.35 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((obs) => obs.disconnect());
+  }, [pathname]);
+
+  const isActive = (link: { href: string; section: string }) => {
+    if (link.href === "/blog") return pathname.startsWith("/blog");
+    return activeSection === link.section;
+  };
+
   return (
-    <div className="fixed top-6 left-1/2 z-[9999] -translate-x-1/2">
-      <nav className="neon-frame relative flex items-center gap-2 overflow-hidden rounded-full border border-cyan-200/55 bg-slate-950/75 px-3 py-2 shadow-[0_0_20px_rgba(34,211,238,0.18),0_10px_28px_rgba(2,6,23,0.65)] backdrop-blur-xl">
+    <div className="fixed top-5 left-1/2 z-[9999] -translate-x-1/2 px-3 w-full max-w-4xl">
+      <nav
+        className="neon-frame relative flex items-center justify-between gap-2 overflow-hidden rounded-full border border-cyan-200/45 bg-slate-950/80 px-3 py-2 shadow-[0_0_24px_rgba(34,211,238,0.16),0_12px_32px_rgba(2,6,23,0.7)] backdrop-blur-xl"
+        aria-label="Main navigation"
+      >
+        {/* Ambient glow */}
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(34,211,238,0.16),transparent_38%),radial-gradient(circle_at_80%_120%,rgba(59,130,246,0.2),transparent_42%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_50%,rgba(34,211,238,0.13),transparent_42%),radial-gradient(circle_at_88%_50%,rgba(59,130,246,0.14),transparent_42%)]"
         />
 
-        <div className="relative z-10 flex items-center gap-1">
-          {links.map((link) => (
-            <Link key={link.name} href={link.href} legacyBehavior>
-              <a className="group relative overflow-hidden rounded-full px-4 py-2.5 text-sm font-semibold tracking-[0.08em] text-cyan-100/85 no-underline transition-colors duration-300 hover:text-white">
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 rounded-full border border-cyan-200/30 bg-cyan-300/15 backdrop-blur-md opacity-0 scale-90 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100"
-                />
-                <span className="relative z-10">{link.name}</span>
-              </a>
-            </Link>
-          ))}
+        {/* Nav links */}
+        <div className="relative z-10 flex items-center gap-0.5">
+          {links.map((link) => {
+            const active = isActive(link);
+            return (
+              <Link key={link.name} href={link.href} legacyBehavior>
+                <a
+                  className={`group relative overflow-hidden rounded-full px-3 py-2 text-xs font-semibold tracking-[0.07em] no-underline transition-colors duration-250 sm:px-4 sm:text-sm ${
+                    active ? "nav-link--active text-white" : "text-cyan-100/80 hover:text-white"
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className={`nav-link-bg pointer-events-none absolute inset-0 rounded-full border border-cyan-200/28 bg-cyan-300/12 transition-all duration-250 ${
+                      active ? "opacity-100 scale-100" : "opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100"
+                    }`}
+                  />
+                  <span className="relative z-10">{link.name}</span>
+                </a>
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="relative z-10 ml-2 flex items-center gap-2">
-          <a
-            href="/resume.pdf"
-            className="led-btn led-btn-stable flex items-center gap-2 rounded-full border border-cyan-200/45 bg-white/10 px-4 py-2 text-sm font-semibold tracking-[0.06em] text-cyan-50 no-underline transition hover:bg-cyan-200/20"
-          >
-            <Download size={16} />
-            {language === "en" ? "CV" : "CV"}
-          </a>
-
+        {/* Right controls */}
+        <div className="relative z-10 flex items-center gap-2">
+          {/* Language toggle */}
           <button
             type="button"
             onClick={toggleLanguage}
-            aria-label={language === "en" ? "Switch to Spanish" : "Cambiar a inglés"}
-            className="flag-chip relative grid h-9 w-9 place-items-center overflow-hidden rounded-full border border-white/15 bg-transparent p-0 text-white transition hover:border-white/35"
+            aria-label={language === "en" ? "Cambiar a español" : "Switch to English"}
+            className="lang-switch"
           >
-            <Image
-              src={languageImage}
-              alt="language flag"
-              fill
-              sizes="36px"
-              className="flag-chip-image"
-            />
+            <span className={`lang-opt ${language === "es" ? "lang-opt--active" : ""}`}>ES</span>
+            <span className="lang-divider">|</span>
+            <span className={`lang-opt ${language === "en" ? "lang-opt--active" : ""}`}>EN</span>
           </button>
         </div>
       </nav>
