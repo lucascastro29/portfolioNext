@@ -4,14 +4,12 @@ import { PortfolioProvider } from "../components/context/PortfolioContext";
 import MouseFog from "../components/MouseFog";
 import Navbar from "../components/Navbar";
 import ParallaxController from "../components/ParallaxController";
-import ScrollProgress from "../components/ScrollProgress";
 import { Analytics } from "@vercel/analytics/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <PortfolioProvider>
-      <ScrollProgress />
-      <MouseFog />
+<MouseFog />
       <ParallaxController />
       <Navbar />
       <Component {...pageProps} />

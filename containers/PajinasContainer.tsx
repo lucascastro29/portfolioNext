@@ -33,15 +33,15 @@ const PajinasContainer = (props: PajinasModel) => {
 
   return (
     <section id="projects" aria-label="Projects section" className="section-stack">
-      <article className="led-sign section-panel parallax-large" data-aos="fade-up">
+      <article className="led-sign section-panel parallax-large">
 
-        <div className="section-label">{t.projectsTitle}</div>
-        <h2 className="subtitle">{t.projectsHeading}</h2>
+        <div className="section-label" data-aos="fade-up">{t.projectsTitle}</div>
+        <h2 className="subtitle" data-aos="fade-up" data-aos-delay="60">{t.projectsHeading}</h2>
 
         {/* Web projects */}
-        <h3 className="subsection-title">{props.Titlewebsite}</h3>
+        <h3 className="subsection-title" data-aos="fade-up" data-aos-delay="100">{props.Titlewebsite}</h3>
         <div className="project-grid">
-          {websites.map(({ key, image, href, tag }) => {
+          {websites.map(({ key, image, href, tag }, i) => {
             const info = t.projects[key];
             return (
               <a
@@ -51,6 +51,8 @@ const PajinasContainer = (props: PajinasModel) => {
                 rel="noopener noreferrer"
                 className="project-card"
                 aria-label={`${info.title} — ${t.visitWebsite}`}
+                data-aos="fade-up"
+                data-aos-delay={120 + i * 100}
               >
                 <div className="project-media">
                   <Image
@@ -82,12 +84,17 @@ const PajinasContainer = (props: PajinasModel) => {
         </div>
 
         {/* Design section */}
-        <h3 className="subsection-title">{props.FlyersProjects}</h3>
+        <h3 className="subsection-title" data-aos="fade-up" data-aos-delay="60">{props.FlyersProjects}</h3>
         <div className="project-grid">
-          {designs.map(({ key, image }) => {
+          {designs.map(({ key, image }, i) => {
             const info = t.design[key];
             return (
-              <article key={key} className="project-card">
+              <article
+                key={key}
+                className="project-card"
+                data-aos="fade-up"
+                data-aos-delay={80 + i * 100}
+              >
                 <div className="project-media">
                   <Image
                     src={image}
