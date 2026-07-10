@@ -793,8 +793,7 @@ small { font-size: var(--fs-sm); }
   overflow: hidden;
 }
 
-.project-media img { object-fit: cover; transition: transform 400ms var(--transition); }
-.project-card:hover .project-media img { transform: scale(1.06); }
+.project-media img { object-fit: cover; }
 
 .project-footer {
   display: flex;
