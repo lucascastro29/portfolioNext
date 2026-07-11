@@ -60,16 +60,16 @@
     },
     "design": {
       "ecommerce": {
-        "title": "Ecommerce Brand",
-        "desc": "Identidad visual y material de marketing para tienda online."
+        "title": "Branding para Evento Gastronómico",
+        "desc": "Identidad visual y materiales de marketing para un evento gastronómico."
       },
       "marketing": {
-        "title": "Direct Marketing Agency",
-        "desc": "Brand identity y flyers para agencia de marketing directo."
+        "title": "Branding para Evento de Buceo",
+        "desc": "Identidad de marca y volantes para un evento de buceo."
       },
       "caza": {
-        "title": "Cazasubmarina Deportes",
-        "desc": "Diseño gráfico para club deportivo de caza submarina."
+        "title": "Branding para Evento Agrícola Educativo",
+        "desc": "Diseño gráfico para un evento agrícola educativo."
       }
     }
   },
@@ -134,16 +134,16 @@
     },
     "design": {
       "ecommerce": {
-        "title": "Ecommerce Brand",
-        "desc": "Visual identity and marketing materials for an online store."
+        "title": "Restaurant Event Branding",
+        "desc": "Visual identity and marketing materials for an restaurant event"
       },
       "marketing": {
-        "title": "Direct Marketing Agency",
-        "desc": "Brand identity and flyers for a direct marketing agency."
+        "title": "Scuba Diving Event Branding",
+        "desc": "Brand identity and flyers for a scuba diving event."
       },
       "caza": {
-        "title": "Cazasubmarina Deportes",
-        "desc": "Graphic design for a spearfishing sports club."
+        "title": "Educative agrucultural Event Branding",
+        "desc": "Graphic design for an educative agricultural event."
       }
     }
   }
