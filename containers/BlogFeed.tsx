@@ -142,6 +142,7 @@ const BlogFeed = ({ posts }: BlogFeedProps) => {
                         width={160}
                         height={100}
                         className="blog-feed-thumb-img"
+                        unoptimized={post.coverImage?.endsWith(".gif")}
                       />
                       {/* Detection corners */}
                       <div className="blog-feed-corners" style={{ "--corner-color": colors.corners } as React.CSSProperties}>

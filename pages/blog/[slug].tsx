@@ -171,6 +171,7 @@ export default function PostPage({ post, readingMinutes, toc, previousPost, next
                 layout="fill"
                 objectFit="cover"
                 priority
+                unoptimized={post.coverImage?.endsWith(".gif")}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             </div>
