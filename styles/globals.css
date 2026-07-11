@@ -1552,7 +1552,7 @@ small { font-size: var(--fs-sm); }
 
 .blog-feed-entry {
   display: grid;
-  grid-template-columns: 110px 1fr 160px;
+  grid-template-columns: 110px 1fr 260px;
   gap: 20px;
   align-items: center;
   padding: 20px 16px;
@@ -1658,8 +1658,8 @@ small { font-size: var(--fs-sm); }
 
 /* Thumbnail column */
 .blog-feed-thumb {
-  width: 160px;
-  height: 100px;
+  width: 260px;
+  height: 164px;
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);

@@ -139,8 +139,8 @@ const BlogFeed = ({ posts }: BlogFeedProps) => {
                       <Image
                         src={post.coverImage}
                         alt={post.title}
-                        width={160}
-                        height={100}
+                        width={260}
+                        height={164}
                         className="blog-feed-thumb-img"
                         unoptimized={post.coverImage?.endsWith(".gif")}
                       />
