@@ -1,7 +1,7 @@
 ---
 title: "berserk-arquitect: el skill que diseña antes de codear"
 date: "2026-03-15"
-coverImage: "/images/workimg.png"
+coverImage: "/images/berserk-cover.gif"
 excerpt: "Cómo construí un skill para Claude Code que interroga sin piedad la arquitectura de un proyecto y la cristaliza en dos archivos que se mantienen solos — para que codear sea casi mecánico."
 author:
   name: "Lucas Castro"
@@ -49,6 +49,8 @@ La regla de oro es **cero solapamiento = cero drift**. Dos archivos que dicen lo
 
 **Regla práctica para decidir dónde va algo:** ¿es verdad estable del proyecto? → `biblia.md`. ¿Es instrucción de cómo trabajar o estado de dónde vamos? → `CLAUDE.md`.
 
+![Cada dato nuevo se rutea a un solo archivo: la verdad estable va a biblia.md, el estado y el cómo-trabajar van a CLAUDE.md. Cero solapamiento = cero drift.](/images/berserk-stage-files.gif)
+
 ---
 
 ## El interrogatorio: una falla por ronda
@@ -75,6 +77,8 @@ Los frentes que cubre antes de cerrar:
 - Cómo se corta en fases y etapas
 - Qué tareas merecen módulo propio
 - Qué cosas nunca se deben hacer
+
+![El interrogatorio ataca una falla estructural por ronda, empezando por lo más load-bearing (negocio, usuario, datos, alcance, fases) y cerrando cada frente antes de avanzar.](/images/berserk-stage-grill.gif)
 
 ---
 
@@ -133,6 +137,8 @@ Es **reanudable** por diseño: cualquiera puede parar y retomar exactamente en e
 - El **protocolo de retoma** dice: al arrancar una sesión nueva, leé el ESTADO ACTUAL antes que nada, no reescribas lo que ya funciona, seguí desde el próximo paso.
 
 **Regla de ejecución:** una etapa por sesión. No mezclar etapas ni adelantar fases.
+
+![El plan se corta en FASE → ETAPA → WORK-ORDER. Las casillas se marcan una a una y el puntero ESTADO ACTUAL avanza al próximo paso, para retomar en frío sin releer todo.](/images/berserk-stage-phases.gif)
 
 ---
 

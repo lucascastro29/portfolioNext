@@ -226,6 +226,22 @@ export default function PostPage({ post, readingMinutes, toc, previousPost, next
                     const id = slugify(text);
                     return <h3 id={id} {...props}>{children}</h3>;
                   },
+                  img: ({ src, alt }) => (
+                    <figure className="my-8">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={typeof src === "string" ? src : ""}
+                        alt={alt ?? ""}
+                        loading="lazy"
+                        className="w-full rounded-2xl border border-white/10 shadow-lg"
+                      />
+                      {alt && (
+                        <figcaption className="mt-3 text-center text-sm text-slate-400">
+                          {alt}
+                        </figcaption>
+                      )}
+                    </figure>
+                  ),
                 }}
               >
                 {post.content}

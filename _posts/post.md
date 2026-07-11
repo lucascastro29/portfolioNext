@@ -1,7 +1,7 @@
 ---
 title: "Entrenar un modelo de clasificación CNN: de 2 clases a N clases"
 date: "2026-04-08"
-coverImage: "/images/workimg.png"
+coverImage: "/images/cnn-cover.gif"
 excerpt: "Cómo diseñé y entrené un modelo de visión por computadora para clasificar orientación de piezas (Tulipa vs Tulipa invertida), y cómo escalar la solución a múltiples clases."
 author:
   name: "Lucas Castro"
@@ -120,6 +120,8 @@ Se aplican:
 - Shuffle para mejorar generalización.
 - Prefetch para optimizar rendimiento.
 
+![Dataset organizado en carpetas train/val y pipeline de preprocesamiento: normalización 0–1, shuffle, cache y prefetch.](/images/cnn-stage-data.gif)
+
 ---
 
 ## 🏗️ 5. Diseño del modelo CNN
@@ -130,6 +132,8 @@ El modelo está compuesto por:
 - Bloques convolucionales (`Conv2D` + `BatchNorm` + `MaxPooling`).
 - Clasificador con `GlobalAveragePooling` + `Dense` + `Dropout`.
 
+![Flujo de activaciones a través de la arquitectura CNN: Input 48×48 → bloques Conv2D+BatchNorm → MaxPooling → GlobalAveragePooling → Dense → sigmoid.](/images/cnn-stage-arch.gif)
+
 ---
 
 ## 🏋️ 6. Entrenamiento del modelo
@@ -139,6 +143,8 @@ Se utilizan callbacks clave:
 - `EarlyStopping` (evita sobreentrenamiento).
 - `ReduceLROnPlateau` (ajusta el learning rate).
 - `ModelCheckpoint` (guarda el mejor modelo).
+
+![Curvas de entrenamiento: la pérdida (loss) baja mientras la precisión de validación (val_acc) sube, con EarlyStopping y ReduceLROnPlateau.](/images/cnn-stage-train.gif)
 
 ---
 

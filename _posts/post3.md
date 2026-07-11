@@ -1,7 +1,7 @@
 ---
 title: "Mi primer post"
 date: "2026-01-26"
-coverImage: "/images/workimg.png"
+coverImage: "/images/blog-stub-cover.gif"
 excerpt: "Este es mi primer post"
 author:
   name: "Lucas Castro"
