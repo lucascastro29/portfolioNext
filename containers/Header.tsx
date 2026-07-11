@@ -9,6 +9,45 @@ import heroPhoto from "../images/foto.jpg";
 
 const TECH_CHIPS = ["Python", "OpenCV · YOLO", "TensorFlow", "Next.js", "Node-RED", "C++"];
 
+// Terminal-style headline: types the title out character by character with a
+// blinking block caret. Pure text (transparent) so it blends with the hero
+// gradient, stays crisp, and re-types instantly when the language changes.
+function TypedHeadline({ text }: { text: string }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(0);
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setCount(text.length);
+      return;
+    }
+    let i = 0;
+    const id = window.setInterval(() => {
+      i += 1;
+      setCount(i);
+      if (i >= text.length) window.clearInterval(id);
+    }, 90);
+    return () => window.clearInterval(id);
+  }, [text]);
+
+  const done = count >= text.length;
+
+  return (
+    <h1 className="hero-title max-w-2xl">
+      <span className="sr-only">{text}</span>
+      <span className="hero-term-prompt" aria-hidden="true">$</span>
+      <span aria-hidden="true">{text.slice(0, count)}</span>
+      <span
+        className={`hero-term-caret${done ? " hero-term-caret--blink" : ""}`}
+        aria-hidden="true"
+      />
+    </h1>
+  );
+}
+
 function useCountUp(target: number, duration = 1100) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
@@ -86,9 +125,7 @@ const Header = () => {
 
           {/* Left: text */}
           <div>
-            <h1 className="hero-title max-w-2xl">
-              {t.headerTitle}
-            </h1>
+            <TypedHeadline key={language} text={t.headerTitle} />
             <p className="hero-subtitle mt-5">
               {t.headerSubtitle}
             </p>
