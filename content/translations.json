@@ -1,6 +1,6 @@
 {
   "es": {
-    "headerTitle": "Hola munda",
+    "headerTitle": "Hola mundo!",
     "headerSubtitle": "Soy Lucas Castro, apasionado por la automatización de sistemas, Machine Learning y Computer Vision. Creo soluciones que simplifican procesos, aplicaciones y herramientas de desarrollo.",
     "headerBadge": "Disponible para freelance",
     "headerExplore": "Ver Proyectos",
@@ -74,7 +74,7 @@
     }
   },
   "en": {
-    "headerTitle": "Hello world",
+    "headerTitle": "Hello world!",
     "headerSubtitle": "I'm Lucas Castro, passionate about system automation, Machine Learning and Computer Vision. I build solutions that simplify processes, applications and development tools.",
     "headerBadge": "Available for freelance",
     "headerExplore": "Explore Work",
