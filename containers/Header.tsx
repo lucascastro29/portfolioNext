@@ -140,7 +140,7 @@ const Header = () => {
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href="#about"
+                href="#projects"
                 className="led-btn led-btn-stable rounded-full border border-cyan-300/40 bg-cyan-400/15 px-6 py-2.5 text-sm font-bold tracking-[0.05em] text-cyan-50 no-underline transition hover:bg-cyan-300/25"
               >
                 {t.headerExplore}
