@@ -1,14 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useContext, useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 
 import { GetStaticProps, GetStaticPaths } from "next";
 import { getPostSlugs, getPostBySlug, getAllPosts } from "../../lib/server/post";
-import { Post } from "../../models/post";
+import { Post, Lang } from "../../models/post";
+import { PortfolioContext } from "../../components/context/PortfolioContext";
+import translations from "../../content/translations.json";
 
 const SITE_URL = "https://portfolio-next-three-mu.vercel.app";
 
@@ -20,13 +22,11 @@ type TocItem = {
 
 type PostRef = {
   slug: string;
-  title: string;
+  title: Record<Lang, string>;
 };
 
 type PostPageProps = {
   post: Post;
-  readingMinutes: number;
-  toc: TocItem[];
   previousPost: PostRef | null;
   nextPost: PostRef | null;
 };
@@ -87,6 +87,11 @@ export const getStaticPaths: GetStaticPaths = () => {
   };
 };
 
+const toRef = (p: Post): PostRef => ({
+  slug: p.slug,
+  title: { es: p.i18n.es.title, en: p.i18n.en.title },
+});
+
 export const getStaticProps: GetStaticProps<PostPageProps> = ({ params }) => {
   const post = getPostBySlug(params!.slug as string);
   const posts = getAllPosts();
@@ -94,25 +99,33 @@ export const getStaticProps: GetStaticProps<PostPageProps> = ({ params }) => {
   const currentIndex = posts.findIndex((p) => p.slug === post.slug);
   const previousPost =
     currentIndex >= 0 && currentIndex < posts.length - 1
-      ? { slug: posts[currentIndex + 1].slug, title: posts[currentIndex + 1].title }
+      ? toRef(posts[currentIndex + 1])
       : null;
-  const nextPost =
-    currentIndex > 0
-      ? { slug: posts[currentIndex - 1].slug, title: posts[currentIndex - 1].title }
-      : null;
+  const nextPost = currentIndex > 0 ? toRef(posts[currentIndex - 1]) : null;
 
   return {
     props: {
       post,
-      readingMinutes: estimateReadingTime(post.content),
-      toc: extractHeadings(post.content),
       previousPost,
       nextPost,
     },
   };
 };
 
-export default function PostPage({ post, readingMinutes, toc, previousPost, nextPost }: PostPageProps) {
+export default function PostPage({ post, previousPost, nextPost }: PostPageProps) {
+  const ctx = useContext(PortfolioContext);
+  const language = (ctx?.language ?? "es") as Lang;
+  const t = translations[language];
+
+  const local = post.i18n?.[language] ?? {
+    title: post.title,
+    excerpt: post.excerpt,
+    content: post.content,
+  };
+  const readingMinutes = useMemo(() => estimateReadingTime(local.content), [local.content]);
+  const toc = useMemo(() => extractHeadings(local.content), [local.content]);
+  const dateLocale = language === "es" ? "es-UY" : "en-US";
+
   const postUrl = `${SITE_URL}/blog/${post.slug}`;
   const ogImage = post.coverImage?.startsWith("http")
     ? post.coverImage
@@ -167,7 +180,7 @@ export default function PostPage({ post, readingMinutes, toc, previousPost, next
             <div className="led-sign relative mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 shadow-lg">
               <Image
                 src={post.coverImage}
-                alt={post.title}
+                alt={local.title}
                 layout="fill"
                 objectFit="cover"
                 priority
@@ -178,8 +191,8 @@ export default function PostPage({ post, readingMinutes, toc, previousPost, next
           )}
 
           <header className="led-sign section-panel blog-post-header mb-10">
-            <h1 className="blog-post-title">{post.title}</h1>
-            {post.excerpt && <p className="blog-post-excerpt">{post.excerpt}</p>}
+            <h1 className="blog-post-title">{local.title}</h1>
+            {local.excerpt && <p className="blog-post-excerpt">{local.excerpt}</p>}
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
@@ -196,7 +209,7 @@ export default function PostPage({ post, readingMinutes, toc, previousPost, next
                   <p className="text-sm font-medium text-white">{post.author?.name ?? "Lucas Castro"}</p>
                   {post.date && (
                     <p className="text-sm text-slate-400">
-                      {new Date(post.date).toLocaleDateString("es-UY", {
+                      {new Date(post.date).toLocaleDateString(dateLocale, {
                         year: "numeric",
                         month: "long",
                         day: "2-digit",
@@ -245,7 +258,7 @@ export default function PostPage({ post, readingMinutes, toc, previousPost, next
                   ),
                 }}
               >
-                {post.content}
+                {local.content}
               </ReactMarkdown>
             </div>
           </div>
@@ -254,9 +267,9 @@ export default function PostPage({ post, readingMinutes, toc, previousPost, next
             <div className="led-sign section-panel blog-post-footer">
               <div className="grid gap-4 md:grid-cols-12">
                 <section className="rounded-xl border border-cyan-200/20 bg-slate-950/35 p-4 md:col-span-7">
-                  <p className="m-0 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">Índice</p>
+                  <p className="m-0 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">{t.blogIndex}</p>
                   {toc.length === 0 ? (
-                    <p className="mt-3 mb-0 text-sm text-cyan-100/70">Sin subtítulos detectados.</p>
+                    <p className="mt-3 mb-0 text-sm text-cyan-100/70">{t.blogNoHeadings}</p>
                   ) : (
                     <ul className="mt-3 mb-0 max-h-72 space-y-1.5 overflow-y-auto pr-1">
                       {toc.map((item, idx) => (
@@ -279,30 +292,30 @@ export default function PostPage({ post, readingMinutes, toc, previousPost, next
                 </section>
 
                 <section className="rounded-xl border border-cyan-200/20 bg-slate-950/35 p-4 md:col-span-2">
-                  <p className="m-0 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">Lectura</p>
+                  <p className="m-0 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">{t.blogReading}</p>
                   <p className="mt-3 mb-0 text-base font-semibold text-cyan-50">~{readingMinutes} min</p>
                 </section>
 
                 <section className="rounded-xl border border-cyan-200/20 bg-slate-950/35 p-4 md:col-span-3">
-                  <p className="m-0 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">Navegación</p>
+                  <p className="m-0 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">{t.blogNavigation}</p>
                   <div className="mt-3 flex flex-col gap-2.5">
                     {previousPost ? (
                       <Link href={`/blog/${previousPost.slug}`} legacyBehavior>
                         <a className="group rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-cyan-100/90 no-underline transition hover:border-cyan-300/40 hover:text-white">
-                          ← <span className="font-medium">Anterior:</span> {previousPost.title}
+                          ← <span className="font-medium">{t.blogPrevious}</span> {previousPost.title[language]}
                         </a>
                       </Link>
                     ) : (
-                      <span className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-cyan-100/45">← Sin post anterior</span>
+                      <span className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-cyan-100/45">← {t.blogNoPrevious}</span>
                     )}
                     {nextPost ? (
                       <Link href={`/blog/${nextPost.slug}`} legacyBehavior>
                         <a className="group rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-cyan-100/90 no-underline transition hover:border-cyan-300/40 hover:text-white">
-                          <span className="font-medium">Siguiente:</span> {nextPost.title} →
+                          <span className="font-medium">{t.blogNext}</span> {nextPost.title[language]} →
                         </a>
                       </Link>
                     ) : (
-                      <span className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-cyan-100/45">Sin post siguiente →</span>
+                      <span className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-cyan-100/45">{t.blogNoNext} →</span>
                     )}
                   </div>
                 </section>

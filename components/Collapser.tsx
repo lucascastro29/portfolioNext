@@ -34,7 +34,7 @@ const Collapser = (props: CollapserModel) => {
         <div className="about-photo-wrap">
           <Image
             src={img_miFace}
-            alt="Foto de perfil de Lucas Castro"
+            alt={language === "es" ? "Foto de perfil de Lucas Castro" : "Profile photo of Lucas Castro"}
             layout="fill"
             objectFit="cover"
             objectPosition="center top"

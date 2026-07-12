@@ -38,13 +38,14 @@ const TAG_COLORS: Record<string, { bg: string; border: string; text: string; dat
   tutorial:     { bg: "rgba(96,165,250,0.1)",  border: "rgba(96,165,250,0.28)",  text: "var(--blue)",   date: "var(--blue)",   corners: "rgba(96,165,250,0.45)" },
 };
 
-function getTagFromTitle(title: string): { label: string; colorKey: string } {
+// Detects a tag colour from the (Spanish) title so it stays stable across languages.
+function getColorKeyFromTitle(title: string): "default" | "architecture" | "tutorial" {
   const lower = title.toLowerCase();
   if (lower.includes("cnn") || lower.includes("modelo") || lower.includes("tensorflow"))
-    return { label: "CNN · ML", colorKey: "default" };
+    return "default";
   if (lower.includes("arquitect") || lower.includes("skill") || lower.includes("diseñ"))
-    return { label: "Architecture", colorKey: "architecture" };
-  return { label: "Tutorial", colorKey: "tutorial" };
+    return "architecture";
+  return "tutorial";
 }
 
 const BlogFeed = ({ posts }: BlogFeedProps) => {
@@ -69,28 +70,39 @@ const BlogFeed = ({ posts }: BlogFeedProps) => {
           </div>
           <div className="blog-terminal-live">
             <span className="blog-live-dot" />
-            <span className="blog-live-label">Live</span>
+            <span className="blog-live-label">{language === "es" ? "En vivo" : "Live"}</span>
           </div>
         </div>
 
         {/* Section header */}
         <div className="section-label" data-aos="fade-up">{t.blogTitle ? `05 / ${t.blogTitle}` : "05 / Blog"}</div>
         <h2 className="subtitle" data-aos="fade-up" data-aos-delay="60">
-          {language === "es" ? "Notas & Artículos" : "Notes & Articles"}
+          {t.blogNotes}
         </h2>
         <p className="section-kicker" data-aos="fade-up" data-aos-delay="90">{t.blogSubtitle}</p>
 
         {/* Blog entries */}
         {posts.length === 0 ? (
           <p style={{ color: "var(--text-muted)", textAlign: "center", marginTop: "2rem" }}>
-            {language === "es" ? "No hay posts todavía." : "No posts yet."}
+            {t.blogEmpty}
           </p>
         ) : (
           <div className="blog-feed-list">
             {posts.map((post, i) => {
-              const { label, colorKey } = getTagFromTitle(post.title);
+              const local = post.i18n?.[language] ?? {
+                title: post.title,
+                excerpt: post.excerpt,
+                content: post.content,
+              };
+              const colorKey = getColorKeyFromTitle(post.title);
               const colors = TAG_COLORS[colorKey] || TAG_COLORS.default;
-              const minutes = estimateReadingTime(post.content || "");
+              const label =
+                colorKey === "architecture"
+                  ? t.blogTagArchitecture
+                  : colorKey === "tutorial"
+                  ? t.blogTagTutorial
+                  : t.blogTagCnn;
+              const minutes = estimateReadingTime(local.content || "");
 
               return (
                 <Link key={post.slug} href={`/blog/${post.slug}`} legacyBehavior>
@@ -114,13 +126,13 @@ const BlogFeed = ({ posts }: BlogFeedProps) => {
                         {label}
                       </span>
                       <span className="blog-feed-reading">
-                        {minutes} min read
+                        {minutes} {t.blogMinRead}
                       </span>
                     </div>
 
                     <div className="blog-feed-content">
-                      <h3 className="blog-feed-title">{post.title}</h3>
-                      <p className="blog-feed-excerpt">{post.excerpt}</p>
+                      <h3 className="blog-feed-title">{local.title}</h3>
+                      <p className="blog-feed-excerpt">{local.excerpt}</p>
                       <div className="blog-feed-author">
                         <Image
                           src={post.author?.picture || "/images/foto.jpg"}
@@ -138,7 +150,7 @@ const BlogFeed = ({ posts }: BlogFeedProps) => {
                     <div className="blog-feed-thumb">
                       <Image
                         src={post.coverImage}
-                        alt={post.title}
+                        alt={local.title}
                         width={260}
                         height={164}
                         className="blog-feed-thumb-img"

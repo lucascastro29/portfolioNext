@@ -191,7 +191,7 @@ const Header = () => {
                 <div className="fd-corner fd-corner--br" />
                 <div className="fd-scan" />
                 <div className="fd-label">
-                  Person: Lucas Castro · 99.8%
+                  {language === "es" ? "Persona" : "Person"}: Lucas Castro · 99.8%
                 </div>
               </div>
             </div>

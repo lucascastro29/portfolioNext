@@ -1,9 +1,17 @@
 // On-brand loading screen: a computer-vision "detection box" — dark wall grid,
 // neon corner brackets and a sweeping scan bar, in the portfolio palette.
 // Replaces the old generic gif_programming.gif spinner (pure SVG + CSS, ~1KB).
+import { useContext } from "react";
+import { PortfolioContext } from "../components/context/PortfolioContext";
+import translations from "../content/translations.json";
+
 const Icon = () => {
+  const ctx = useContext(PortfolioContext);
+  const language = (ctx?.language ?? "es") as "es" | "en";
+  const label = translations[language].loading;
+
   return (
-    <div className="lc-loader" role="status" aria-label="Cargando">
+    <div className="lc-loader" role="status" aria-label={label}>
       <svg className="lc-box" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <linearGradient id="lcPanel" x1="0" y1="0" x2="1" y2="1">
@@ -56,7 +64,7 @@ const Icon = () => {
       </svg>
 
       <div className="lc-label">
-        cargando<span className="d d1">.</span><span className="d d2">.</span><span className="d d3">.</span>
+        {label}<span className="d d1">.</span><span className="d d2">.</span><span className="d d3">.</span>
       </div>
 
       <style jsx>{`

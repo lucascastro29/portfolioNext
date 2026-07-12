@@ -1,11 +1,20 @@
+"use client";
+
 import Head from "next/head";
 import Link from "next/link";
+import { useContext } from "react";
+import { PortfolioContext } from "../components/context/PortfolioContext";
+import translations from "../content/translations.json";
 
 export default function Custom404() {
+  const ctx = useContext(PortfolioContext);
+  const language = (ctx?.language ?? "es") as "es" | "en";
+  const t = translations[language];
+
   return (
     <>
       <Head>
-        <title>404 — Página no encontrada · Lucas Castro</title>
+        <title>{`404 — ${t.notFoundTitle} · Lucas Castro`}</title>
         <meta name="robots" content="noindex" />
       </Head>
       <main
@@ -26,10 +35,10 @@ export default function Custom404() {
           404
         </h1>
         <h2 style={{ fontSize: "32px", marginTop: "10px" }}>
-          Página no encontrada
+          {t.notFoundTitle}
         </h2>
         <p style={{ fontSize: "18px", maxWidth: "500px", marginTop: "20px" }}>
-          La página que buscás no existe o fue movida. Volvé al inicio del portfolio.
+          {t.notFoundDesc}
         </p>
         <Link
           href="/"
@@ -43,7 +52,7 @@ export default function Custom404() {
             textDecoration: "none",
           }}
         >
-          ← Volver al inicio
+          ← {t.backHome}
         </Link>
       </main>
     </>

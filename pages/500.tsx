@@ -1,11 +1,20 @@
+"use client";
+
 import Head from "next/head";
 import Link from "next/link";
+import { useContext } from "react";
+import { PortfolioContext } from "../components/context/PortfolioContext";
+import translations from "../content/translations.json";
 
 export default function Custom500() {
+  const ctx = useContext(PortfolioContext);
+  const language = (ctx?.language ?? "es") as "es" | "en";
+  const t = translations[language];
+
   return (
     <>
       <Head>
-        <title>500 — Error del servidor · Lucas Castro</title>
+        <title>{`500 — ${t.serverErrorTitle} · Lucas Castro`}</title>
         <meta name="robots" content="noindex" />
       </Head>
       <main
@@ -32,10 +41,10 @@ export default function Custom500() {
           500
         </h1>
         <h2 style={{ fontSize: "32px", marginTop: "10px" }}>
-          Error del servidor
+          {t.serverErrorTitle}
         </h2>
         <p style={{ fontSize: "18px", maxWidth: "500px", marginTop: "20px" }}>
-          Algo salió mal de nuestro lado. Probá de nuevo en unos momentos.
+          {t.serverErrorDesc}
         </p>
         <Link
           href="/"
@@ -49,7 +58,7 @@ export default function Custom500() {
             textDecoration: "none",
           }}
         >
-          ← Volver al inicio
+          ← {t.backHome}
         </Link>
       </main>
     </>
