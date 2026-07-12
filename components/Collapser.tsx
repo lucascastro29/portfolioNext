@@ -69,9 +69,7 @@ const Collapser = (props: CollapserModel) => {
         {/* Work */}
         <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="60">
           <div className="section-label">{props.Titlework}</div>
-          <h2 className="subtitle" style={{ fontSize: "var(--fs-h3)", marginBottom: "1.2rem" }}>
-            {stripPrefix(props.Titlework)}
-          </h2>
+          
           <div className="timeline">
             <div className="timeline-item">
               <p className="timeline-title">
@@ -97,9 +95,7 @@ const Collapser = (props: CollapserModel) => {
         {/* Studies */}
         <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="120">
           <div className="section-label">{props.Titlestudios}</div>
-          <h2 className="subtitle" style={{ fontSize: "var(--fs-h3)", marginBottom: "1.2rem" }}>
-            {stripPrefix(props.Titlestudios)}
-          </h2>
+          
           <ul className="study-list">
             <li>{props.estudios1}</li>
             <li>{props.estudios2}</li>

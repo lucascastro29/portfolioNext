@@ -74,7 +74,6 @@ const PajinasContainer = (props: PajinasModel) => {
       <article className="led-sign section-panel parallax-large">
 
         <div className="section-label" data-aos="fade-up">{t.projectsTitle}</div>
-        <h2 className="subtitle" data-aos="fade-up" data-aos-delay="60">{t.projectsHeading}</h2>
         <p className="section-kicker" data-aos="fade-up" data-aos-delay="90">
           {language === "es" ? "Sitios web, aplicaciones y diseño." : "Websites, apps and design."}
         </p>

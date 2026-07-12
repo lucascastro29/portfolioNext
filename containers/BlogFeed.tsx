@@ -76,9 +76,7 @@ const BlogFeed = ({ posts }: BlogFeedProps) => {
 
         {/* Section header */}
         <div className="section-label" data-aos="fade-up">{t.blogTitle ? `05 / ${t.blogTitle}` : "05 / Blog"}</div>
-        <h2 className="subtitle" data-aos="fade-up" data-aos-delay="60">
-          {t.blogNotes}
-        </h2>
+       
         <p className="section-kicker" data-aos="fade-up" data-aos-delay="90">{t.blogSubtitle}</p>
 
         {/* Blog entries */}

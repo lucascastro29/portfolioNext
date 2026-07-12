@@ -145,13 +145,7 @@ const Header = () => {
               >
                 {t.headerExplore}
               </a>
-              <NextLink
-                href="/blog"
-                className="led-btn led-btn-stable rounded-full border border-white/16 bg-white/6 px-6 py-2.5 text-sm font-bold tracking-[0.05em] text-slate-100 no-underline transition hover:bg-white/12"
-                style={{ background: "rgba(255,255,255,0.06)", borderColor: "rgba(255,255,255,0.16)" }}
-              >
-                {t.headerJournal}
-              </NextLink>
+              
               <a
                 href="https://github.com/lucascastro29"
                 target="_blank"
@@ -210,13 +204,7 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Scroll indicator */}
-        <div className="hero-scroll relative z-10">
-          <span className="hero-scroll-line" />
-          <a href="#about" className="hero-scroll-text">
-            {t.headerScroll}
-          </a>
-        </div>
+    
       </div>
     </section>
   );

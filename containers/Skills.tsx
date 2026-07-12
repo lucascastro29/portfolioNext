@@ -105,7 +105,6 @@ const Skills = (props: SkillsModel) => {
   return (
     <section id="skills" className="led-sign section-panel parallax-large" data-aos="fade-up">
       <div className="section-label">{props.title}</div>
-      <h2 className="subtitle">{props.title.includes(" / ") ? props.title.split(" / ")[1] : props.title}</h2>
       <p className="section-kicker">{t.skillsKicker}</p>
 
       <div className="tech-grid">

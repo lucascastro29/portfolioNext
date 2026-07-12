@@ -29,9 +29,7 @@ export default function Forms() {
         <div className="section-label" style={{ justifyContent: "center" }}>
           {t.contactTitle}
         </div>
-        <h2 className="subtitle">
-          {t.contactTitle.includes(" / ") ? t.contactTitle.split(" / ")[1] : t.contactTitle}
-        </h2>
+        
 
         <p className="contact-copy">{t.contactCopy}</p>
 
