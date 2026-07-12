@@ -46,19 +46,20 @@ export default function Custom500() {
         <p style={{ fontSize: "18px", maxWidth: "500px", marginTop: "20px" }}>
           {t.serverErrorDesc}
         </p>
-        <Link
-          href="/"
-          style={{
-            marginTop: "30px",
-            padding: "12px 28px",
-            backgroundColor: "var(--accent-color, #2ecc71)",
-            color: "white",
-            borderRadius: "8px",
-            fontWeight: 600,
-            textDecoration: "none",
-          }}
-        >
-          {`← ${t.backHome}`}
+        <Link href="/" legacyBehavior>
+          <a
+            style={{
+              marginTop: "30px",
+              padding: "12px 28px",
+              backgroundColor: "var(--accent-color, #2ecc71)",
+              color: "white",
+              borderRadius: "8px",
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            {`← ${t.backHome}`}
+          </a>
         </Link>
       </main>
     </>
