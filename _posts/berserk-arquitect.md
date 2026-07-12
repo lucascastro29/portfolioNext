@@ -12,7 +12,7 @@ ogImage:
 
 ## El problema real: codear sobre una arquitectura floja
 
-Hay un patrón que se repite en casi todos los proyectos que arrancan con entusiasmo y mueren en el intento: **se codea antes de pensar**. No porque los devs sean descuidados — sino porque la presión de "mostrar algo" empuja a abrir el editor antes de haber cerrado las preguntas load-bearing del proyecto.
+Hay un patrón que se repite en muchos proyectos que arrancan con entusiasmo y mueren en el intento: **se codea antes de pensar**. No porque los devs sean descuidados — sino porque la presión de "mostrar algo" empuja a abrir el editor antes de haber cerrado las preguntas load-bearing del proyecto.
 
 El resultado es predecible: la arquitectura se descubre a medida que se construye, los supuestos ocultos explotan en producción, y cada decisión nueva requiere reescribir tres que parecían sólidas.
 
@@ -31,6 +31,7 @@ El skill hace tres cosas:
 3. **Mantiene** esos archivos sincronizados a medida que el proyecto avanza.
 
 ---
+
 
 ## Los dos archivos núcleo
 
@@ -82,6 +83,7 @@ Los frentes que cubre antes de cerrar:
 
 ---
 
+
 ## Los tres modos de uso
 
 ### Modo A — Inicio de proyecto (o formalizar uno existente)
@@ -120,6 +122,7 @@ Así nunca tenés que revisar a mano si los dos archivos están al día.
 
 ---
 
+
 ## El modelo de fases reanudable
 
 El plan de desarrollo se estructura así:
@@ -141,6 +144,7 @@ Es **reanudable** por diseño: cualquiera puede parar y retomar exactamente en e
 ![El plan se corta en FASE → ETAPA → WORK-ORDER. Las casillas se marcan una a una y el puntero ESTADO ACTUAL avanza al próximo paso, para retomar en frío sin releer todo.](/images/berserk-stage-phases.gif)
 
 ---
+
 
 ## Las tres secciones vivas
 
@@ -174,6 +178,7 @@ Si se corta el contexto, el protocolo de retoma deja todo listo para la próxima
 
 ---
 
+
 ## Por qué funciona
 
 La clave del método no es la herramienta — es la **disciplina de separación**. Cuando hay una sola fuente de verdad para cada tipo de información, no hay drift. Cuando el estado del proyecto tiene un único punto de actualización, no hay versiones desincronizadas.
@@ -183,6 +188,7 @@ El interrogatorio adversarial fuerza a cerrar los bordes antes de codear. El mod
 El resultado: entrás a codear con el diseño cerrado, y cada decisión load-bearing ya tiene respuesta antes de que te la preguntes en el medio de una función.
 
 ---
+
 
 ## Cheat sheet
 
@@ -201,5 +207,6 @@ SNAPSHOT     /anthropic-skills:berserk-arquitect pasame la biblia a docx
 - Una etapa por sesión. No mezclar etapas. No duplicar entre archivos.
 
 ---
+
 
 El repo está en [github.com/lucascastro29/berserk](https://github.com/lucascastro29/berserk). El README es el manual completo del método.
