@@ -1020,6 +1020,18 @@ small { font-size: var(--fs-sm); }
 .blog-post-body   { padding: clamp(1rem, 1.2vw + 0.7rem, 2.2rem); }
 .blog-post-footer { padding: 1rem; }
 
+/* Blog post content spacing: headings need breathing room from the section
+   dividers (--- -> <hr>). The global heading rule sets margin-top:0, which
+   glued h2/h3 to the divider above them. */
+.blog-post-body h2 { margin-top: 2.6rem; }
+.blog-post-body h3 { margin-top: 1.9rem; }
+.blog-post-body hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid rgba(186, 230, 253, 0.14);
+}
+.blog-post-body > div > :first-child { margin-top: 0; }
+
 /* ── UTILITIES ───────────────────────────────────────────────── */
 .tittlestyle {
   width: 250px;
