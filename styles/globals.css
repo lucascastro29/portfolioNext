@@ -205,6 +205,7 @@ small { font-size: var(--fs-sm); }
 .section-panel {
   border-radius: var(--radius-card);
   padding: clamp(1.4rem, 1.2rem + 1.8vw, 2.6rem);
+  padding-Top: clamp(1.2rem, 1rem + 1.6vw, 2.4rem);
   background: var(--card-bg);
   transition: box-shadow var(--transition);
 }
