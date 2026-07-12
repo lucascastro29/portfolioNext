@@ -58,7 +58,7 @@ export default function Custom500() {
             textDecoration: "none",
           }}
         >
-          ← {t.backHome}
+          {`← ${t.backHome}`}
         </Link>
       </main>
     </>

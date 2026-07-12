@@ -52,7 +52,7 @@ export default function Custom404() {
             textDecoration: "none",
           }}
         >
-          ← {t.backHome}
+          {`← ${t.backHome}`}
         </Link>
       </main>
     </>
