@@ -143,7 +143,7 @@ const Collapser = (props: CollapserModel) => {
           <div className="timeline">
             <div className="timeline-item">
               <p className="timeline-title">
-                {language === "es" ? "Analista de TI — SOMIL S.A." : "IT Analyst — SOMIL S.A."}
+                {language === "es" ? "Analista de IT — SOMIL S.A." : "IT Analyst — SOMIL S.A."}
               </p>
               <span className="timeline-period">{workPeriod}</span>
               <p className="timeline-desc">{props.Textwork}</p>
