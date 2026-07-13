@@ -12,7 +12,7 @@ import img_flyer2 from "../images/flyer2.jpg";
 import img_flyer3 from "../images/flyer3.jpg";
 import img_pajina5 from "../images/valdnar-cover.png";
 import img_routine from "../images/routineuniverse-cover.png";
-import img_botbinance from "../images/blog-stub-cover.gif";
+import img_botbinance from "../images/bot-binance-cover.gif";
 const PajinasContainer = (props: PajinasModel) => {
   const ctx = useContext(PortfolioContext);
   const language = (ctx?.language ?? "es") as "es" | "en";

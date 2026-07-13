@@ -1,7 +1,7 @@
 ---
 title: "Bot agéntico de trading: IA que opera Binance Futures por vos"
 date: "2026-07-13"
-coverImage: "/images/blog-stub-cover.gif"
+coverImage: "/images/bot-binance-cover.gif"
 excerpt: "Un bot autónomo que combina análisis técnico clásico con agentes Claude para operar futuros en Binance — con guardrails de seguridad que la IA nunca puede saltear, auto-tuning de parámetros y control total desde Telegram."
 author:
   name: "Lucas Castro"
@@ -48,6 +48,8 @@ Un loop autónomo que corre cada N minutos, analiza la performance acumulada y a
 
 Los ajustes respetan rangos seguros por parámetro — el tuner nunca puede sacar un valor fuera del rango definido en código — y tiene cooldown entre cambios para no sobreajustar con pocos trades.
 
+![Arquitectura multi-agente: Bot Core recibe datos de mercado y ejecuta órdenes, Claude Decision Agent evalúa señales marginales, Analyst Agent analiza performance histórica, y Auto-Tuner ajusta parámetros automáticamente — todo coordinado con la base SQLite y control por Telegram.](/images/bot-stage-agents.gif)
+
 ---
 
 ## Guardrails: la parte más importante del proyecto
@@ -56,6 +58,8 @@ Si tuviera que elegir una sola cosa de la que estoy orgulloso en este proyecto, 
 
 Si Claude falla, devuelve basura o tarda demasiado, el bot entra en modo defensivo automáticamente: bloquea nuevas entradas y endurece la protección de posiciones abiertas. La premisa es simple: **si algo sale mal, la respuesta por defecto es proteger el capital, nunca arriesgar más.**
 
+![Guardrails de seguridad: cada orden pasa por validación de precisión Binance, notional mínimo, cooldown, circuit breaker y límite de pérdida diaria. Si la IA falla o devuelve JSON inválido, el bot entra en modo defensivo — bloquea entradas y endurece protección.](/images/bot-stage-guardrails.gif)
+
 ---
 
 ## Control por Telegram
@@ -63,6 +67,8 @@ Si Claude falla, devuelve basura o tarda demasiado, el bot entra en modo defensi
 Todo el sistema es controlable desde el teléfono. Estado del bot, detalle de posiciones, pausar/reanudar operación, cerrar posiciones manualmente, aprobar o rechazar decisiones de la IA, cambiar entre modo automático y manual — todo con comandos de Telegram.
 
 Esto convierte al bot en algo que podés monitorear y ajustar desde cualquier lado, sin necesidad de estar frente a una terminal.
+
+![Control por Telegram: el usuario envía /estado y recibe posiciones abiertas, PnL y régimen. Con /pendientes ve decisiones de la IA esperando aprobación. Con /si aprueba la entrada. Con /analista consulta métricas de performance al agente analista.](/images/bot-stage-telegram.gif)
 
 ---
 
