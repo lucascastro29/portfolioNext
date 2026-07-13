@@ -626,6 +626,92 @@ small { font-size: var(--fs-sm); }
   margin: 0;
 }
 
+/* Formal education */
+.study-subheading {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.65rem;
+}
+
+.study-subheading:not(:first-child) {
+  margin-top: 0.3rem;
+}
+
+.edu-list {
+  display: grid;
+  gap: 0.85rem;
+  list-style: none;
+  margin: 0 0 1.4rem;
+  padding: 0;
+}
+
+.edu-item {
+  position: relative;
+  padding: 0.95rem 1rem 0.95rem 1.15rem;
+  border-radius: var(--radius-inner);
+  border: 1px solid rgba(186, 230, 253, 0.16);
+  border-left: 2px solid var(--cyan);
+  background: rgba(34, 211, 238, 0.045);
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.edu-item:hover {
+  border-color: rgba(34, 211, 238, 0.32);
+  background: rgba(34, 211, 238, 0.08);
+  transform: translateX(2px);
+}
+
+.edu-item-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.edu-degree {
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--text-primary);
+}
+
+.edu-badge {
+  flex-shrink: 0;
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  color: var(--cyan-dim);
+  background: rgba(34, 211, 238, 0.08);
+}
+
+.edu-badge--incomplete {
+  border-color: rgba(251, 191, 36, 0.35);
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+}
+
+.edu-detail {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.study-divider {
+  border: none;
+  border-top: 1px dashed rgba(186, 230, 253, 0.16);
+  margin: 0 0 1.3rem;
+}
+
 /* Study list */
 .study-list {
   display: grid;

@@ -23,20 +23,37 @@ const Collapser = (props: CollapserModel) => {
   const cyberPeriod = "2020 — 2022";
 
   // Academic education (degrees / in-progress studies), bilingual.
-  const education: { es: string; en: string; detEs: string; detEn: string }[] = [
+  const education: {
+    es: string;
+    en: string;
+    detEs: string;
+    detEn: string;
+    badgeEs: string;
+    badgeEn: string;
+    status: "ongoing" | "incomplete";
+  }[] = [
     {
-      es: "Ingeniería en Computación (en curso)",
-      en: "Computer Engineering (in progress)",
+      es: "Ingeniería en Computación",
+      en: "Computer Engineering",
       detEs: "Facultad de Ingeniería, UdelaR · 2021 – presente (retomada en 2025)",
       detEn: "Faculty of Engineering, UdelaR · 2021 – present (resumed in 2025)",
+      badgeEs: "En curso",
+      badgeEn: "In progress",
+      status: "ongoing",
     },
     {
-      es: "Tecnicatura en Ciberseguridad (incompleta, 1½ años)",
-      en: "Cybersecurity Technical Degree (incomplete, 1.5 years)",
-      detEs: "2022 – 2024",
-      detEn: "2022 – 2024",
+      es: "Tecnicatura en Ciberseguridad",
+      en: "Cybersecurity Technical Degree",
+      detEs: "2022 – 2024 · 1½ años cursados",
+      detEn: "2022 – 2024 · 1.5 years completed",
+      badgeEs: "Incompleta",
+      badgeEn: "Incomplete",
+      status: "incomplete",
     },
   ];
+
+  const formalEduLabel = language === "es" ? "Educación formal" : "Formal education";
+  const certsLabel = language === "es" ? "Certificaciones y cursos" : "Certifications & courses";
 
   // Certifications (linked to the original documents on Google Drive), bilingual.
   const certs: { es: string; en: string; issuer: string; url: string }[] = [
@@ -185,15 +202,31 @@ const Collapser = (props: CollapserModel) => {
         <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="120">
           <div className="section-label">{props.Titlestudios}</div>
           
-          <ul className="study-list">
+          <p className="study-subheading">{formalEduLabel}</p>
+          <ul className="edu-list">
             {education.map((e) => (
-              <li key={e.es}>
-                <div className="study-cert-link" style={{ cursor: "default" }}>
-                  <span className="study-cert-name">{language === "es" ? e.es : e.en}</span>
-                  <span className="study-cert-issuer">{language === "es" ? e.detEs : e.detEn}</span>
+              <li className="edu-item" key={e.es}>
+                <div className="edu-item-head">
+                  <span className="edu-degree">{language === "es" ? e.es : e.en}</span>
+                  <span
+                    className={
+                      e.status === "incomplete"
+                        ? "edu-badge edu-badge--incomplete"
+                        : "edu-badge"
+                    }
+                  >
+                    {language === "es" ? e.badgeEs : e.badgeEn}
+                  </span>
                 </div>
+                <span className="edu-detail">{language === "es" ? e.detEs : e.detEn}</span>
               </li>
             ))}
+          </ul>
+
+          <hr className="study-divider" />
+
+          <p className="study-subheading">{certsLabel}</p>
+          <ul className="study-list">
             {certs.map((c) => (
               <li key={c.url}>
                 <a
