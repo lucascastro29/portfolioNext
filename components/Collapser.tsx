@@ -22,6 +22,22 @@ const Collapser = (props: CollapserModel) => {
   const workPeriod = language === "es" ? "jul. 2024 — Presente" : "Jul 2024 — Present";
   const cyberPeriod = "2020 — 2022";
 
+  // Academic education (degrees / in-progress studies), bilingual.
+  const education: { es: string; en: string; detEs: string; detEn: string }[] = [
+    {
+      es: "Ingeniería en Computación (en curso)",
+      en: "Computer Engineering (in progress)",
+      detEs: "Facultad de Ingeniería, UdelaR · 2021 – presente (retomada en 2025)",
+      detEn: "Faculty of Engineering, UdelaR · 2021 – present (resumed in 2025)",
+    },
+    {
+      es: "Tecnicatura en Ciberseguridad (incompleta, 1½ años)",
+      en: "Cybersecurity Technical Degree (incomplete, 1.5 years)",
+      detEs: "2022 – 2024",
+      detEn: "2022 – 2024",
+    },
+  ];
+
   // Certifications (linked to the original documents on Google Drive), bilingual.
   const certs: { es: string; en: string; issuer: string; url: string }[] = [
     {
@@ -129,6 +145,9 @@ const Collapser = (props: CollapserModel) => {
           <div className="section-label">{props.aboutLabel}</div>
           <h3 className="about-name">Lucas Castro</h3>
           <div className="about-role-badge">{roleBadge}</div>
+          <p style={{ marginTop: "0.5rem", fontSize: "0.92rem", color: "var(--text-muted)" }}>
+            {language === "es" ? "23 años · Montevideo, Uruguay" : "23 years old · Montevideo, Uruguay"}
+          </p>
           <p style={{ marginTop: "0.75rem" }}>{props.Textaboutme}</p>
         </div>
       </article>
@@ -167,6 +186,14 @@ const Collapser = (props: CollapserModel) => {
           <div className="section-label">{props.Titlestudios}</div>
           
           <ul className="study-list">
+            {education.map((e) => (
+              <li key={e.es}>
+                <div className="study-cert-link" style={{ cursor: "default" }}>
+                  <span className="study-cert-name">{language === "es" ? e.es : e.en}</span>
+                  <span className="study-cert-issuer">{language === "es" ? e.detEs : e.detEn}</span>
+                </div>
+              </li>
+            ))}
             {certs.map((c) => (
               <li key={c.url}>
                 <a
