@@ -76,14 +76,24 @@ const TECHS: TechItem[] = [
     accent: "#00618A",
   },
   {
-    name: "Node-RED",
+    name: "Node-RED · Metabase",
     level: 70,
-    category: { es: "Automatización · IoT", en: "Automation · IoT" },
+    category: { es: "Automatización · BI", en: "Automation · BI" },
     note: {
-      es: "Flujos visuales para integración de sistemas e interfaces IoT",
-      en: "Visual flows for system integration and IoT interfaces",
+      es: "Flujos visuales de integración y dashboards de datos con Metabase",
+      en: "Visual integration flows and data dashboards with Metabase",
     },
     accent: "#8F0000",
+  },
+  {
+    name: "GeneXus",
+    level: 68,
+    category: { es: "Low-Code · Backend", en: "Low-Code · Backend" },
+    note: {
+      es: "Desarrollo low-code de aplicaciones y generación automática de código",
+      en: "Low-code app development and automatic code generation",
+    },
+    accent: "#0063A6",
   },
   {
     name: "C++ · Java · PHP",

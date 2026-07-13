@@ -168,6 +168,7 @@ export const TECH_ICON_MAP: Record<string, IconComponent> = {
   "Next.js · TypeScript":  IconNextJS,
   "Node.js · JavaScript":  IconNodeJS,
   "SQL · MySQL · PostgreSQL": IconMySQL,
-  "Node-RED":              IconNodeRED,
+  "Node-RED · Metabase":   IconNodeRED,
+  "GeneXus":               IconGenexus,
   "C++ · Java · PHP":      IconCpp,
 };
