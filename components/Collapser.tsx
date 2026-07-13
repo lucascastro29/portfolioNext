@@ -22,6 +22,76 @@ const Collapser = (props: CollapserModel) => {
   const workPeriod = language === "es" ? "2022 — Presente" : "2022 — Present";
   const cyberPeriod = "2020 — 2022";
 
+  // Certifications (linked to the original documents on Google Drive), bilingual.
+  const certs: { es: string; en: string; issuer: string; url: string }[] = [
+    {
+      es: "Computer Vision e Image Processing en Python",
+      en: "Computer Vision & Image Processing in Python",
+      issuer: "OpenCV University · 94%",
+      url: "https://drive.google.com/file/d/1nMubvg1ITb4DnCAVtFZOY08vS_wpqzd2/view",
+    },
+    {
+      es: "Analista Junior GeneXus 17",
+      en: "GeneXus 17 Junior Analyst",
+      issuer: "GeneXus",
+      url: "https://drive.google.com/file/d/1mmlx3IreOc3TjBMk1gzzoXOO7ms7g5E2/view",
+    },
+    {
+      es: "Jóvenes a Programar — Desarrollo Web Full Stack (430 h)",
+      en: "Jóvenes a Programar — Full Stack Web Development (430 h)",
+      issuer: "Plan Ceibal · 2021",
+      url: "https://drive.google.com/file/d/1xdzI-cSk247U-3A-S8kx8UJInyDiW9Yb/view",
+    },
+    {
+      es: "Gobernanza de la Inteligencia Artificial (50 h)",
+      en: "Artificial Intelligence Governance (50 h)",
+      issuer: "UBA IALAB",
+      url: "https://drive.google.com/file/d/1YlSBRFV_zI6g5KOOur-Ij9VbYmxMCTPP/view",
+    },
+    {
+      es: "Gobernanza de Datos (120 h)",
+      en: "Data Governance (120 h)",
+      issuer: "UBA IALAB",
+      url: "https://drive.google.com/file/d/1knOQ4IptZjNoRivuFzahSLFq_5JJAdWW/view",
+    },
+    {
+      es: "Node.js — Start Coding (50 h)",
+      en: "Node.js — Start Coding (50 h)",
+      issuer: "UBA IALAB",
+      url: "https://drive.google.com/file/d/1IcN2Byj-6yJp1KOmq1OJu-P_tdDuO5Wn/view",
+    },
+    {
+      es: "React Avanzado — Start Coding (25 h)",
+      en: "Advanced React — Start Coding (25 h)",
+      issuer: "UBA IALAB",
+      url: "https://drive.google.com/file/d/1xdm2ECd4R05rWsAoq84DAIakmSLnMsVu/view",
+    },
+    {
+      es: "React Básico — Start Coding (40 h)",
+      en: "React Basics — Start Coding (40 h)",
+      issuer: "UBA IALAB",
+      url: "https://drive.google.com/file/d/1IOWxGMvPZ6iHm2L7-ewFb-E6-Nzena5M/view",
+    },
+    {
+      es: "JavaScript — Start Coding (25 h)",
+      en: "JavaScript — Start Coding (25 h)",
+      issuer: "UBA IALAB",
+      url: "https://drive.google.com/file/d/1YW0vCKdcAUI2hUgSwIXQ22R62aLRrU4y/view",
+    },
+    {
+      es: "Crash Course on Python",
+      en: "Crash Course on Python",
+      issuer: "Google · Coursera",
+      url: "https://drive.google.com/file/d/1vVofGW7xMsP_wPkdUQn6vsNjNW1RD_iO/view",
+    },
+    {
+      es: "First Certificate in English (B2)",
+      en: "First Certificate in English (B2)",
+      issuer: "Cambridge English",
+      url: "https://drive.google.com/file/d/1W1ut3CcLvplLFAHSTV-ggrcsnlC9wPgn/view",
+    },
+  ];
+
   return (
     <section id="about" aria-label="About me section" className="section-stack">
 
@@ -97,10 +167,20 @@ const Collapser = (props: CollapserModel) => {
           <div className="section-label">{props.Titlestudios}</div>
           
           <ul className="study-list">
-            <li>{props.estudios1}</li>
-            <li>{props.estudios2}</li>
-            <li>{props.estudios3}</li>
-            <li>{props.estudios4}</li>
+            {certs.map((c) => (
+              <li key={c.url}>
+                <a
+                  href={c.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="study-cert-link"
+                >
+                  <span className="study-cert-name">{language === "es" ? c.es : c.en}</span>
+                  <span className="study-cert-issuer">{c.issuer}</span>
+                  <span className="study-cert-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </article>
       </div>
