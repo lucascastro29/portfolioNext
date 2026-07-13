@@ -1,6 +1,6 @@
 ---
 title: "berserk-arquitect: el skill que diseña antes de codear"
-date: "2026-03-15"
+date: "2026-06-26"
 coverImage: "/images/berserk-cover.gif"
 excerpt: "Cómo construí un skill para Claude Code que interroga sin piedad la arquitectura de un proyecto y la cristaliza en dos archivos que se mantienen solos — para que codear sea casi mecánico."
 author:
@@ -209,4 +209,4 @@ SNAPSHOT     /anthropic-skills:berserk-arquitect pasame la biblia a docx
 ---
 
 
-El repo está en [github.com/lucascastro29/berserk](https://github.com/lucascastro29/berserk). El README es el manual completo del método.
+El repo está en [github.com/lucascastro29/berserk](https://github.com/lucascastro29/berserk-arquitect). El README es el manual completo del método.
