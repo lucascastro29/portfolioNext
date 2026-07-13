@@ -19,7 +19,7 @@ const Collapser = (props: CollapserModel) => {
       ? "Analista IT · Desarrollador de Software"
       : "IT Analyst · Software Developer";
 
-  const workPeriod = language === "es" ? "2022 — Presente" : "2022 — Present";
+  const workPeriod = language === "es" ? "jul. 2024 — Presente" : "Jul 2024 — Present";
   const cyberPeriod = "2020 — 2022";
 
   // Certifications (linked to the original documents on Google Drive), bilingual.
@@ -143,7 +143,7 @@ const Collapser = (props: CollapserModel) => {
           <div className="timeline">
             <div className="timeline-item">
               <p className="timeline-title">
-                {language === "es" ? "Desarrollo IA & Automatización" : "AI & Automation Development"}
+                {language === "es" ? "Analista de TI — SOMIL S.A." : "IT Analyst — SOMIL S.A."}
               </p>
               <span className="timeline-period">{workPeriod}</span>
               <p className="timeline-desc">{props.Textwork}</p>
