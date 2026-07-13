@@ -13,6 +13,7 @@ import img_flyer3 from "../images/flyer3.jpg";
 import img_pajina5 from "../images/valdnar-cover.png";
 import img_routine from "../images/routineuniverse-cover.png";
 import img_botbinance from "../images/bot-binance-cover.gif";
+import img_opencv from "../images/opencv-cover.gif";
 const PajinasContainer = (props: PajinasModel) => {
   const ctx = useContext(PortfolioContext);
   const language = (ctx?.language ?? "es") as "es" | "en";
@@ -46,7 +47,14 @@ const PajinasContainer = (props: PajinasModel) => {
       href: "https://github.com/lucascastro29/botBinance",
       tag: "Trading · AI Agent",
       colorKey: "amber",
-    },*/ 
+    },*/
+    {
+      key: "opencvprojects" as const,
+      image: img_opencv,
+      href: "https://github.com/lucascastro29/OpenCVProjects",
+      tag: "Computer Vision · ML",
+      colorKey: "cyan",
+    },
   ];
 
   const designs = [

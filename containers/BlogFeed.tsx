@@ -44,7 +44,7 @@ function getColorKeyFromTitle(title: string): "default" | "architecture" | "tuto
   const lower = title.toLowerCase();
   if (lower.includes("trading") || lower.includes("bot") || lower.includes("binance") || lower.includes("patroclo"))
     return "trading";
-  if (lower.includes("cnn") || lower.includes("modelo") || lower.includes("tensorflow"))
+  if (lower.includes("cnn") || lower.includes("modelo") || lower.includes("tensorflow") || lower.includes("opencv") || lower.includes("visión") || lower.includes("vision"))
     return "default";
   if (lower.includes("arquitect") || lower.includes("skill") || lower.includes("diseñ"))
     return "architecture";

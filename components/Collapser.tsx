@@ -53,7 +53,14 @@ const Collapser = (props: CollapserModel) => {
   ];
 
   // Certifications (linked to the original documents on Google Drive), bilingual.
-  const certs: { es: string; en: string; issuer: string; url: string }[] = [
+  const certs: { es: string; en: string; issuer: string; url: string; inProgress?: boolean }[] = [
+    {
+      es: "Deep Learning con TensorFlow y Keras",
+      en: "Deep Learning with TensorFlow & Keras",
+      issuer: "OpenCV University · 51%",
+      url: "https://opencv.org",
+      inProgress: true,
+    },
     {
       es: "Computer Vision e Image Processing en Python",
       en: "Computer Vision & Image Processing in Python",
@@ -240,7 +247,14 @@ const Collapser = (props: CollapserModel) => {
                   rel="noopener noreferrer"
                   className="study-cert-link"
                 >
-                  <span className="study-cert-name">{language === "es" ? c.es : c.en}</span>
+                  <span className="study-cert-name">
+                    {language === "es" ? c.es : c.en}
+                    {c.inProgress && (
+                      <span className="edu-badge" style={{ marginLeft: "0.5rem", fontSize: "0.65rem" }}>
+                        {language === "es" ? "En curso" : "In progress"}
+                      </span>
+                    )}
+                  </span>
                   <span className="study-cert-issuer">{c.issuer}</span>
                   <span className="study-cert-arrow" aria-hidden="true">↗</span>
                 </a>

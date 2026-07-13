@@ -83,6 +83,11 @@
         "title": "Patroclo Warren",
         "desc": "Bot agéntico de trading para Binance Futures con IA multi-agente, auto-tuning y control por Telegram.",
         "stack": "Python · Binance API · Claude API"
+      },
+      "opencvprojects": {
+        "title": "OpenCV Projects",
+        "desc": "Colección de proyectos de visión por computadora y deep learning: desde manipulación de imágenes hasta CNNs con transfer learning.",
+        "stack": "Python · OpenCV · TensorFlow"
       }
     },
     "design": {
@@ -184,6 +189,11 @@
         "title": "Patroclo Warren",
         "desc": "Agentic trading bot for Binance Futures with multi-agent AI, auto-tuning and Telegram control.",
         "stack": "Python · Binance API · Claude API"
+      },
+      "opencvprojects": {
+        "title": "OpenCV Projects",
+        "desc": "Computer vision and deep learning project collection: from image manipulation to CNNs with transfer learning.",
+        "stack": "Python · OpenCV · TensorFlow"
       }
     },
     "design": {
