@@ -1,6 +1,6 @@
 ---
 title: "Bot agéntico de trading: IA que opera Binance Futures por vos"
-date: "2026-07-13"
+date: "2026-05-07"
 coverImage: "/images/bot-binance-cover.gif"
 excerpt: "Un bot autónomo que combina análisis técnico clásico con agentes Claude para operar futuros en Binance — con guardrails de seguridad que la IA nunca puede saltear, auto-tuning de parámetros y control total desde Telegram."
 author:

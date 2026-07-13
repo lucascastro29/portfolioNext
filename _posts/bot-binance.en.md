@@ -1,6 +1,6 @@
 ---
 title: "Agentic trading bot: AI that trades Binance Futures for you"
-date: "2026-07-13"
+date: "2026-05-07"
 coverImage: "/images/bot-binance-cover.gif"
 excerpt: "An autonomous bot that blends classic technical analysis with Claude agents to trade Binance Futures — with safety guardrails the AI can never bypass, auto-tuning of parameters and full control from Telegram."
 author:

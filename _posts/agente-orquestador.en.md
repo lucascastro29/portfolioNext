@@ -1,6 +1,6 @@
 ---
 title: "Orchestrator Agent: a hierarchical system of Claude agents for personal use"
-date: "2026-07-11"
+date: "2026-05-19"
 coverImage: "/images/agente-orquestador-cover.gif"
 excerpt: "A central orchestrator that coordinates sub-agents and Claude Code sessions, reachable from Telegram and web, with persistent memory, a router that cuts cost per message by ~65% and three layers of defense against prompt injection."
 author:

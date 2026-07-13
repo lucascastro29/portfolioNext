@@ -1,6 +1,6 @@
 ---
 title: "Agente Orquestador: un sistema jerárquico de agentes Claude para uso personal"
-date: "2026-07-11"
+date: "2026-05-19"
 coverImage: "/images/agente-orquestador-cover.gif"
 excerpt: "Un orquestador central que coordina sub-agentes y sesiones de Claude Code, accesible desde Telegram y web, con memoria persistente, un router que baja el costo por mensaje ~65% y tres capas de defensa contra prompt injection."
 author:
