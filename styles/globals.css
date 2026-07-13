@@ -240,12 +240,23 @@ small { font-size: var(--fs-sm); }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.4rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .split-col-stack {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.4rem;
+}
+
+.split-col-stack .section-panel--grow {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.split-col-stack .section-panel--grow .edu-list {
+  flex: 1;
 }
 
 /* ── Typography Helpers ──────────────────────────────────────── */

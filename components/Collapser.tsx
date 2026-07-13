@@ -198,7 +198,11 @@ const Collapser = (props: CollapserModel) => {
           </article>
 
           {/* Formal education */}
-          <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="90">
+          <article
+            className="led-sign section-panel section-panel--grow parallax-large"
+            data-aos="fade-up"
+            data-aos-delay="90"
+          >
             <div className="section-label">{props.Titlestudios}</div>
 
             <ul className="edu-list edu-list--standalone">
