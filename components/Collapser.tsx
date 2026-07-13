@@ -52,9 +52,6 @@ const Collapser = (props: CollapserModel) => {
     },
   ];
 
-  const formalEduLabel = language === "es" ? "Educación formal" : "Formal education";
-  const certsLabel = language === "es" ? "Certificaciones y cursos" : "Certifications & courses";
-
   // Certifications (linked to the original documents on Google Drive), bilingual.
   const certs: { es: string; en: string; issuer: string; url: string }[] = [
     {
@@ -172,56 +169,61 @@ const Collapser = (props: CollapserModel) => {
       {/* ── Work + Studies ────────────────────────────────────── */}
       <div className="split-grid">
 
-        {/* Work */}
-        <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="60">
-          <div className="section-label">{props.Titlework}</div>
-          
-          <div className="timeline">
-            <div className="timeline-item">
-              <p className="timeline-title">
-                {language === "es" ? "Analista de IT — SOMIL S.A." : "IT Analyst — SOMIL S.A."}
-              </p>
-              <span className="timeline-period">{workPeriod}</span>
-              <p className="timeline-desc">{props.Textwork}</p>
+        {/* Left column: Work + Formal education, stacked as separate boxes */}
+        <div className="split-col-stack">
+          {/* Work */}
+          <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="60">
+            <div className="section-label">{props.Titlework}</div>
+
+            <div className="timeline">
+              <div className="timeline-item">
+                <p className="timeline-title">
+                  {language === "es" ? "Analista de IT — SOMIL S.A." : "IT Analyst — SOMIL S.A."}
+                </p>
+                <span className="timeline-period">{workPeriod}</span>
+                <p className="timeline-desc">{props.Textwork}</p>
+              </div>
+              <div className="timeline-item">
+                <p className="timeline-title">
+                  {language === "es" ? "Técnico Informático — Cyber Green" : "IT Technician — Cyber Green"}
+                </p>
+                <span className="timeline-period">{cyberPeriod}</span>
+                <p className="timeline-desc">
+                  {language === "es"
+                    ? "Soporte técnico, mantenimiento de hardware y atención al cliente."
+                    : "Technical support, hardware maintenance and customer service."}
+                </p>
+              </div>
             </div>
-            <div className="timeline-item">
-              <p className="timeline-title">
-                {language === "es" ? "Técnico Informático — Cyber Green" : "IT Technician — Cyber Green"}
-              </p>
-              <span className="timeline-period">{cyberPeriod}</span>
-              <p className="timeline-desc">
-                {language === "es"
-                  ? "Soporte técnico, mantenimiento de hardware y atención al cliente."
-                  : "Technical support, hardware maintenance and customer service."}
-              </p>
-            </div>
-          </div>
+          </article>
 
-          <hr className="study-divider" />
+          {/* Formal education */}
+          <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="90">
+            <div className="section-label">{props.Titlestudios}</div>
 
-          <p className="study-subheading">{formalEduLabel}</p>
-          <ul className="edu-list">
-            {education.map((e) => (
-              <li className="edu-item" key={e.es}>
-                <div className="edu-item-head">
-                  <span className="edu-degree">{language === "es" ? e.es : e.en}</span>
-                  <span
-                    className={
-                      e.status === "incomplete"
-                        ? "edu-badge edu-badge--incomplete"
-                        : "edu-badge"
-                    }
-                  >
-                    {language === "es" ? e.badgeEs : e.badgeEn}
-                  </span>
-                </div>
-                <span className="edu-detail">{language === "es" ? e.detEs : e.detEn}</span>
-              </li>
-            ))}
-          </ul>
-        </article>
+            <ul className="edu-list edu-list--standalone">
+              {education.map((e) => (
+                <li className="edu-item" key={e.es}>
+                  <div className="edu-item-head">
+                    <span className="edu-degree">{language === "es" ? e.es : e.en}</span>
+                    <span
+                      className={
+                        e.status === "incomplete"
+                          ? "edu-badge edu-badge--incomplete"
+                          : "edu-badge"
+                      }
+                    >
+                      {language === "es" ? e.badgeEs : e.badgeEn}
+                    </span>
+                  </div>
+                  <span className="edu-detail">{language === "es" ? e.detEs : e.detEn}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
 
-        {/* Studies */}
+        {/* Right column: Certifications & courses */}
         <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="120">
           <div className="section-label">{props.Titlestudios}</div>
 

@@ -240,6 +240,12 @@ small { font-size: var(--fs-sm); }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.4rem;
+  align-items: start;
+}
+
+.split-col-stack {
+  display: grid;
+  gap: 1.4rem;
 }
 
 /* ── Typography Helpers ──────────────────────────────────────── */
@@ -647,6 +653,10 @@ small { font-size: var(--fs-sm); }
   list-style: none;
   margin: 0 0 1.4rem;
   padding: 0;
+}
+
+.edu-list--standalone {
+  margin-bottom: 0;
 }
 
 .edu-item {
