@@ -36,11 +36,14 @@ const TAG_COLORS: Record<string, { bg: string; border: string; text: string; dat
   default:      { bg: "rgba(34,211,238,0.1)",  border: "rgba(34,211,238,0.28)",  text: "var(--cyan)",   date: "var(--cyan)",   corners: "rgba(56,189,248,0.45)" },
   architecture: { bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.28)", text: "var(--violet)", date: "var(--violet)", corners: "rgba(167,139,250,0.45)" },
   tutorial:     { bg: "rgba(96,165,250,0.1)",  border: "rgba(96,165,250,0.28)",  text: "var(--blue)",   date: "var(--blue)",   corners: "rgba(96,165,250,0.45)" },
+  trading:      { bg: "rgba(251,191,36,0.1)",  border: "rgba(251,191,36,0.28)",  text: "var(--amber)",  date: "var(--amber)",  corners: "rgba(251,191,36,0.45)" },
 };
 
 // Detects a tag colour from the (Spanish) title so it stays stable across languages.
-function getColorKeyFromTitle(title: string): "default" | "architecture" | "tutorial" {
+function getColorKeyFromTitle(title: string): "default" | "architecture" | "tutorial" | "trading" {
   const lower = title.toLowerCase();
+  if (lower.includes("trading") || lower.includes("bot") || lower.includes("binance") || lower.includes("patroclo"))
+    return "trading";
   if (lower.includes("cnn") || lower.includes("modelo") || lower.includes("tensorflow"))
     return "default";
   if (lower.includes("arquitect") || lower.includes("skill") || lower.includes("diseñ"))
@@ -99,6 +102,8 @@ const BlogFeed = ({ posts }: BlogFeedProps) => {
                   ? t.blogTagArchitecture
                   : colorKey === "tutorial"
                   ? t.blogTagTutorial
+                  : colorKey === "trading"
+                  ? (t as any).blogTagTrading ?? "Trading · AI"
                   : t.blogTagCnn;
               const minutes = estimateReadingTime(local.content || "");
 

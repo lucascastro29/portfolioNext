@@ -57,6 +57,7 @@
     "blogTagArchitecture": "Arquitectura",
     "blogTagTutorial": "Tutorial",
     "blogTagCnn": "CNN · ML",
+    "blogTagTrading": "Trading · IA",
     "projects": {
       "ecommerce": {
         "title": "E-Commerce",
@@ -77,6 +78,11 @@
         "title": "Routine Universe",
         "desc": "App de gestión de rutinas y hábitos para lograr metas con estructura y seguimiento diario.",
         "stack": "Next.js · React"
+      },
+      "botbinance": {
+        "title": "Patroclo Warren",
+        "desc": "Bot agéntico de trading para Binance Futures con IA multi-agente, auto-tuning y control por Telegram.",
+        "stack": "Python · Binance API · Claude API"
       }
     },
     "design": {
@@ -152,6 +158,7 @@
     "blogTagArchitecture": "Architecture",
     "blogTagTutorial": "Tutorial",
     "blogTagCnn": "CNN · ML",
+    "blogTagTrading": "Trading · AI",
     "projects": {
       "ecommerce": {
         "title": "E-Commerce",
@@ -172,6 +179,11 @@
         "title": "Routine Universe",
         "desc": "Routine and habit tracking app to achieve goals with structure and daily progress.",
         "stack": "Next.js · React"
+      },
+      "botbinance": {
+        "title": "Patroclo Warren",
+        "desc": "Agentic trading bot for Binance Futures with multi-agent AI, auto-tuning and Telegram control.",
+        "stack": "Python · Binance API · Claude API"
       }
     },
     "design": {

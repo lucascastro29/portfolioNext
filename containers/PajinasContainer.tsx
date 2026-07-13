@@ -12,6 +12,7 @@ import img_flyer2 from "../images/flyer2.jpg";
 import img_flyer3 from "../images/flyer3.jpg";
 import img_pajina5 from "../images/valdnar-cover.png";
 import img_routine from "../images/routineuniverse-cover.png";
+import img_botbinance from "../images/blog-stub-cover.gif";
 const PajinasContainer = (props: PajinasModel) => {
   const ctx = useContext(PortfolioContext);
   const language = (ctx?.language ?? "es") as "es" | "en";
@@ -38,6 +39,13 @@ const PajinasContainer = (props: PajinasModel) => {
       href: "https://routineuniverse.com",
       tag: "Productivity · Web App",
       colorKey: "green",
+    },
+    {
+      key: "botbinance" as const,
+      image: img_botbinance,
+      href: "https://github.com/lucascastro29/botBinance",
+      tag: "Trading · AI Agent",
+      colorKey: "amber",
     },
   ];
 
@@ -66,6 +74,11 @@ const PajinasContainer = (props: PajinasModel) => {
       chipBg: "rgba(52,211,153,0.1)", chipBorder: "rgba(52,211,153,0.3)", chipText: "var(--green)",
       hoverBorder: "rgba(52,211,153,0.4)", hoverShadow: "0 0 32px rgba(52,211,153,0.18), 0 16px 48px rgba(0,0,0,0.5)",
       cornerColor: "rgba(52,211,153,0.5)", labelColor: "#6ee7b7",
+    },
+    amber: {
+      chipBg: "rgba(251,191,36,0.1)", chipBorder: "rgba(251,191,36,0.3)", chipText: "var(--amber)",
+      hoverBorder: "rgba(251,191,36,0.4)", hoverShadow: "0 0 32px rgba(251,191,36,0.18), 0 16px 48px rgba(0,0,0,0.5)",
+      cornerColor: "rgba(251,191,36,0.5)", labelColor: "#fcd34d",
     },
   };
 
