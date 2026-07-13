@@ -88,8 +88,8 @@ El entrenamiento se ejecuta en GPU para:
 
 Se utilizó Google Colab junto con Google Drive para gestionar el dataset y los modelos.
 
-> 🔗 **Colab del proyecto:** _[Agregar link al notebook]_  
-> 🔗 **Repositorio en GitHub:** _[Agregar link al repositorio]_
+> 🔗 **Colab del proyecto:**  
+> 🔗 **Repositorio en GitHub:** 
 
 ---
 

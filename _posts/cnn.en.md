@@ -88,8 +88,8 @@ Training runs on GPU to:
 
 I used Google Colab together with Google Drive to manage the dataset and the models.
 
-> 🔗 **Project Colab:** _[Add link to the notebook]_  
-> 🔗 **GitHub repository:** _[Add link to the repository]_
+> 🔗 **Project Colab:** 
+> 🔗 **GitHub repository:** 
 
 ---
 
