@@ -47,14 +47,14 @@ const PajinasContainer = (props: PajinasModel) => {
       href: "https://github.com/lucascastro29/botBinance",
       tag: "Trading · AI Agent",
       colorKey: "amber",
-    },*/
+    },
     {
       key: "opencvprojects" as const,
       image: img_opencv,
       href: "https://github.com/lucascastro29/OpenCVProjects",
       tag: "Computer Vision · ML",
       colorKey: "cyan",
-    },
+    },*/
   ];
 
   const designs = [
