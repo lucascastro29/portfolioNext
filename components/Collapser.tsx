@@ -196,12 +196,9 @@ const Collapser = (props: CollapserModel) => {
               </p>
             </div>
           </div>
-        </article>
 
-        {/* Studies */}
-        <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="120">
-          <div className="section-label">{props.Titlestudios}</div>
-          
+          <hr className="study-divider" />
+
           <p className="study-subheading">{formalEduLabel}</p>
           <ul className="edu-list">
             {education.map((e) => (
@@ -222,10 +219,12 @@ const Collapser = (props: CollapserModel) => {
               </li>
             ))}
           </ul>
+        </article>
 
-          <hr className="study-divider" />
+        {/* Studies */}
+        <article className="led-sign section-panel parallax-large" data-aos="fade-up" data-aos-delay="120">
+          <div className="section-label">{props.Titlestudios}</div>
 
-          <p className="study-subheading">{certsLabel}</p>
           <ul className="study-list">
             {certs.map((c) => (
               <li key={c.url}>
