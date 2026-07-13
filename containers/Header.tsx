@@ -7,7 +7,7 @@ import { PortfolioContext } from "../components/context/PortfolioContext";
 import translations from "../content/translations.json";
 import heroPhoto from "../images/foto.jpg";
 
-const TECH_CHIPS = ["Python", "OpenCV · YOLO", "TensorFlow", "Next.js", "Node-RED", "C++"];
+const TECH_CHIPS = ["Python", "OpenCV · YOLO", "TensorFlow", "Next.js · React", "CakePHP", "MySQL · Firebase", "Claude · MCP"];
 
 // Terminal-style headline: types the title out character by character with a
 // blinking block caret. Pure text (transparent) so it blends with the hero
