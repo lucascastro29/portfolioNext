@@ -39,14 +39,14 @@ const PajinasContainer = (props: PajinasModel) => {
       href: "https://routineuniverse.com",
       tag: "Productivity · Web App",
       colorKey: "green",
-    },
+    },/*
     {
       key: "botbinance" as const,
       image: img_botbinance,
       href: "https://github.com/lucascastro29/botBinance",
       tag: "Trading · AI Agent",
       colorKey: "amber",
-    },
+    },*/ 
   ];
 
   const designs = [
