@@ -128,26 +128,13 @@ const BlogFeed = ({ posts }: BlogFeedProps) => {
                       >
                         {label}
                       </span>
-                      <span className="blog-feed-reading">
-                        {minutes} {t.blogMinRead}
-                      </span>
+                      
                     </div>
 
                     <div className="blog-feed-content">
                       <h3 className="blog-feed-title">{local.title}</h3>
                       <p className="blog-feed-excerpt">{local.excerpt}</p>
-                      <div className="blog-feed-author">
-                        <Image
-                          src={post.author?.picture || "/images/foto.jpg"}
-                          alt={post.author?.name || "Lucas Castro"}
-                          width={24}
-                          height={24}
-                          className="blog-feed-avatar"
-                        />
-                        <span className="blog-feed-author-name">
-                          {post.author?.name || "Lucas Castro"}
-                        </span>
-                      </div>
+                      
                     </div>
 
                     <div className="blog-feed-thumb">
