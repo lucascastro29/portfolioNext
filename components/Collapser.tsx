@@ -165,7 +165,6 @@ const Collapser = (props: CollapserModel) => {
         <div className="about-copy">
           <div className="section-label">{props.aboutLabel}</div>
           <h3 className="about-name">Lucas Castro</h3>
-          <div className="about-role-badge">{roleBadge}</div>
           <p style={{ marginTop: "0.5rem", fontSize: "0.92rem", color: "var(--text-muted)" }}>
             {language === "es" ? "23 años · Montevideo, Uruguay" : "23 years old · Montevideo, Uruguay"}
           </p>

@@ -12,7 +12,7 @@ import { Post, Lang } from "../../models/post";
 import { PortfolioContext } from "../../components/context/PortfolioContext";
 import translations from "../../content/translations.json";
 
-const SITE_URL = "https://portfolio-next-three-mu.vercel.app";
+const SITE_URL = "https://lucascastrodev.com/";
 
 type TocItem = {
   id: string;
@@ -192,7 +192,7 @@ export default function PostPage({ post, previousPost, nextPost }: PostPageProps
 
           <header className="led-sign section-panel blog-post-header mb-10">
             <h1 className="blog-post-title">{local.title}</h1>
-            {local.excerpt && <p className="blog-post-excerpt">{local.excerpt}</p>}
+            {/*{local.excerpt && <p className="blog-post-excerpt">{local.excerpt}</p>}
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
@@ -222,6 +222,7 @@ export default function PostPage({ post, previousPost, nextPost }: PostPageProps
                 {readingMinutes} min
               </div>
             </div>
+            */}
           </header>
 
           <div className="led-sign section-panel blog-post-body">
