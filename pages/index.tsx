@@ -77,7 +77,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#050a12" />
         <link rel="canonical" href={SITE_URL} />
-
+        <meta name="google-site-verification" content="oxieg6GgqDtAvnZZjuH0H5cUMsSUp-I4Suv3aLZxzS0" />
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={SITE_URL} />
